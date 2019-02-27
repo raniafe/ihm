@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import program.View;
 
 import javax.swing.*;
 
@@ -21,31 +22,53 @@ public class HomeController extends Controller {
 
     @FXML
     public void initialize(){
-        /*Boutique.setOnAction(event -> {
-            try {
-                redirectionBoutique(rootPane);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });*/
 
     }
 
-    public void displayMonCompte(){
+    public void displayAccueil(){
         try {
-            redirectionMonCompte(rootPane);
+            redirection(rootPane, View.Accueil);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-   public void displayMonStock() {
-        String fxmlFile = "../../resources/fxxml/Mon_stock.fxml";
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+
+    public void displayBoutique(){
         try {
+            redirection(rootPane, View.BOUTIQUE);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-            Parent rootNode = loader.load(getClass().getResourceAsStream(fxmlFile));
-            this.rootPane.setRight(rootNode);
+    public void displayMonCompte(){
+        try {
+            redirection(rootPane, View.MonCompte);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+
+   public void displayMonStock() {
+       try {
+           redirection(rootPane, View.MonStock);
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+    }
+
+    public void displayMesReservation(){
+        try {
+            redirection(rootPane, View.MesReservations);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void displayMesVentes() {
+        try {
+            redirection(rootPane, View.MesVentes);
         } catch (IOException e) {
             e.printStackTrace();
         }

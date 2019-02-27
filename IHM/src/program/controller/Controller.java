@@ -10,13 +10,13 @@ import java.io.IOException;
 
 public  abstract class Controller {
 
-    public void redirectionMonCompte(Parent element) throws IOException {
+    public void redirection(Parent element,String fxmlFile) throws IOException {
         BoutiqueController controller = new BoutiqueController() ;
         FXMLLoader loader = new FXMLLoader() ;
         loader.setController(controller);
         Stage stage=(Stage) element.getScene().getWindow();
         controller.initialize();
-        Parent root = loader.load(getClass().getResource("../../resources/fxml/Mon_Compte.fxml"));
+        Parent root = loader.load(getClass().getResource(fxmlFile));
         stage.setTitle("Gaspi-Miam");
         stage.setScene(new Scene(root, 700, 475));
         stage.show();

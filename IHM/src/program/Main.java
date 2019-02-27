@@ -16,7 +16,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader() ;
         loader.setController(controller);
         controller.initialize();
-        Parent root = loader.load(getClass().getResource(View.Accueil));
+        Parent root = loader.load(getClass().getResource("../resources/fxml/Boutique2.fxml"));
         primaryStage.setTitle("Gaspi-Miam");
         primaryStage.setScene(new Scene(root, 700, 475));
         primaryStage.show();
