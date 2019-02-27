@@ -15,64 +15,46 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.Button?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
             <children>
                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <ImageView fitHeight="90.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
+                        <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
                             <image>
                                 <Image url="@../images/logo11.jpg" />
                             </image>
                             <viewport>
                                 <Rectangle2D />
                             </viewport>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
                         </ImageView>
-                        <VBox prefHeight="100.0" prefWidth="513.0">
-                            <children>
-                                <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="69.0" prefWidth="594.0" style="-fx-padding: 25; -fx-background-color: #FFFFFF;">
-                                    <menus>
-                                        <Menu mnemonicParsing="false" />
-                                        <Menu mnemonicParsing="false" text="Accueil" fx:id="Accueil"/>
-                                        <Menu mnemonicParsing="false" text="Boutique" fx:id="Boutique" />
-                                        <Menu mnemonicParsing="false" text="Mes Ventes" fx:id="Mes Ventes" />
-                                        <Menu mnemonicParsing="false" text="Mes Réservations" fx:id="Mes Réservations"/>
-                                        <Menu mnemonicParsing="true"  text="Mon Stock" fx:id="Mon Stock"/>
-                                    </menus>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                    <effect>
-                                        <Blend />
-                                    </effect>
-                                    <opaqueInsets>
-                                        <Insets />
-                                    </opaqueInsets>
-                                </MenuBar>
-                            </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                            <children>
-                                <MenuBar style="-fx-background-color: #FFFFFF;">
-                                    <menus>
-                                        <Menu mnemonicParsing="false">
-                                            <graphic>
-                                                <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../images/icon-130a.png" />
-                                                    </image>
-                                                </ImageView>
-                                            </graphic>
-                                            <items>
-                                                <MenuItem mnemonicParsing="false" text="Mon compte" />
-                                                <MenuItem mnemonicParsing="false" text="Déconnexion" />
-                                            </items>
-                                        </Menu>
-                                    </menus>
-                                </MenuBar>
-                            </children>
-                        </VBox>
+                        <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
+                        <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
+                        <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
+                        <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
+                        <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                        <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
+                            <menus>
+                                <Menu mnemonicParsing="false">
+                                    <graphic>
+                                        <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
+                                            <image>
+                                                <Image url="@../images/icon-130a.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false"  text="Mon compte" />
+                                        <MenuItem mnemonicParsing="false" text="Déconnexion" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
                     </children>
                 </HBox>
             </children>
