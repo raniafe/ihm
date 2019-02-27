@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/logo11.jpg" />
+                            </image>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="632.0">
+                            <children>
+                                <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="69.0" prefWidth="594.0" style="-fx-padding: 25; -fx-background-color: #FFFFFF;">
+                                    <menus>
+                                        <Menu mnemonicParsing="false" />
+                                        <Menu mnemonicParsing="false" text="Accueil" fx:id="Accueil"/>
+                                        <Menu mnemonicParsing="false" text="Boutique" fx:id="Boutique" />
+                                        <Menu mnemonicParsing="false" text="Mes Ventes" fx:id="Mes Ventes" />
+                                        <Menu mnemonicParsing="false" text="Mes Réservations" fx:id="Mes Réservations"/>
+                                        <Menu mnemonicParsing="true"  text="Mon Stock" fx:id="Mon Stock"/>
+                                    </menus>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </MenuBar>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <MenuBar style="-fx-background-color: #FFFFFF;">
+                                    <menus>
+                                        <Menu mnemonicParsing="false">
+                                            <graphic>
+                                                <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/icon-130a.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="Mon compte" />
+                                                <MenuItem mnemonicParsing="false" text="Déconnexion" />
+                                            </items>
+                                        </Menu>
+                                    </menus>
+                                </MenuBar>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox prefHeight="411.0" prefWidth="775.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="53.0" prefWidth="775.0" translateX="300.0">
+                    <children>
+                        <Text fill="#7b1083" strokeType="OUTSIDE" strokeWidth="0.0" text="Produit" translateX="-50.0">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="33.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </HBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox prefHeight="14.0" prefWidth="775.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <HBox layoutY="10.0" prefHeight="102.0" prefWidth="775.0" translateY="30.0">
+                                    <children>
+                                        <ImageView fitHeight="144.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/oranges.jpg" />
+                                            </image>
+                                            <HBox.margin>
+                                                <Insets left="50.0" />
+                                            </HBox.margin>
+                                        </ImageView>
+                                        <Label alignment="TOP_LEFT" prefHeight="123.0" prefWidth="258.0" text="L’orange est un agrume, fruit des orangers, des arbres de différentes espèces de la famille des Rutacées ou d'hybrides de ceux-ci. Il en existe donc plusieurs types, principalement issus de l'espèce Citrus sinensis comme les oranges sanguines, et les oranges amères produites par le bigaradier." translateX="150.0" wrapText="true">
+                                            <HBox.margin>
+                                                <Insets left="100.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <HBox prefHeight="29.0" prefWidth="775.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="30.0">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <ChoiceBox prefHeight="0.0" prefWidth="32.0" translateX="50.0" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="0.0" prefWidth="775.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaites-tu réserver ?" textAlignment="CENTER" wrappingWidth="774.803405046463">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" text="Réserver" translateX="340.0">
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
