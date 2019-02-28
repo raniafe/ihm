@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public  abstract class Controller {
 
-    public void redirection(Parent element,String fxmlFile) throws IOException {
-        BoutiqueController controller = new BoutiqueController() ;
+    public abstract void initialize() ;
+    public void redirection(Parent element,String fxmlFile, Controller controller) throws IOException {
         FXMLLoader loader = new FXMLLoader() ;
         loader.setController(controller);
         Stage stage=(Stage) element.getScene().getWindow();

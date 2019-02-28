@@ -6,9 +6,14 @@ import program.View;
 
 import java.io.IOException;
 
+
+
 public class BoutiqueController extends HomeController {
 
-    public void initialize(){}
+
+
+    public void initialize(){
+    }
 
 
 }
