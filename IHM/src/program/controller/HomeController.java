@@ -27,7 +27,7 @@ public class HomeController extends Controller {
 
     public void displayAccueil(){
         try {
-            redirection(rootPane, View.Accueil);
+            redirection(rootPane, View.Accueil,new HomeController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,7 +35,7 @@ public class HomeController extends Controller {
 
     public void displayBoutique(){
         try {
-            redirection(rootPane, View.BOUTIQUE);
+            redirection(rootPane, View.BOUTIQUE, new BoutiqueController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class HomeController extends Controller {
 
     public void displayMonCompte(){
         try {
-            redirection(rootPane, View.MonCompte);
+            redirection(rootPane, View.MonCompte, new HomeController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,7 +52,7 @@ public class HomeController extends Controller {
 
    public void displayMonStock() {
        try {
-           redirection(rootPane, View.MonStock);
+           redirection(rootPane, View.MonStock, new HomeController());
        } catch (IOException e) {
            e.printStackTrace();
        }
@@ -60,7 +60,7 @@ public class HomeController extends Controller {
 
     public void displayMesReservation(){
         try {
-            redirection(rootPane, View.MesReservations);
+            redirection(rootPane, View.MesReservations, new HomeController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class HomeController extends Controller {
 
     public void displayMesVentes() {
         try {
-            redirection(rootPane, View.MesVentes);
+            redirection(rootPane, View.MesVentes, new VentesController());
         } catch (IOException e) {
             e.printStackTrace();
         }
