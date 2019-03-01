@@ -8,6 +8,8 @@ import javafx.scene.control.Menu;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import program.View;
+import program.model.ModelListOfProduit;
+import program.view.ViewBoutique;
 
 import javax.swing.*;
 
@@ -33,13 +35,36 @@ public class HomeController extends Controller {
         }
     }
 
-    public void displayBoutique(){
-        try {
-            redirection(rootPane, View.BOUTIQUE, new BoutiqueController());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void displayBoutique()  throws Exception{
+
+        FXMLLoader loader = new FXMLLoader();
+
+        ViewBoutique view = new ViewBoutique();
+
+        //create a controller
+        BoutiqueController controller = new BoutiqueController();
+
+        //attach controller
+        loader.setController(controller);
+
+        //attach XML file
+        Parent root = loader.load(getClass().getResourceAsStream(view.XML_FILE));
+
+        ModelListOfProduit model = new ModelListOfProduit();
+
+        //initialize the controller
+        controller.initialize( model );
+
+        view.init( model, controller );
+
+        //create the view
+        Stage primaryStage=(Stage) rootPane.getScene().getWindow();
+        primaryStage.setScene(new Scene(root, 700, 600));
+
+        //show the view
+        primaryStage.show();
     }
+
 
     public void displayMonCompte(){
         try {

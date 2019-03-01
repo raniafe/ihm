@@ -1,10 +1,9 @@
 package program.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.layout.BorderPane;
-import program.View;
+import javafx.scene.control.ListView;
 
-import java.io.IOException;
+import program.model.ModelListOfProduit;
 
 
 
@@ -12,7 +11,22 @@ public class BoutiqueController extends HomeController {
 
 
 
-    public void initialize(){
+    private ModelListOfProduit modelListCustomers = null;
+
+
+    @FXML
+    private ListView produitsListView;
+
+
+    public ListView getProduitsListView() {
+        return produitsListView;
+    }
+
+
+    public void initialize(ModelListOfProduit customersList){
+        this.modelListCustomers = customersList;
+
+
     }
 
 
