@@ -26,10 +26,10 @@ public class ViewBoutique {
         ViewBoutique.model = model;
         ViewBoutique.controller = controller;
         //init the ObservableList of custumers to the ListView
-        controller.getProduitsListView().setItems(model.getListOfProduits());
+//        controller.getProduitsListView().setItems(model.getListOfProduits());
 
         //call a cell factory and display each observable item in the ListView
-        adaptItems( controller.getProduitsListView() );
+//        adaptItems( controller.getProduitsListView() );
 
 
     }

@@ -4,13 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ModelListOfProduit {
 
-    private ObservableList<ProduitModel> listOfCustumers;
+    private Set<ProduitModel> listOfCustumers;
 
     public ModelListOfProduit() {
-        listOfCustumers = FXCollections.observableList( new ArrayList<>());
+        listOfCustumers = new HashSet<>();
         listOfCustumers.add( new ProduitModel("Sandrine") ) ;
         listOfCustumers.add( new ProduitModel("Danielle") );
         listOfCustumers.add( new ProduitModel("Claude") );
@@ -23,8 +25,7 @@ public class ModelListOfProduit {
     }
 
 
-
-    public ObservableList<ProduitModel> getListOfProduits() {
+    public Set<ProduitModel> getListOfProduits() {
         return listOfCustumers;
     }
 

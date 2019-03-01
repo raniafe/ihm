@@ -93,7 +93,8 @@
                         </HBox>
                         <HBox layoutY="10.0" prefHeight="102.0" prefWidth="775.0" translateY="30.0">
                            <children>
-                              <ListView fx:id="cutomersListView" layoutX="45.0" layoutY="10.0" prefHeight="150.0" prefWidth="250.0" />
+                              <ListView fx:id="produitsListView" layoutX="45.0" layoutY="10.0" prefHeight="150.0"
+                                        prefWidth="250.0"/>
                               <!--<ImageView fitHeight="123.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateX="50.0">
                                  <image>
                                     <Image url="@../images/framboise1.jpg" />
