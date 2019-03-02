@@ -68,7 +68,7 @@ public class HomeController extends Controller {
 
     public void displayMonCompte(){
         try {
-            redirection(rootPane, View.MonCompte, new HomeController());
+            redirection(rootPane, View.MonCompte, new CompteController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -85,7 +85,7 @@ public class HomeController extends Controller {
 
     public void displayMesReservation(){
         try {
-            redirection(rootPane, View.MesReservations, new HomeController());
+            redirection(rootPane, View.MesReservations, new ResaController());
         } catch (IOException e) {
             e.printStackTrace();
         }
