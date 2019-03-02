@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        /*FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
 
         ViewBoutique view = new ViewBoutique();
 
@@ -26,12 +26,12 @@ public class Main extends Application {
         loader.setController(controller);
 
         //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream("../resources/fxml/Page_acceuil.fxml"));
+        Parent root = loader.load(getClass().getResourceAsStream("../resources/fxml/Boutique2.fxml"));
 
         ModelListOfProduit model = new ModelListOfProduit();
 
         //initialize the controller
-        //controller.initialize( model );
+        controller.initialize( model );
 
         view.init( model, controller );
 
@@ -40,17 +40,17 @@ public class Main extends Application {
 
         //show the view
         primaryStage.show();
-*/
 
 
-        HomeController controller = new HomeController() ;
+
+        /*HomeController controller = new HomeController() ;
         FXMLLoader loader = new FXMLLoader() ;
         loader.setController(controller);
         controller.initialize();
         Parent root = loader.load(getClass().getResource("../resources/fxml/Page_acceuil.fxml"));
         primaryStage.setTitle("Gaspi-Miam");
         primaryStage.setScene(new Scene(root, 700, 475));
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
 
