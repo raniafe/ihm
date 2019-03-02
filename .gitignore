@@ -1,0 +1,15 @@
+**/target
+**/*.class
+**/.DS_Store
+*.iws
+*.tmp
+
+# IntelliJ
+out/
+.idea/
+*.iml
+modules.xml
+*.ipr
+
+# Compiled Java
+*.class
