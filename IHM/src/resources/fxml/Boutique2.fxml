@@ -16,13 +16,14 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.MenuItem?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane" fx:controller="program.controller.BoutiqueController">
+<?import javafx.scene.control.ListView?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
          <children>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
+                  <!--<ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
                      <image>
                         <Image url="@../images/logo11.jpg" />
                      </image>
@@ -32,24 +33,24 @@
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
-                  </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" onAction="#displayAccueil"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" onAction="#displayBoutique" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" onAction="#displayMesReservation"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" onAction="#displayMonStock"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" onAction="#displayMesVentes" />
+                  </ImageView>-->
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique"  />
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations"/>
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes"  />
                   <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                      <menus>
                         <Menu mnemonicParsing="false">
                            <graphic>
-                              <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
+                             <!-- <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
                                  <image>
                                     <Image url="@../images/icon-130a.png" />
                                  </image>
-                              </ImageView>
+                              </ImageView>-->
                            </graphic>
                            <items>
-                              <MenuItem mnemonicParsing="false"  text="Mon compte" onAction="#displayMonCompte" />
+                              <MenuItem mnemonicParsing="false"  text="Mon compte" />
                               <MenuItem mnemonicParsing="false" text="Déconnexion"  />
                            </items>
                         </Menu>
@@ -92,7 +93,9 @@
                         </HBox>
                         <HBox layoutY="10.0" prefHeight="102.0" prefWidth="775.0" translateY="30.0">
                            <children>
-                              <ImageView fitHeight="123.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateX="50.0">
+                              <ListView fx:id="produitsListView" layoutX="45.0" layoutY="10.0" prefHeight="150.0"
+                                        prefWidth="250.0"/>
+                              <!--<ImageView fitHeight="123.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateX="50.0">
                                  <image>
                                     <Image url="@../images/framboise1.jpg" />
                                  </image>
@@ -106,7 +109,7 @@
                                  <image>
                                     <Image url="@../images/chicken.jpg" />
                                  </image>
-                              </ImageView>
+                              </ImageView>-->
                            </children>
                         </HBox>
                      </children>
