@@ -9,6 +9,7 @@ public abstract class View {
     public static final String MonCompte="../../resources/fxml/Mon_Compte.fxml" ;
     public static final String MesReservations="../../resources/fxml/reservation.fxml" ;
     public static final String MesVentes="../../resources/fxml/Mes Ventes.fxml" ;
+    public static final String Produit="../../resources/fxml/produit_resa.fxml" ;
 
 
 

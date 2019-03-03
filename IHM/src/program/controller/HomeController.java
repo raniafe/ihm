@@ -98,4 +98,11 @@ public class HomeController extends Controller {
             e.printStackTrace();
         }
     }
+    public void displayProduit(){
+        try {
+            redirection(rootPane, View.Produit, new ProduitReservationController());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
