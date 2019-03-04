@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
@@ -19,13 +20,23 @@ import java.io.IOException;
 
 public class BoutiqueController extends HomeController {
 
-
-
     private ModelListOfProduit modelListCustomers = null;
 
 
     @FXML
     private ListView produitsListView;
+    @FXML
+    private Button acceuil;
+    @FXML
+    private Button reservations;
+    @FXML
+    private Button stock;
+    @FXML
+    private Button ventes;
+    @FXML
+    private Button boutique;
+
+
     private ObservableList observableList = FXCollections.observableArrayList();
 
 
@@ -60,6 +71,12 @@ public class BoutiqueController extends HomeController {
                 }
             }
         });
+        acceuil.setOnAction(event -> displayAccueil());
+        //boutique.setOnAction(event->displayBoutique());
+        reservations.setOnAction(event -> displayMesReservation());
+        stock.setOnAction(event -> displayMonStock());
+        ventes.setOnAction(event -> displayMesVentes());
+
 
     }
 

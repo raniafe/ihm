@@ -15,7 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0"
+            prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -32,11 +34,16 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>-->
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0"
+                          style="-fx-background-color: #ffffff;" text="Acceuil" fx:id="acceuil"/>
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0"
+                          style="-fx-background-color: #ffffff;" text="Boutique" fx:id="boutique"/>
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0"
+                          style="-fx-background-color: #ffffff;" text="Mes réservations" fx:id="reservations"/>
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0"
+                          style="-fx-background-color: #ffffff;" text="Mon stock" fx:id="stock"/>
+                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0"
+                          style="-fx-background-color: #ffffff;" text="Mes Ventes" fx:id="ventes"/>
                   <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                      <menus>
                         <Menu mnemonicParsing="false">
