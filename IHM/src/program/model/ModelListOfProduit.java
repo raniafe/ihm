@@ -9,24 +9,33 @@ import java.util.Set;
 
 public class ModelListOfProduit {
 
-    private ObservableList<ProduitModel> listOfCustumers;
+    private ObservableList<ProduitModel> listOfProduitsStock;
+    private ObservableList<ProduitModel> listOfProduitsBoutique;
 
     public ModelListOfProduit() {
-        listOfCustumers = FXCollections.observableList( new ArrayList<>());
-        listOfCustumers.add( new ProduitModel("Framboises", "/resources/images/framboise1.jpg") ) ;
-        listOfCustumers.add( new ProduitModel("Oranges","/resources/images/oranges.jpg") );
-        listOfCustumers.add( new ProduitModel("Eggs","/resources/images/eggs.jpg") );
-        listOfCustumers.add(new ProduitModel("Yaourt", "/resources/images/yaourt1.jpg"));
-        listOfCustumers.add(new ProduitModel("Tomates", "/resources/images/tomatoes.jpg"));
+        listOfProduitsStock = FXCollections.observableList( new ArrayList<>());
+        listOfProduitsBoutique = FXCollections.observableList( new ArrayList<>());
+        listOfProduitsStock.add( new ProduitModel("Framboises", "/resources/images/framboise1.jpg") ) ;
+        listOfProduitsStock.add( new ProduitModel("Oranges","/resources/images/oranges.jpg") );
+        listOfProduitsStock.add( new ProduitModel("Eggs","/resources/images/eggs.jpg") );
+        listOfProduitsStock.add(new ProduitModel("Yaourt", "/resources/images/yaourt1.jpg"));
+        listOfProduitsStock.add(new ProduitModel("Tomates", "/resources/images/tomatoes.jpg"));
     }
 
-    public void add(ProduitModel person) {
-        listOfCustumers.add( person );
+    public void addStock(ProduitModel person) {
+        listOfProduitsStock.add( person );
     }
 
+    public void addBoutique(ProduitModel person) {
+        listOfProduitsBoutique.add( person );
+    }
 
-    public ObservableList<ProduitModel> getListOfProduits() {
-        return listOfCustumers;
+    public ObservableList<ProduitModel> getListOfProduitsStock() {
+        return listOfProduitsBoutique;
+    }
+
+    public ObservableList<ProduitModel> getListOfProduitsBoutique() {
+        return listOfProduitsBoutique;
     }
 
 }

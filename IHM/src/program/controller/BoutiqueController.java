@@ -55,7 +55,7 @@ public class BoutiqueController extends HomeController {
         // imageLogo.setImage(new Image(ViewBoutique.imageLogo));
 
         this.modelListCustomers = customersList;
-        observableList.setAll(customersList.getListOfProduits());
+        observableList.setAll(customersList.getListOfProduitsBoutique());
         produitsListView.setItems(observableList);
         produitsListView.setCellFactory((Callback<ListView<String>, ListCell>) listView -> new ListCell<ProduitModel>() {
             @Override

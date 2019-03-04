@@ -47,7 +47,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader() ;
         loader.setController(controller);
         controller.initialize();
-        Parent root = loader.load(getClass().getResource("../resources/fxml/Page_acceuil.fxml"));
+        Parent root = loader.load(getClass().getResource("../resources/fxml/FormulaireAjoutProduit.fxml"));
         primaryStage.setTitle("Gaspi-Miam");
         primaryStage.setScene(new Scene(root, 770, 475));
         primaryStage.show();
