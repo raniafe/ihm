@@ -9,15 +9,15 @@ import java.util.Set;
 
 public class ModelListOfProduit {
 
-    private Set<ProduitModel> listOfCustumers;
+    private ObservableList<ProduitModel> listOfCustumers;
 
     public ModelListOfProduit() {
-        listOfCustumers = new HashSet<>();
-        listOfCustumers.add( new ProduitModel("Sandrine") ) ;
-        listOfCustumers.add( new ProduitModel("Danielle") );
-        listOfCustumers.add( new ProduitModel("Claude") );
-        listOfCustumers.add( new ProduitModel("Noé") );
-        listOfCustumers.add( new ProduitModel("Luna") );
+        listOfCustumers = FXCollections.observableList( new ArrayList<>());
+        listOfCustumers.add( new ProduitModel("Framboises", "/resources/images/framboise1.jpg") ) ;
+        listOfCustumers.add( new ProduitModel("Oranges","/resources/images/oranges.jpg") );
+        listOfCustumers.add( new ProduitModel("Eggs","/resources/images/eggs.jpg") );
+        listOfCustumers.add( new ProduitModel("yaourt","/resources/images/yaourt1.jpg") );
+        listOfCustumers.add( new ProduitModel("tomates","/resources/images/tomatoes.jpg") );
     }
 
     public void add(ProduitModel person) {
@@ -25,7 +25,7 @@ public class ModelListOfProduit {
     }
 
 
-    public Set<ProduitModel> getListOfProduits() {
+    public ObservableList<ProduitModel> getListOfProduits() {
         return listOfCustumers;
     }
 

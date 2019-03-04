@@ -59,7 +59,7 @@ public class HomeController extends Controller {
 
         //create the view
         Stage primaryStage=(Stage) rootPane.getScene().getWindow();
-        primaryStage.setScene(new Scene(root, 700, 600));
+        primaryStage.setScene(new Scene(root, 770, 475));
 
         //show the view
         primaryStage.show();
@@ -68,7 +68,7 @@ public class HomeController extends Controller {
 
     public void displayMonCompte(){
         try {
-            redirection(rootPane, View.MonCompte, new HomeController());
+            redirection(rootPane, View.MonCompte, new CompteController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -85,7 +85,7 @@ public class HomeController extends Controller {
 
     public void displayMesReservation(){
         try {
-            redirection(rootPane, View.MesReservations, new HomeController());
+            redirection(rootPane, View.MesReservations, new ResaController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -98,4 +98,12 @@ public class HomeController extends Controller {
             e.printStackTrace();
         }
     }
+    public void displayProduit(){
+        try {
+            redirection(rootPane, View.Produit, new ProduitReservationController());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

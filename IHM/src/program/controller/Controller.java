@@ -18,7 +18,7 @@ public  abstract class Controller {
         controller.initialize();
         Parent root = loader.load(getClass().getResource(fxmlFile));
         stage.setTitle("Gaspi-Miam");
-        stage.setScene(new Scene(root, 700, 475));
+        stage.setScene(new Scene(root, 770, 475));
         stage.show();
     }
 }

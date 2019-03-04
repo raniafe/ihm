@@ -26,7 +26,7 @@ public class Main extends Application {
         loader.setController(controller);
 
         //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream("../resources/fxml/Page_acceuil.fxml"));
+        Parent root = loader.load(getClass().getResourceAsStream("../resources/fxml/Boutique2.fxml"));
 
         ModelListOfProduit model = new ModelListOfProduit();
 
@@ -39,8 +39,8 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 700, 600));
 
         //show the view
-        primaryStage.show();
-*/
+        primaryStage.show(); */
+
 
 
         HomeController controller = new HomeController() ;
@@ -49,7 +49,7 @@ public class Main extends Application {
         controller.initialize();
         Parent root = loader.load(getClass().getResource("../resources/fxml/Page_acceuil.fxml"));
         primaryStage.setTitle("Gaspi-Miam");
-        primaryStage.setScene(new Scene(root, 700, 475));
+        primaryStage.setScene(new Scene(root, 770, 475));
         primaryStage.show();
     }
 
