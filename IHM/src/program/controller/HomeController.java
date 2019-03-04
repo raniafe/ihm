@@ -59,7 +59,7 @@ public class HomeController extends Controller {
 
         //create the view
         Stage primaryStage=(Stage) rootPane.getScene().getWindow();
-        primaryStage.setScene(new Scene(root, 700, 600));
+        primaryStage.setScene(new Scene(root, 770, 475));
 
         //show the view
         primaryStage.show();
