@@ -74,60 +74,60 @@
                 </HBox>
                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                     <children>
-                          <HBox alignment="TOP_CENTER" prefHeight="102.0" prefWidth="775.0">
-                              <children>
-                                  <ImageView fitHeight="202.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true">
-                                      <image>
-                                          <Image url="@../images/oranges.jpg" />
-                                      </image>
-                                      <HBox.margin>
-                                          <Insets left="50.0" />
-                                      </HBox.margin>
-                                  </ImageView>
-                                  <Label alignment="TOP_LEFT" prefHeight="151.0" prefWidth="284.0" text="Comestible, elle est réputée pour sa teneur en vitamine C, bien que cette dernière ne soit pas particulièrement haute comparée à d'autres fruits et légumes. C’est le quatrième fruit le plus cultivé au monde.Comestible, elle est réputée pour sa teneur en vitamine C. " translateX="-70.0" translateY="40.0" wrapText="true">
-                                      <HBox.margin>
-                                          <Insets left="100.0" />
-                                      </HBox.margin>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                                  </Label>
-                        <Text fill="#6f285d" strokeType="OUTSIDE" strokeWidth="0.0" text="Orange" translateX="-350.0" translateY="10.0">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="18.0" />
-                           </font>
-                        </Text>
-                              </children>
-                          </HBox>
-                      <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="775.0">
-                          <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="100.0" translateY="-10.0">
-                                  <font>
-                                      <Font size="14.0" />
-                                  </font>
-                              </Text>
-                              <ChoiceBox opacity="0.77" prefHeight="0.0" prefWidth="32.0" style="-fx-background-color: #C7CF00;" translateX="125.0" translateY="-10.0" />
-                          </children>
-                      </HBox>
-                      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
-                          <children>
-                              <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Donner" textFill="WHITE" translateX="180.0">
-                                  <HBox.margin>
-                                      <Insets top="5.0" />
-                                  </HBox.margin>
-                              </Button>
-                              <Button id="#800080" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Manger" textFill="WHITE" translateX="200.0">
-                                  <HBox.margin>
-                                      <Insets top="10.0" />
-                                  </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Vendre" textFill="WHITE" translateX="220.0">
-                                  <HBox.margin>
-                                      <Insets top="5.0" />
-                                  </HBox.margin>
-                              </Button>
-                          </children>
-                      </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="102.0" prefWidth="775.0">
+                            <children>
+                                <ImageView fitHeight="202.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/oranges.jpg" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="50.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label alignment="TOP_LEFT" prefHeight="151.0" prefWidth="284.0" text="Comestible, elle est réputée pour sa teneur en vitamine C, bien que cette dernière ne soit pas particulièrement haute comparée à d'autres fruits et légumes. C’est le quatrième fruit le plus cultivé au monde.Comestible, elle est réputée pour sa teneur en vitamine C. " translateX="-70.0" translateY="40.0" wrapText="true">
+                                    <HBox.margin>
+                                        <Insets left="100.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Text fill="#6f285d" strokeType="OUTSIDE" strokeWidth="0.0" text="Orange" translateX="-350.0" translateY="10.0">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="775.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="100.0" translateY="-10.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Text>
+                                <ChoiceBox opacity="0.77" prefHeight="0.0" prefWidth="32.0" style="-fx-background-color: #C7CF00;" translateX="125.0" translateY="-10.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Donner" textFill="WHITE" translateX="180.0">
+                                    <HBox.margin>
+                                        <Insets top="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button id="#800080" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Manger" textFill="WHITE" translateX="200.0">
+                                    <HBox.margin>
+                                        <Insets top="10.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Vendre" textFill="WHITE" translateX="220.0">
+                                    <HBox.margin>
+                                        <Insets top="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
                     </children>
                 </VBox>
             </children>
