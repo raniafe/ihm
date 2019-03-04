@@ -16,8 +16,8 @@ public class ModelListOfProduit {
         listOfCustumers.add( new ProduitModel("Framboises", "/resources/images/framboise1.jpg") ) ;
         listOfCustumers.add( new ProduitModel("Oranges","/resources/images/oranges.jpg") );
         listOfCustumers.add( new ProduitModel("Eggs","/resources/images/eggs.jpg") );
-        listOfCustumers.add( new ProduitModel("yaourt","/resources/images/yaourt1.jpg") );
-        listOfCustumers.add( new ProduitModel("tomates","/resources/images/tomatoes.jpg") );
+        listOfCustumers.add(new ProduitModel("Yaourt", "/resources/images/yaourt1.jpg"));
+        listOfCustumers.add(new ProduitModel("Tomates", "/resources/images/tomatoes.jpg"));
     }
 
     public void add(ProduitModel person) {

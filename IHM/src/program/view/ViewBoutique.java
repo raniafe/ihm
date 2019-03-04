@@ -19,6 +19,7 @@ public class ViewBoutique {
     private static final String PRODUIT = "../../resources/Produit.fxml";
     private static ModelListOfProduit model;
     private static BoutiqueController controller;
+    public static final String imageLogo = "program/resources/images/logo11.jpg";
 
 
 
@@ -26,7 +27,7 @@ public class ViewBoutique {
         ViewBoutique.model = model;
         ViewBoutique.controller = controller;
         //init the ObservableList of custumers to the ListView
-     //  controller.getProduitsListView().setItems(model.getListOfProduits());
+        // controller.getProduitsListView().setItems(model.getListOfProduits());
 
         //call a cell factory and display each observable item in the ListView
        // adaptItems( controller.getProduitsListView() );

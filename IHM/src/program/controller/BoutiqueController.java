@@ -9,11 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Callback;
 
 import program.model.ModelListOfProduit;
 import program.model.ProduitModel;
 import program.view.ViewBoutique;
+
 
 import java.io.IOException;
 
@@ -35,6 +38,8 @@ public class BoutiqueController extends HomeController {
     private Button ventes;
     @FXML
     private Button boutique;
+    @FXML
+    private ImageView imageLogo;
 
 
     private ObservableList observableList = FXCollections.observableArrayList();
@@ -46,6 +51,9 @@ public class BoutiqueController extends HomeController {
 
 
     public void initialize(ModelListOfProduit customersList){
+
+        // imageLogo.setImage(new Image(ViewBoutique.imageLogo));
+
         this.modelListCustomers = customersList;
         observableList.setAll(customersList.getListOfProduits());
         produitsListView.setItems(observableList);
