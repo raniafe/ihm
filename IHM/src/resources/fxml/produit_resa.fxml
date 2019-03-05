@@ -87,7 +87,7 @@
                                                 <Insets left="50.0" />
                                             </HBox.margin>
                                         </ImageView>
-                                        <Label alignment="TOP_LEFT" prefHeight="123.0" prefWidth="258.0" text="L’orange est un agrume, fruit des orangers, des arbres de différentes espèces de la famille des Rutacées ou d'hybrides de ceux-ci. Il en existe donc plusieurs types, principalement issus de l'espèce Citrus sinensis comme les oranges sanguines, et les oranges amères produites par le bigaradier." translateX="150.0" wrapText="true">
+                                        <Label fx:id="descri" alignment="TOP_LEFT" prefHeight="123.0" prefWidth="258.0" text="L’orange est un agrume, fruit des orangers, des arbres de différentes espèces de la famille des Rutacées ou d'hybrides de ceux-ci. Il en existe donc plusieurs types, principalement issus de l'espèce Citrus sinensis comme les oranges sanguines, et les oranges amères produites par le bigaradier." translateX="150.0" wrapText="true">
                                             <HBox.margin>
                                                 <Insets left="100.0" />
                                             </HBox.margin>

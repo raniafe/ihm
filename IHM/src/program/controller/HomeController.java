@@ -36,12 +36,6 @@ public class HomeController extends Controller {
     @FXML
     private ImageView orang ;
 
-    private ModelListOfProduit produit=new ModelListOfProduit();
-    public HomeController (){
-    }
-    public HomeController (ModelListOfProduit produitList){
-        this.produit=produitList;
-    }
     public void initialize(){
         framb.setOnMouseClicked(event -> displayProduit("framb"));
         yaour.setOnMouseClicked(event -> displayProduit("yaour"));
@@ -53,7 +47,7 @@ public class HomeController extends Controller {
 
     public void displayAccueil(){
         try {
-            redirection(rootPane, View.Accueil,new HomeController(produit));
+            redirection(rootPane, View.Accueil,new HomeController());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -101,7 +95,7 @@ public class HomeController extends Controller {
 
    public void displayMonStock() {
        try {
-           redirection(rootPane, View.MonStock, new HomeController(produit));
+           redirection(rootPane, View.MonStock, new StockController());
        } catch (IOException e) {
            e.printStackTrace();
        }

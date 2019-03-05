@@ -43,7 +43,7 @@ public class Main extends Application {
 
 
         ModelListOfProduit model = new ModelListOfProduit();
-        HomeController controller = new HomeController(model) ;
+        HomeController controller = new HomeController() ;
         FXMLLoader loader = new FXMLLoader() ;
         Parent root = loader.load(getClass().getResource("../resources/fxml/Page_acceuil.fxml"));
 
