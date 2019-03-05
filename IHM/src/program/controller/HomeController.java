@@ -4,14 +4,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import program.View;
 import program.model.ModelListOfProduit;
+import program.model.ProduitModel;
 import program.view.ViewBoutique;
 
-import javax.swing.*;
 
 import java.io.IOException;
 
@@ -21,15 +23,37 @@ public class HomeController extends Controller {
     private BorderPane rootPane;
     @FXML
     private Menu Boutique;
-
     @FXML
-    public void initialize(){
+    private ImageView framb ;
+    @FXML
+    private ImageView tomat ;
+    @FXML
+    private ImageView yaour ;
+    @FXML
+    private ImageView oeufs ;
+    @FXML
+    private ImageView poulet ;
+    @FXML
+    private ImageView orang ;
 
+    private ModelListOfProduit produit=new ModelListOfProduit();
+    public HomeController (){
+    }
+    public HomeController (ModelListOfProduit produitList){
+        this.produit=produitList;
+    }
+    public void initialize(){
+        framb.setOnMouseClicked(event -> displayProduit("framb"));
+        yaour.setOnMouseClicked(event -> displayProduit("yaour"));
+        tomat.setOnMouseClicked(event -> displayProduit("tomat"));
+        oeufs.setOnMouseClicked(event -> displayProduit("oeufs"));
+        poulet.setOnMouseClicked(event -> displayProduit("poulet"));
+        orang.setOnMouseClicked(event -> displayProduit("orang"));
     }
 
     public void displayAccueil(){
         try {
-            redirection(rootPane, View.Accueil,new HomeController());
+            redirection(rootPane, View.Accueil,new HomeController(produit));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,7 +101,7 @@ public class HomeController extends Controller {
 
    public void displayMonStock() {
        try {
-           redirection(rootPane, View.MonStock, new HomeController());
+           redirection(rootPane, View.MonStock, new HomeController(produit));
        } catch (IOException e) {
            e.printStackTrace();
        }
@@ -98,12 +122,11 @@ public class HomeController extends Controller {
             e.printStackTrace();
         }
     }
-    public void displayProduit(){
+    public void displayProduit(String produitName){
         try {
-            redirection(rootPane, View.Produit, new ProduitReservationController());
-        } catch (IOException e) {
+            redirection(rootPane, View.Produit, new ModelListOfProduit().getByName(produitName), "produit");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }

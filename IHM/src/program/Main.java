@@ -42,12 +42,13 @@ public class Main extends Application {
         primaryStage.show(); */
 
 
-
-        HomeController controller = new HomeController() ;
+        ModelListOfProduit model = new ModelListOfProduit();
+        HomeController controller = new HomeController(model) ;
         FXMLLoader loader = new FXMLLoader() ;
+        Parent root = loader.load(getClass().getResource("../resources/fxml/Page_acceuil.fxml"));
+
         loader.setController(controller);
-        controller.initialize();
-        Parent root = loader.load(getClass().getResource("../resources/fxml/FormulaireAjoutProduit.fxml"));
+        //controller.initialize();
         primaryStage.setTitle("Gaspi-Miam");
         primaryStage.setScene(new Scene(root, 770, 475));
         primaryStage.show();
