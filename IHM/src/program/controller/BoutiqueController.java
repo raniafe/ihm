@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 
+import program.View;
 import program.model.ModelListOfProduit;
 import program.model.ProduitModel;
 import program.view.ViewBoutique;
@@ -58,7 +59,7 @@ public class BoutiqueController extends Controller {
     public void initialize(){
 
         loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
-        listenTo(produitsListView);
+        listenTo(produitsListView, View.Produit);
 
         acceuil.setOnAction(event -> displayAccueil());
         //boutique.setOnAction(event->displayBoutique());

@@ -102,6 +102,10 @@ public class ModelListOfProduit {
         return listOfProduitsVentes;
     }
 
+    public ObservableList<ProduitModel> getListOfProduitsRéservation() {
+        return listOfProduitsRéservation;
+    }
+
     public ObservableList<String> getCategorieList() {return categorieList ; }
 
     public ObservableList<ProduitModel> filtrerListParCategorie(String Categorie, String list) {

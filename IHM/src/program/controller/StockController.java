@@ -39,7 +39,7 @@ public class StockController extends Controller {
 
         comboBox.setItems(modelListOfProduit.getCategorieList());
         loadList(Controller.getModelListOfProduit().getListOfProduitsStock(), produitsListView);
-        listenTo( produitsListView );
+        listenTo(produitsListView, View.ProduitStock);
         //fapButton.setOnAction(event -> displayFAP());
         //Fonction à déclarer avec les autres Display() ;je ne l'ai pas fait car qqn travaillait dessus
         listenToComBox(comboBox);

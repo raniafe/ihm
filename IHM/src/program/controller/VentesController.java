@@ -2,6 +2,7 @@ package program.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import program.View;
 
 public class VentesController extends Controller {
     @FXML
@@ -11,7 +12,7 @@ public class VentesController extends Controller {
     public void initialize() {
 
         loadList(Controller.getModelListOfProduit().getListOfProduitsVentes(), produitsListView);
-        listenTo(produitsListView);
+        listenTo(produitsListView, View.Produit);
 
     }
 }

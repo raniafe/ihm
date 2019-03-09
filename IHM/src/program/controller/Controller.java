@@ -162,12 +162,12 @@ public   class Controller {
 
     }
 
-    public void listenTo(ListView listView) {
+    public void listenTo(ListView listView, String fxml) {
         listView.getSelectionModel().selectedItemProperty().addListener(
                 (ChangeListener<ProduitModel>) (observable, oldValue, newValue) -> {
 
                     try {
-                        redirection(rootPane,View.Produit,newValue,"produit");
+                        redirection(rootPane, fxml, newValue, "produit");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
