@@ -26,6 +26,7 @@ public   class Controller {
 
     protected static ModelListOfProduit modelListOfProduit ;
     ModelListOfProfile modelListOfProfile ;
+
     public Controller(){
         modelListOfProduit = new ModelListOfProduit() ;
         modelListOfProfile = new ModelListOfProfile() ;

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -16,8 +17,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.ListView?>
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.StockController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.StockController">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -62,7 +64,7 @@
       </VBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -81,7 +83,7 @@
             </HBox>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox prefHeight="124.0" prefWidth="759.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="124.0" prefWidth="759.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choisis une date:" />
                         <DatePicker>
@@ -104,15 +106,23 @@
                         <Insets right="20.0" />
                      </opaqueInsets>
                   </HBox>
-                  <HBox prefHeight="361.0" prefWidth="775.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="361.0" prefWidth="775.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Mes alertes">
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="167.0" text="Mes alertes">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" text="Tous les produits" />
-                        <Button id="fapButton" mnemonicParsing="false" text="Ajouter un produit au stock" />
+                        <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" prefHeight="27.0"
+                                prefWidth="147.0" text="Tous les produits"/>
+                        <Button id="fapButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="310.0"
+                                text="Ajouter un produit au stock"/>
+                        <ListView fx:id="produitsListView" prefHeight="103.0" prefWidth="525.0" translateX="-200.0"
+                                  translateY="50.0">
+                           <HBox.margin>
+                              <Insets bottom="80.0"/>
+                           </HBox.margin>
+                        </ListView>
                      </children>
                      <VBox.margin>
                         <Insets top="50.0" />
@@ -120,12 +130,8 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="produitsListView" layoutX="45.0" layoutY="10.0" prefHeight="150.0" prefWidth="250.0" HBox.hgrow="ALWAYS"> </ListView>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="       " />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="       " />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                         <Text layoutX="610.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="       " />
                      </children>
                   </HBox>

@@ -16,8 +16,6 @@ import java.io.IOException;
 
 public class StockController extends Controller {
 
-    private ModelListOfProduit modelListStock = null;
-
     @FXML
     private Button fapButton;
 
@@ -25,7 +23,6 @@ public class StockController extends Controller {
     private ListView produitsListView;
 
     public void initialize() {
-
         loadList(Controller.getModelListOfProduit().getListOfProduitsStock(), produitsListView);
         //fapButton.setOnAction(event -> displayFAP());
         //Fonction à déclarer avec les autres Display() ;je ne l'ai pas fait car qqn travaillait dessus

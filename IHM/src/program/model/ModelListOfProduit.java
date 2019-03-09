@@ -14,6 +14,7 @@ public class ModelListOfProduit {
     private ObservableList<ProduitModel> listOfProduitsVentes;
 
     public ModelListOfProduit() {
+
         listOfProduitsStock = FXCollections.observableList( new ArrayList<>());
         listOfProduitsBoutique = FXCollections.observableList( new ArrayList<>());
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
@@ -26,13 +27,13 @@ public class ModelListOfProduit {
         listOfProduitsBoutique.add( new ProduitModel("poulet","/resources/images/chicken.jpg") );
 
 
-        listOfProduitsStock.add(new ProduitModel("passsion", "/resources/images/passion.jpg"));
+        listOfProduitsStock.add(new ProduitModel("fruit", "/resources/images/passion.jpg"));
         listOfProduitsStock.add(new ProduitModel("salade", "/resources/images/salad.jpg"));
         listOfProduitsStock.add(new ProduitModel("banane", "/resources/images/banana.jpg"));
 
         listOfProduitsVentes.add(new ProduitModel("cerise", "/resources/images/cerise.jpg"));
         listOfProduitsVentes.add(new ProduitModel("abricot", "/resources/images/abricot.jpg"));
-        listOfProduitsVentes.add(new ProduitModel("champignons", "/resources/images/champignons.jpg"));
+        listOfProduitsVentes.add(new ProduitModel("champi", "/resources/images/champignons.jpg"));
         listOfProduitsVentes.add(new ProduitModel("citron", "/resources/images/citron.jpg"));
 
 
@@ -54,7 +55,7 @@ public class ModelListOfProduit {
             case "orang":
                 return listOfProduitsBoutique.get(1);
 
-            case "passion":
+            case "fruit":
                 return listOfProduitsStock.get(0);
             case "salade":
                 return listOfProduitsStock.get(1);
@@ -65,7 +66,7 @@ public class ModelListOfProduit {
                 return listOfProduitsVentes.get(0);
             case "abricot":
                 return listOfProduitsVentes.get(1);
-            case "champignons":
+            case "champi":
                 return listOfProduitsVentes.get(2);
             case "citron":
                 return listOfProduitsVentes.get(3);
