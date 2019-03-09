@@ -13,12 +13,16 @@ public class ModelListOfProduit {
     private ObservableList<ProduitModel> listOfProduitsStock;
     private ObservableList<ProduitModel> listOfProduitsBoutique;
     private ObservableList<ProduitModel> listOfProduitsVentes;
+    private ObservableList<ProduitModel> listOfProduitsRéservation;
+
 
     public ModelListOfProduit() {
 
         listOfProduitsStock = FXCollections.observableList( new ArrayList<>());
         listOfProduitsBoutique = FXCollections.observableList( new ArrayList<>());
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
+        listOfProduitsRéservation = FXCollections.observableList(new ArrayList<>());
+
 
         listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", new Date(13 / 03 / 2019), "/resources/images/framboise1.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16 / 03 / 2019), "/resources/images/oranges.jpg"));
@@ -36,6 +40,11 @@ public class ModelListOfProduit {
         listOfProduitsVentes.add(new ProduitModel("abricot", 2, "Fruit", new Date(17 / 03 / 2019), "/resources/images/abricot.jpg"));
         listOfProduitsVentes.add(new ProduitModel("champi", 20, "Légume", new Date(12 / 03 / 2019), "/resources/images/champignons.jpg"));
         listOfProduitsVentes.add(new ProduitModel("citron", 4, "Légume", new Date(16 / 03 / 2019), "/resources/images/citron.jpg"));
+
+
+        listOfProduitsRéservation.add(new ProduitModel("melon", 1, "Fruit", new Date(16 / 03 / 2019), "/resources/images/melon.jpg"));
+        listOfProduitsRéservation.add(new ProduitModel("pêche", 12, "Fruit", new Date(13 / 03 / 2019), "/resources/images/peach.jpg"));
+
 
 
     }
@@ -72,6 +81,12 @@ public class ModelListOfProduit {
             case "citron":
                 return listOfProduitsVentes.get(3);
 
+            case "melon":
+                return listOfProduitsRéservation.get(0);
+
+            case "pêche":
+                return listOfProduitsRéservation.get(1);
+
             default:
                 return listOfProduitsBoutique.get(0);
         }
@@ -95,5 +110,9 @@ public class ModelListOfProduit {
 
     public ObservableList<ProduitModel> getListOfProduitsVentes() {
         return listOfProduitsVentes;
+    }
+
+    public ObservableList<ProduitModel> getListOfProduitsRéservation() {
+        return listOfProduitsRéservation;
     }
 }
