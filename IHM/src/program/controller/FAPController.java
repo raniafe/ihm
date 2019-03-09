@@ -34,12 +34,12 @@ public class FAPController extends Controller {
     }
 
 
-
+/*
     public void initialize() {
 
         addButton.setOnAction(event -> new ModelListOfProduit().addStock(new ProduitModel(nameTag.getText(),"")));
     }
 
-
+*/
 
 }

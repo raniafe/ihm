@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,22 +20,22 @@ public class ModelListOfProduit {
         listOfProduitsBoutique = FXCollections.observableList( new ArrayList<>());
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
 
-        listOfProduitsBoutique.add( new ProduitModel("Framboises", "/resources/images/framboise1.jpg") ) ;
-        listOfProduitsBoutique.add( new ProduitModel("Oranges","/resources/images/oranges.jpg") );
-        listOfProduitsBoutique.add( new ProduitModel("Eggs","/resources/images/eggs.jpg") );
-        listOfProduitsBoutique.add( new ProduitModel("yaourt","/resources/images/yaourt1.jpg") );
-        listOfProduitsBoutique.add( new ProduitModel("tomat","/resources/images/tomatoes.jpg") );
-        listOfProduitsBoutique.add( new ProduitModel("poulet","/resources/images/chicken.jpg") );
+        listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", new Date(13 / 03 / 2019), "/resources/images/framboise1.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16 / 03 / 2019), "/resources/images/oranges.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("Eggs", 2, "Autres", new Date(17 / 03 / 2019), "/resources/images/eggs.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("yaourt", 8, "Autres", new Date(12 / 03 / 2019), "/resources/images/yaourt1.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("tomat", 6, "Légume", new Date(13 / 03 / 2019), "/resources/images/tomatoes.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("poulet", 1, "Autres", new Date(15 / 03 / 2019), "/resources/images/chicken.jpg"));
 
 
-        listOfProduitsStock.add(new ProduitModel("fruit", "/resources/images/passion.jpg"));
-        listOfProduitsStock.add(new ProduitModel("salade", "/resources/images/salad.jpg"));
-        listOfProduitsStock.add(new ProduitModel("banane", "/resources/images/banana.jpg"));
+        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit", new Date(13 / 03 / 2019), "/resources/images/passion.jpg"));
+        listOfProduitsStock.add(new ProduitModel("salade", 2, "Légume", new Date(16 / 03 / 2019), "/resources/images/salad.jpg"));
+        listOfProduitsStock.add(new ProduitModel("banane", 12, "Fruit", new Date(17 / 03 / 2019), "/resources/images/banana.jpg"));
 
-        listOfProduitsVentes.add(new ProduitModel("cerise", "/resources/images/cerise.jpg"));
-        listOfProduitsVentes.add(new ProduitModel("abricot", "/resources/images/abricot.jpg"));
-        listOfProduitsVentes.add(new ProduitModel("champi", "/resources/images/champignons.jpg"));
-        listOfProduitsVentes.add(new ProduitModel("citron", "/resources/images/citron.jpg"));
+        listOfProduitsVentes.add(new ProduitModel("cerise", 9, "Fruit", new Date(13 / 03 / 2019), "/resources/images/cerise.jpg"));
+        listOfProduitsVentes.add(new ProduitModel("abricot", 2, "Fruit", new Date(17 / 03 / 2019), "/resources/images/abricot.jpg"));
+        listOfProduitsVentes.add(new ProduitModel("champi", 20, "Légume", new Date(12 / 03 / 2019), "/resources/images/champignons.jpg"));
+        listOfProduitsVentes.add(new ProduitModel("citron", 4, "Légume", new Date(16 / 03 / 2019), "/resources/images/citron.jpg"));
 
 
     }
