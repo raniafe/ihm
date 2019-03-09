@@ -64,6 +64,7 @@ public class ViewBoutique {
                                     }
                                     //initialize the person controller
                                     personController.init((ProduitModel) item);
+
                                     // Display content of the fxml file
                                     setGraphic(listElement);
                                     adaptItems(listView);

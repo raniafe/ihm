@@ -12,17 +12,19 @@ import java.io.IOException;
 public  abstract class Controller {
 
     public abstract void initialize() ;
+
     public void redirection(Parent element,String fxmlFile, Controller controller) throws IOException {
        FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource(fxmlFile));
         loader.setController(controller);
         Stage stage=(Stage) element.getScene().getWindow();
-        //controller.initialize();
+        controller.initialize();
         stage.setTitle("Gaspi-Miam");
         stage.setScene(new Scene(root, 770, 475));
         stage.show();
     }
-    public void redirection(Parent element, String fxmlFile, ProduitModel produit,String controller) throws IOException {
+
+    public void redirectionProduit(Parent element, String fxmlFile, ProduitModel produit, String controller) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Stage stage = (Stage) element.getScene().getWindow();
@@ -34,5 +36,6 @@ public  abstract class Controller {
         }
         stage.show();
     }
+
 
 }

@@ -118,7 +118,7 @@ public class HomeController extends Controller {
     }
     public void displayProduit(String produitName){
         try {
-            redirection(rootPane, View.Produit, new ModelListOfProduit().getByName(produitName), "produit");
+            redirectionProduit(rootPane, View.Produit, new ModelListOfProduit().getByName(produitName), "produit");
         } catch (Exception e) {
             e.printStackTrace();
         }
