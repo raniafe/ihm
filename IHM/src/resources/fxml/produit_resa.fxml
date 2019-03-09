@@ -33,11 +33,11 @@
                                 <Insets />
                             </HBox.margin>
                         </ImageView>
-                        <Button mnemonicParsing="false" styleClass="menue" onAction="#displayAccueil" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
-                        <Button mnemonicParsing="false"  styleClass="menue" onAction="#displayBoutique" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
-                        <Button mnemonicParsing="false"  styleClass="menue" onAction="#displayMesReservation" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
-                        <Button mnemonicParsing="false"  styleClass="menue" onAction="#displayMonStock" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
-                        <Button mnemonicParsing="false"  styleClass="menue" onAction="#displayMesVentes" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                        <Button mnemonicParsing="false" onAction="#displayAccueil" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Acceuil" />
+                        <Button mnemonicParsing="false" onAction="#displayBoutique" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Boutique" />
+                        <Button mnemonicParsing="false" onAction="#displayMesReservation" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mes réservations" />
+                        <Button mnemonicParsing="false" onAction="#displayMonStock" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mon stock" />
+                        <Button mnemonicParsing="false" onAction="#displayMesVentes" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mes Ventes" />
                         <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                             <menus>
                                 <Menu mnemonicParsing="false">
@@ -63,7 +63,7 @@
     <center>
         <VBox prefHeight="411.0" prefWidth="775.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox prefHeight="53.0" prefWidth="775.0" translateX="300.0">
+                <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="775.0" translateX="-100.0">
                     <children>
                         <Text fill="#7b1083" strokeType="OUTSIDE" strokeWidth="0.0" text="Produit" textAlignment="CENTER" translateX="150.0" translateY="15.0">
                             <font>
@@ -84,7 +84,7 @@
                                           <Insets left="50.0" />
                                       </HBox.margin>
                                   </ImageView>
-                                  <Label fx:id="descri" alignment="TOP_LEFT" prefHeight="195.0" prefWidth="370.0" text="L’orange est un agrume, fruit des orangers, des arbres de différentes espèces de la famille des Rutacées ou d'hybrides de ceux-ci. Il en existe donc plusieurs types, principalement issus de l'espèce Citrus sinensis comme les oranges sanguines, et les oranges amères produites par le bigaradier." translateY="50.0" wrapText="true">
+                                  <Label fx:id="descri" alignment="TOP_LEFT" prefHeight="148.0" prefWidth="370.0" text="L’orange est un agrume, fruit des orangers, des arbres de différentes espèces de la famille des Rutacées ou d'hybrides de ceux-ci. Il en existe donc plusieurs types, principalement issus de l'espèce Citrus sinensis comme les oranges sanguines, et les oranges amères produites par le bigaradier." translateY="50.0" wrapText="true">
                                       <HBox.margin>
                                           <Insets left="100.0" />
                                       </HBox.margin>
@@ -93,22 +93,26 @@
                           </HBox>
                       <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="775.0">
                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaites-tu réserver ?" textAlignment="CENTER" translateY="50.0" wrappingWidth="774.803405046463">
-                                  <font>
-                                      <Font size="14.0" />
-                                  </font>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="-250.0" translateY="50.0">
-                                  <font>
-                                      <Font size="14.0" />
-                                  </font>
-                              </Text>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                                    <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaites-tu réserver :" textAlignment="CENTER" translateX="100.0" translateY="30.0" wrappingWidth="774.803405046463">
+                                        <font>
+                                            <Font size="17.0" />
+                                        </font>
+                                    </Text>
+                                    <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="450.0" translateY="40.0" />
+                                    <ChoiceBox fx:id="quantity" prefHeight="33.0" prefWidth="51.0" translateX="600.0" translateY="53.0" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="400.0" translateY="30.0">
+                                        <font>
+                                            <Font size="16.0" />
+                                        </font>
+                                    </Text>
+                           </children>
+                        </VBox>
                           </children>
                       </HBox>
                     </children>
                 </VBox>
-                  <Button styleClass="Button" mnemonicParsing="false" prefHeight="21.0" prefWidth="83.0" text="Réserver" translateX="350.0" translateY="50.0" />
-                  <ChoiceBox prefHeight="33.0" prefWidth="51.0" translateX="680.0" translateY="-10.0" />
             </children>
         </VBox>
     </center>

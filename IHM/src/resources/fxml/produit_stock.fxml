@@ -106,22 +106,22 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Text>
-                                <ChoiceBox opacity="0.77" prefHeight="0.0" prefWidth="32.0" style="-fx-background-color: #C7CF00;" translateX="125.0" translateY="-10.0" />
+                                <ChoiceBox fx:id="quantity" opacity="0.77" prefHeight="0.0" prefWidth="32.0" style="-fx-background-color: #C7CF00;" translateX="125.0" translateY="-10.0" />
                             </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Donner" textFill="WHITE" translateX="180.0">
+                                <Button mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Donner" textFill="BLACK" translateX="180.0">
                                     <HBox.margin>
                                         <Insets top="5.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button  mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Manger" textFill="WHITE" translateX="200.0">
+                                <Button  mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Manger" textFill="BLACK" translateX="200.0">
                                     <HBox.margin>
                                         <Insets top="10.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #800080;" text="Vendre" textFill="WHITE" translateX="220.0">
+                                <Button mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Vendre" textFill="BLACK" translateX="220.0">
                                     <HBox.margin>
                                         <Insets top="5.0" />
                                     </HBox.margin>

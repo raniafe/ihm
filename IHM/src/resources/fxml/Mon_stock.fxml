@@ -113,7 +113,7 @@
                         </Button>
                         <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="338.0" styleClass="Button" text="Tous les produits" translateX="230.0" translateY="-20.0" />
                         <Button id="fapButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="406.0" styleClass="Button" text="Ajouter un produit au stock" translateX="300.0" translateY="-20.0" />
-                        <ListView fx:id="produitsListView" prefHeight="103.0" prefWidth="525.0" translateX="-500.0" translateY="50.0">
+                        <ListView styleClass="ListV" fx:id="produitsListView" prefHeight="103.0" prefWidth="525.0" translateX="-500.0" translateY="50.0">
                            <HBox.margin>
                               <Insets bottom="80.0" />
                            </HBox.margin>

@@ -9,6 +9,8 @@ public class ModelListOfProduit {
 
     private String[] categories = {"Fruit", "Legume", "Autres"} ;
     private ObservableList<String> categorieList =FXCollections.observableList( new ArrayList(Arrays.asList(categories)));
+    private Integer[] quantités = {1, 2, 3,4,5,6,7,8,9,10 } ;
+    private ObservableList<Integer> quantlist =FXCollections.observableList( new ArrayList(Arrays.asList(quantités)));
     private ObservableList<ProduitModel> listOfProduitsStock;
     private ObservableList<ProduitModel> listOfProduitsBoutique;
     private ObservableList<ProduitModel> listOfProduitsVentes;
@@ -107,6 +109,7 @@ public class ModelListOfProduit {
     }
 
     public ObservableList<String> getCategorieList() {return categorieList ; }
+    public ObservableList<Integer> getQuantList() {return quantlist ; }
 
     public ObservableList<ProduitModel> filtrerListParCategorie(String Categorie, String list) {
         ObservableList<ProduitModel> listOfProduitAFiltrer ;

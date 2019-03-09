@@ -1,5 +1,6 @@
 package program.controller;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,6 +13,8 @@ public class ProduitReservationController extends HomeController {
 
     @FXML
     private ImageView image ;
+    @FXML
+    private ChoiceBox quantity;
     public ProduitReservationController(){
 
     }
@@ -24,6 +27,7 @@ public class ProduitReservationController extends HomeController {
     }
 
     public void initialize() {
+        quantity.setItems(modelListOfProduit.getQuantList());
     }
 
 
