@@ -59,7 +59,7 @@ public   class Controller {
 
 
         //initialize the controller
-        controller.initialize( modelListOfProduit );
+        controller.initialize( );
 
         view.init( modelListOfProduit, controller );
 

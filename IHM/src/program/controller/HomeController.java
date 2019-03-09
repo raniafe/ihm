@@ -37,11 +37,6 @@ public  class HomeController extends Controller {
     private ImageView orang ;
 
 
-
-    public HomeController() {
-        this.modelListOfProduit = Controller.getModelListOfProduit() ;
-    }
-
     public void initialize(){
         framb.setOnMouseClicked(event -> displayProduit("framb"));
         yaour.setOnMouseClicked(event -> displayProduit("yaour"));
@@ -53,7 +48,7 @@ public  class HomeController extends Controller {
 
     public void displayProduit(String produitName){
         try {
-            redirection(rootPane, View.Produit, this.modelListOfProduit.getByName(produitName), "produit");
+            redirection(rootPane, View.Produit, Controller.getModelListOfProduit().getByName(produitName), "produit");
         } catch (Exception e) {
             e.printStackTrace();
         }

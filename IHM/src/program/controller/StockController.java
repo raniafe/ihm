@@ -24,9 +24,9 @@ public class StockController extends Controller {
     @FXML
     private ListView produitsListView;
 
-    public void initialize(ModelListOfProduit listOfProduitStock) {
-        this.modelListStock = listOfProduitStock;
-        loadList(modelListStock.getListOfProduitsBoutique(), produitsListView);
+    public void initialize() {
+
+        loadList(Controller.getModelListOfProduit().getListOfProduitsStock(), produitsListView);
         //fapButton.setOnAction(event -> displayFAP());
         //Fonction à déclarer avec les autres Display() ;je ne l'ai pas fait car qqn travaillait dessus
     }

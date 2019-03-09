@@ -45,14 +45,16 @@ public class BoutiqueController extends Controller {
     private ObservableList observableList = FXCollections.observableArrayList();
 
 
-    public ListView getProduitsListView() {
+    /*//public ListView getProduitsListView() {
         return produitsListView;
-    }
+    }*/
 
 
-    public void initialize(ModelListOfProduit customersList){
+    public void initialize(){
 
-        this.modelListCustomers = customersList;
+        loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
+
+        /*this.modelListCustomers = customersList;
         observableList.setAll(customersList.getListOfProduitsBoutique());
         produitsListView.setItems(observableList);
         produitsListView.setCellFactory((Callback<ListView<String>, ListCell>) listView -> new ListCell<ProduitModel>() {
@@ -76,7 +78,7 @@ public class BoutiqueController extends Controller {
 
                 }
             }
-        });
+        });*/
         acceuil.setOnAction(event -> displayAccueil());
         //boutique.setOnAction(event->displayBoutique());
         reservations.setOnAction(event -> displayMesReservation());
