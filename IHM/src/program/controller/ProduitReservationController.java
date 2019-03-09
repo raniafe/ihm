@@ -23,5 +23,9 @@ public class ProduitReservationController extends HomeController {
         image.setImage(new Image(produit.getImage()));
     }
 
+    public void initialize() {
+    }
+
+
 
 }
