@@ -17,7 +17,7 @@ import program.view.ViewBoutique;
 
 import java.io.IOException;
 
-public class HomeController extends Controller {
+public  class HomeController extends Controller {
 
     @FXML
     private BorderPane rootPane;
@@ -36,7 +36,14 @@ public class HomeController extends Controller {
     @FXML
     private ImageView orang ;
 
-    public void initialize(){
+
+
+    public HomeController() {
+        this.modelListOfProduit = Controller.getModelListOfProduit() ;
+    }
+
+    public void initialize(){}
+    public void init(){
         framb.setOnMouseClicked(event -> displayProduit("framb"));
         yaour.setOnMouseClicked(event -> displayProduit("yaour"));
         tomat.setOnMouseClicked(event -> displayProduit("tomat"));
@@ -66,14 +73,13 @@ public class HomeController extends Controller {
         loader.setController(controller);
 
         //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(view.XML_FILE));
+        Parent root = loader.load(getClass().getResourceAsStream(View.BOUTIQUE));
 
-        ModelListOfProduit model = new ModelListOfProduit();
 
         //initialize the controller
-        controller.initialize( model );
+        controller.initialize( modelListOfProduit );
 
-        view.init( model, controller );
+        view.init( modelListOfProduit, controller );
 
         //create the view
         Stage primaryStage=(Stage) rootPane.getScene().getWindow();
@@ -118,7 +124,7 @@ public class HomeController extends Controller {
     }
     public void displayProduit(String produitName){
         try {
-            redirectionProduit(rootPane, View.Produit, new ModelListOfProduit().getByName(produitName), "produit");
+            redirection(rootPane, View.Produit, this.modelListOfProduit.getByName(produitName), "produit");
         } catch (Exception e) {
             e.printStackTrace();
         }

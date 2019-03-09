@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class BoutiqueController extends HomeController {
 
-    private ModelListOfProduit modelListCustomers = null;
+    private ModelListOfProduit modelListCustomers ;
 
 
     @FXML
@@ -51,8 +51,6 @@ public class BoutiqueController extends HomeController {
 
 
     public void initialize(ModelListOfProduit customersList){
-
-        // imageLogo.setImage(new Image(ViewBoutique.imageLogo));
 
         this.modelListCustomers = customersList;
         observableList.setAll(customersList.getListOfProduitsBoutique());

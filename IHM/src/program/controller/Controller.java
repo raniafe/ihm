@@ -11,12 +11,22 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import program.View;
 import program.model.ModelListOfProduit;
+import program.model.ModelListOfProduit;
+import program.model.ModelListOfProfile;
 import program.model.ProduitModel;
 
 import java.io.IOException;
 
 public  abstract class Controller {
 
+    protected static ModelListOfProduit modelListOfProduit ;
+    ModelListOfProfile modelListOfProfile ;
+    public Controller(){
+        modelListOfProduit = new ModelListOfProduit() ;
+        modelListOfProfile = new ModelListOfProfile() ;
+    }
+   // public void initialize(ModelListOfProduit modelListOfProduit) {}
+   // public void initialize(ModelListOfProfile modelListOfProfile) {}
     public abstract void initialize() ;
 
     public void redirection(Parent element,String fxmlFile, Controller controller) throws IOException {
@@ -29,8 +39,7 @@ public  abstract class Controller {
         stage.setScene(new Scene(root, 770, 475));
         stage.show();
     }
-
-    public void redirectionProduit(Parent element, String fxmlFile, ProduitModel produit, String controller) throws IOException {
+    public void redirection(Parent element, String fxmlFile, ProduitModel produit,String controller) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Stage stage = (Stage) element.getScene().getWindow();
@@ -43,6 +52,8 @@ public  abstract class Controller {
         stage.show();
     }
 
+    public static ModelListOfProduit getModelListOfProduit() { return modelListOfProduit ;
+    }
 
     public void loadList(ObservableList<ProduitModel> listToObserve, ListView produitListView) {
 

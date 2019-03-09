@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.layout.*?>
-
-
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.image.ImageView?>
-<VBox alignment="CENTER"
-      maxWidth="180.0"
-      minWidth="50.0"
-      prefHeight="20.0"
-      xmlns="http://javafx.com/javafx/8.0.112"
-      xmlns:fx="http://javafx.com/fxml/1" fx:id="Vbox" >
-    <Label fx:id="name" wrapText="true">
-        <font>
-            <Font size="14.0" />
-        </font>
-    </Label>
-    <ImageView fx:id="image" fitHeight="123.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateX="50.0"></ImageView>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-</VBox>
+<HBox fx:id="hbox" alignment="CENTER" maxWidth="400.0" minWidth="100.0" prefHeight="200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fx:id="image" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" translateX="220.0" />
+    <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" translateX="-200.0" translateY="50.0">
+        <children>
+            <Label fx:id="name" prefHeight="34.0" prefWidth="116.0" textFill="#5e0847" translateX="-50.0" wrapText="true">
+                <font>
+                    <Font size="25.0" />
+                </font>
+            </Label>
+        </children>
+    </HBox>
+
+</HBox>

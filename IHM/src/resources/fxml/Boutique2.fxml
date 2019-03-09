@@ -9,134 +9,126 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.image.ImageView?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0"
-            prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:id="rootPane">
-   <top>
-      <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
-         <children>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
-               <children>
-                  <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true"
-                             fx:id="imageLogo"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0"
-                          style="-fx-background-color: #ffffff;" text="Acceuil" fx:id="acceuil"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0"
-                          style="-fx-background-color: #ffffff;" text="Boutique" fx:id="boutique"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0"
-                          style="-fx-background-color: #ffffff;" text="Mes réservations" fx:id="reservations"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0"
-                          style="-fx-background-color: #ffffff;" text="Mon stock" fx:id="stock"/>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0"
-                          style="-fx-background-color: #ffffff;" text="Mes Ventes" fx:id="ventes"/>
-                  <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
-                     <menus>
-                        <Menu mnemonicParsing="false">
-                           <graphic>
-                              <!-- <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
-                                  <image>
-                                     <Image url="@../images/icon-130a.png" />
-                                  </image>
-                               </ImageView>-->
-                           </graphic>
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Mon compte" />
-                              <MenuItem mnemonicParsing="false" text="Déconnexion" />
-                           </items>
-                        </Menu>
-                     </menus>
-                  </MenuBar>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </top>
-   <center>
-      <VBox prefHeight="411.0" prefWidth="775.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="53.0" prefWidth="909.0" translateX="300.0">
-               <children>
-                  <Text fill="#7b1083" strokeType="OUTSIDE" strokeWidth="0.0" text="Boutique" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font name="Trebuchet MS Bold" size="33.0" />
-                     </font>
-                     <rotationAxis>
-                        <Point3D />
-                     </rotationAxis>
-                  </Text>
-               </children>
-            </HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox prefHeight="14.0" prefWidth="775.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Catégories : " translateX="20.0" HBox.hgrow="ALWAYS">
-                           <HBox.margin>
-                              <Insets left="40.0" />
-                           </HBox.margin></Text>
-                        <ComboBox prefHeight="31.0" prefWidth="233.0" translateX="50.0" HBox.hgrow="ALWAYS">
-                           <HBox.margin>
-                              <Insets left="40.0" />
-                           </HBox.margin></ComboBox>
-                     </children>
-                  </HBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <HBox prefHeight="49.0" prefWidth="775.0" translateY="10.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trier par : " translateX="30.0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin></Text>
-                              <CheckBox mnemonicParsing="false" text="Date" translateX="70.0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Prix" translateX="90.0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Proximité" translateX="120.0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="40.0" />
-                                 </HBox.margin></CheckBox>
-                           </children>
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
+                    <children>
+                        <ImageView fx:id="imageLogo" fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true" />
+                        <Button fx:id="acceuil" mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
+                        <Button fx:id="boutique" mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
+                        <Button fx:id="reservations" mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
+                        <Button fx:id="stock" mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
+                        <Button fx:id="ventes" mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                        <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
+                            <menus>
+                                <Menu mnemonicParsing="false">
+                                    <graphic>
+                                        <!-- <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
+                                            <image>
+                                               <Image url="@../images/icon-130a.png" />
+                                            </image>
+                                         </ImageView>-->
+                                    </graphic>
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Mon compte" />
+                                        <MenuItem mnemonicParsing="false" text="Déconnexion" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox prefHeight="411.0" prefWidth="775.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="909.0" translateX="100.0">
+                    <children>
+                        <Text fill="#7b1083" strokeType="OUTSIDE" strokeWidth="0.0" text="Boutique" translateX="-100.0" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="33.0" />
+                            </font>
+                            <rotationAxis>
+                                <Point3D />
+                            </rotationAxis>
+                        </Text>
+                    </children>
+                </HBox>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox alignment="TOP_CENTER" prefHeight="14.0" prefWidth="775.0" translateX="-50.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Catégories : " translateX="20.0" translateY="20.0" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets left="40.0" />
+                                    </HBox.margin></Text>
+                                <ComboBox prefHeight="31.0" prefWidth="233.0" translateY="20.0" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets left="40.0" />
+                                    </HBox.margin></ComboBox>
+                            </children>
                         </HBox>
-                        <HBox layoutY="10.0" prefHeight="102.0" prefWidth="775.0" translateY="30.0">
-                           <children>
-                              <ListView fx:id="produitsListView" layoutX="45.0" layoutY="10.0" prefHeight="150.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
-                                 <HBox.margin>
-                                    <Insets left="20.0" right="20.0" />
-                                 </HBox.margin></ListView>
-                              <!--<ImageView fitHeight="123.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateX="50.0">
-                                 <image>
-                                    <Image url="@../images/framboise1.jpg" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="124.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true" translateX="100.0">
-                                 <image>
-                                    <Image url="@../images/yaourt1.jpg" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="125.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" translateX="150.0">
-                                 <image>
-                                    <Image url="@../images/chicken.jpg" />
-                                 </image>
-                              </ImageView>-->
-                           </children>
+                        <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" translateX="-100.0">
+                            <children>
+                                <HBox alignment="TOP_CENTER" prefHeight="49.0" prefWidth="775.0" translateX="350.0" translateY="100.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trier par : " translateX="100.0" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets left="40.0" />
+                                            </HBox.margin></Text>
+                                        <CheckBox mnemonicParsing="false" text="Date" translateX="140.0" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets left="40.0" />
+                                            </HBox.margin></CheckBox>
+                                        <CheckBox mnemonicParsing="false" text="Prix" translateX="160.0" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets left="40.0" />
+                                            </HBox.margin></CheckBox>
+                                        <CheckBox mnemonicParsing="false" text="Proximité" translateX="210.0" HBox.hgrow="ALWAYS">
+                                            <HBox.margin>
+                                                <Insets left="40.0" />
+                                            </HBox.margin></CheckBox>
+                                    </children>
+                                </HBox>
+                                <VBox alignment="TOP_CENTER" layoutY="10.0" prefHeight="700.0" prefWidth="1000.0" translateX="-20.0" translateY="100.0">
+                                    <children>
+                                        <ListView fx:id="produitsListView" layoutX="0.0" layoutY="10.0" maxHeight="800.0" maxWidth="800.0" minWidth="400.0" prefHeight="194.0" prefWidth="462.0" translateX="-100.0" translateY="50.0" HBox.hgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="50.0" right="50.0" />
+                                            </VBox.margin></ListView>
+                                        <!--<ImageView fitHeight="123.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateX="50.0">
+                                           <image>
+                                              <Image url="@../images/framboise1.jpg" />
+                                           </image>
+                                        </ImageView>
+                                        <ImageView fitHeight="124.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true" translateX="100.0">
+                                           <image>
+                                              <Image url="@../images/yaourt1.jpg" />
+                                           </image>
+                                        </ImageView>
+                                        <ImageView fitHeight="125.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" translateX="150.0">
+                                           <image>
+                                              <Image url="@../images/chicken.jpg" />
+                                           </image>
+                                        </ImageView>-->
+                                    </children>
+                                </VBox>
+                            </children>
                         </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-   </center>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
 </BorderPane>

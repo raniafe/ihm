@@ -18,7 +18,7 @@ public class ProduitController {
     private ProduitModel produitModel ;
 
     @FXML
-    private VBox VBox;
+    private HBox VBox;
 
     @FXML
     private Label name;

@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class ProduitModel {
 
+
     private ArrayList<String> categorieList = new ArrayList<String>() ;
     private String name;
     private int quantite;
