@@ -42,6 +42,7 @@ public class ProduitController extends Controller{
 
 
 
+
     }
 
     public void setInfo(ProduitModel product) {

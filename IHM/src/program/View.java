@@ -11,7 +11,7 @@ public abstract class View {
     public static final String MesVentes="../../resources/fxml/Mes Ventes.fxml" ;
     public static final String Produit="../../resources/fxml/produit_resa.fxml" ;
     public static final String ProduitStock = "../../resources/fxml/produit_stock.fxml";
-
+    public static final String CSS="../../resources/Accueil.css" ;
 
 
 

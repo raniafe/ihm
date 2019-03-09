@@ -110,6 +110,7 @@ public   class Controller {
     public void redirection(Parent element,String fxmlFile, Controller controller) throws IOException {
        FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource(fxmlFile));
+        root.getStylesheets().add("/resources/Accueil.css");
         loader.setController(controller);
         Stage stage=(Stage) element.getScene().getWindow();
 //        controller.initialize();
@@ -122,6 +123,7 @@ public   class Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Stage stage = (Stage) element.getScene().getWindow();
         Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
+        root.getStylesheets().add("/resources/Accueil.css");
         stage.setScene(new Scene(root, 770, 475));
         switch (controller){
             case "produit": ((ProduitReservationController) loader.getController()).setProduit(produit);

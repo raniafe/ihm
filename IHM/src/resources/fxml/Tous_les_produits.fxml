@@ -35,11 +35,11 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                  <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
+                  <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
+                  <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
+                  <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
+                  <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
                   <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                      <menus>
                         <Menu mnemonicParsing="false">
@@ -109,12 +109,12 @@
                      <children>
                         <HBox prefHeight="361.0" prefWidth="775.0">
                            <children>
-                              <Button mnemonicParsing="false" text="Mes alertes">
+                              <Button styleClass="Button" mnemonicParsing="false" text="Mes alertes">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
                               </Button>
-                              <Button layoutX="10.0" layoutY="60.0" mnemonicParsing="false" text="Tous les produits" />
+                              <Button styleClass="Button" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" text="Tous les produits" />
                            </children>
                            <VBox.margin>
                               <Insets />
@@ -145,7 +145,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </HBox>
-                        <Button alignment="CENTER" mnemonicParsing="false" text="Ajoute un produit !" textAlignment="CENTER">
+                        <Button alignment="CENTER" styleClass="Button" mnemonicParsing="false" text="Ajoute un produit !" textAlignment="CENTER">
                            <VBox.margin>
                               <Insets bottom="5.0" top="10.0" />
                            </VBox.margin>
