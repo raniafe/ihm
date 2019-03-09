@@ -21,7 +21,7 @@ import program.view.ViewBoutique;
 import java.io.IOException;
 
 
-public class BoutiqueController extends HomeController {
+public class BoutiqueController extends Controller {
 
     private ModelListOfProduit modelListCustomers ;
 

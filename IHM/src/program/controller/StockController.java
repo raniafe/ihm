@@ -14,7 +14,7 @@ import program.model.ProduitModel;
 
 import java.io.IOException;
 
-public class StockController extends HomeController {
+public class StockController extends Controller {
 
     private ModelListOfProduit modelListStock = null;
 

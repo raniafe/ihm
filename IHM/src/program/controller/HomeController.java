@@ -42,8 +42,7 @@ public  class HomeController extends Controller {
         this.modelListOfProduit = Controller.getModelListOfProduit() ;
     }
 
-    public void initialize(){}
-    public void init(){
+    public void initialize(){
         framb.setOnMouseClicked(event -> displayProduit("framb"));
         yaour.setOnMouseClicked(event -> displayProduit("yaour"));
         tomat.setOnMouseClicked(event -> displayProduit("tomat"));
@@ -52,76 +51,6 @@ public  class HomeController extends Controller {
         orang.setOnMouseClicked(event -> displayProduit("orang"));
     }
 
-    public void displayAccueil(){
-        try {
-            redirection(rootPane, View.Accueil,new HomeController());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void displayBoutique()  throws Exception{
-
-        FXMLLoader loader = new FXMLLoader();
-
-        ViewBoutique view = new ViewBoutique();
-
-        //create a controller
-        BoutiqueController controller = new BoutiqueController();
-
-        //attach controller
-        loader.setController(controller);
-
-        //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(View.BOUTIQUE));
-
-
-        //initialize the controller
-        controller.initialize( modelListOfProduit );
-
-        view.init( modelListOfProduit, controller );
-
-        //create the view
-        Stage primaryStage=(Stage) rootPane.getScene().getWindow();
-        primaryStage.setScene(new Scene(root, 770, 475));
-
-        //show the view
-        primaryStage.show();
-    }
-
-
-    public void displayMonCompte(){
-        try {
-            redirection(rootPane, View.MonCompte, new CompteController());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-   public void displayMonStock() {
-       try {
-           redirection(rootPane, View.MonStock, new StockController());
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
-    }
-
-    public void displayMesReservation(){
-        try {
-            redirection(rootPane, View.MesReservations, new ResaController());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void displayMesVentes() {
-        try {
-            redirection(rootPane, View.MesVentes, new VentesController());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public void displayProduit(String produitName){
         try {
             redirection(rootPane, View.Produit, this.modelListOfProduit.getByName(produitName), "produit");
@@ -129,4 +58,5 @@ public  class HomeController extends Controller {
             e.printStackTrace();
         }
     }
+
 }

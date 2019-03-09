@@ -18,11 +18,12 @@ public class ModelListOfProduit {
         listOfProduitsBoutique = FXCollections.observableList( new ArrayList<>());
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
 
-        listOfProduitsBoutique.add(new ProduitModel("Framboises", "/resources/images/framboise1.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("Eggs", "/resources/images/eggs.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("yaourt", "/resources/images/yaourt1.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("tomat", "/resources/images/tomatoes.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("poulet", "/resources/images/chicken.jpg"));
+        listOfProduitsBoutique.add( new ProduitModel("Framboises", "/resources/images/framboise1.jpg") ) ;
+        listOfProduitsBoutique.add( new ProduitModel("Oranges","/resources/images/oranges.jpg") );
+        listOfProduitsBoutique.add( new ProduitModel("Eggs","/resources/images/eggs.jpg") );
+        listOfProduitsBoutique.add( new ProduitModel("yaourt","/resources/images/yaourt1.jpg") );
+        listOfProduitsBoutique.add( new ProduitModel("tomat","/resources/images/tomatoes.jpg") );
+        listOfProduitsBoutique.add( new ProduitModel("poulet","/resources/images/chicken.jpg") );
 
 
         listOfProduitsStock.add(new ProduitModel("passsion", "/resources/images/passion.jpg"));

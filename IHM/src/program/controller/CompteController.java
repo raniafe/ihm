@@ -9,7 +9,7 @@ import program.model.ModelListOfProduit;
 import program.model.ModelListOfProfile;
 import program.model.ProfileModel;
 
-public class CompteController extends HomeController {
+public class CompteController extends Controller {
 
     @FXML
     private TextArea nom;
