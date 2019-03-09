@@ -1,5 +1,6 @@
 package program.controller;
 
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,7 +27,6 @@ public   class Controller {
 
     protected static ModelListOfProduit modelListOfProduit ;
     ModelListOfProfile modelListOfProfile ;
-
     public Controller(){
         modelListOfProduit = new ModelListOfProduit() ;
         modelListOfProfile = new ModelListOfProfile() ;
@@ -122,7 +122,6 @@ public   class Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Stage stage = (Stage) element.getScene().getWindow();
         Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
-        stage.setTitle("Gaspi-Miam");
         stage.setScene(new Scene(root, 770, 475));
         switch (controller){
             case "produit": ((ProduitReservationController) loader.getController()).setProduit(produit);
@@ -161,6 +160,18 @@ public   class Controller {
             }
         });
 
+    }
+
+    public void listenTo(ListView listView) {
+        listView.getSelectionModel().selectedItemProperty().addListener(
+                (ChangeListener<ProduitModel>) (observable, oldValue, newValue) -> {
+
+                    try {
+                        redirection(rootPane,View.Produit,newValue,"produit");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
     }
 
 

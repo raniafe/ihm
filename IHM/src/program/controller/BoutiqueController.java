@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 
 import program.model.ModelListOfProduit;
@@ -23,9 +24,13 @@ import java.io.IOException;
 
 public class BoutiqueController extends Controller {
 
+
+
     private ModelListOfProduit modelListCustomers ;
 
 
+    @FXML
+    private BorderPane rootPane ;
     @FXML
     private ListView produitsListView;
     @FXML
@@ -53,32 +58,8 @@ public class BoutiqueController extends Controller {
     public void initialize(){
 
         loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
+        listenTo(produitsListView);
 
-        /*this.modelListCustomers = customersList;
-        observableList.setAll(customersList.getListOfProduitsBoutique());
-        produitsListView.setItems(observableList);
-        produitsListView.setCellFactory((Callback<ListView<String>, ListCell>) listView -> new ListCell<ProduitModel>() {
-            @Override
-            public void updateItem(ProduitModel product, boolean empty) {
-                super.updateItem(product, empty);
-                if (product != null) {
-                    Parent listElement=null;
-                    // Load fxml file for this Person
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/fxml/Produit.fxml"));
-
-                    ProduitController produitController = new ProduitController();
-                    loader.setController(produitController);
-                    try {
-                        listElement = loader.load(getClass().getResourceAsStream("../../resources/fxml/Produit.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    produitController.setInfo(product);
-                    setGraphic(listElement);
-
-                }
-            }
-        });*/
         acceuil.setOnAction(event -> displayAccueil());
         //boutique.setOnAction(event->displayBoutique());
         reservations.setOnAction(event -> displayMesReservation());
@@ -87,6 +68,8 @@ public class BoutiqueController extends Controller {
 
 
     }
+
+
 
 
 }

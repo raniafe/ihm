@@ -15,7 +15,7 @@ public class ResaController extends Controller {
 
     public void initialize() {
 
-        loadList(Controller.getModelListOfProduit().getListOfProduitsRéservation(), produitsListView);
+        //loadList(Controller.getModelListOfProduit().getListOfProduitsRéservation(), produitsListView);
 
     }
 }

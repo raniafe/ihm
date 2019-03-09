@@ -8,14 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import program.View;
-import program.model.ModelListOfProduit;
-import program.model.ProduitModel;
-import program.view.ViewBoutique;
 
-
-import java.io.IOException;
 
 public  class HomeController extends Controller {
 
@@ -53,5 +47,8 @@ public  class HomeController extends Controller {
             e.printStackTrace();
         }
     }
+
+
+
 
 }

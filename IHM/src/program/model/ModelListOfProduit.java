@@ -3,18 +3,16 @@ package program.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ModelListOfProduit {
 
+    private String[] categories = {"Fruit", "Legume", "Autres"} ;
+    private ObservableList<String> categorieList =FXCollections.observableList( new ArrayList(Arrays.asList(categories)));
     private ObservableList<ProduitModel> listOfProduitsStock;
     private ObservableList<ProduitModel> listOfProduitsBoutique;
     private ObservableList<ProduitModel> listOfProduitsVentes;
-    private ObservableList<ProduitModel> listOfProduitsRéservation;
-
+    private ObservableList<ProduitModel> listOfProduitsRéservation ;
 
     public ModelListOfProduit() {
 
@@ -22,7 +20,6 @@ public class ModelListOfProduit {
         listOfProduitsBoutique = FXCollections.observableList( new ArrayList<>());
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
         listOfProduitsRéservation = FXCollections.observableList(new ArrayList<>());
-
 
         listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", new Date(13 / 03 / 2019), "/resources/images/framboise1.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16 / 03 / 2019), "/resources/images/oranges.jpg"));
@@ -44,7 +41,6 @@ public class ModelListOfProduit {
 
         listOfProduitsRéservation.add(new ProduitModel("melon", 1, "Fruit", new Date(16 / 03 / 2019), "/resources/images/melon.jpg"));
         listOfProduitsRéservation.add(new ProduitModel("pêche", 12, "Fruit", new Date(13 / 03 / 2019), "/resources/images/peach.jpg"));
-
 
 
     }
@@ -81,12 +77,6 @@ public class ModelListOfProduit {
             case "citron":
                 return listOfProduitsVentes.get(3);
 
-            case "melon":
-                return listOfProduitsRéservation.get(0);
-
-            case "pêche":
-                return listOfProduitsRéservation.get(1);
-
             default:
                 return listOfProduitsBoutique.get(0);
         }
@@ -112,7 +102,23 @@ public class ModelListOfProduit {
         return listOfProduitsVentes;
     }
 
-    public ObservableList<ProduitModel> getListOfProduitsRéservation() {
-        return listOfProduitsRéservation;
+    public ObservableList<String> getCategorieList() {return categorieList ; }
+
+    public ObservableList<ProduitModel> filtrerListParCategorie(String Categorie, String list) {
+        ObservableList<ProduitModel> listOfProduitAFiltrer ;
+        ObservableList<ProduitModel> listOfProduitFiltre = FXCollections.observableList( new ArrayList<>());
+        switch (list)
+        {
+            case "stock" :
+                listOfProduitAFiltrer = this.listOfProduitsStock ;
+                break;
+            case "boutique":
+                listOfProduitAFiltrer = this.listOfProduitsBoutique ;
+                    break;
+        }
+
+        return listOfProduitFiltre;
     }
+
+
 }

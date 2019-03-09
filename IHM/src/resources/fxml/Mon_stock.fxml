@@ -96,7 +96,7 @@
                               <Insets left="30.0" />
                            </HBox.margin>
                         </Text>
-                        <ComboBox prefWidth="150.0" promptText="sélectionner">
+                        <ComboBox prefWidth="150.0" promptText="sélectionner" fx:id="comboBox">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>

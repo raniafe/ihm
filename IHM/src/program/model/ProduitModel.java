@@ -3,13 +3,15 @@ package program.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class ProduitModel {
 
 
-    private ArrayList<String> categorieList = new ArrayList<String>() ;
+
     private String name;
     private int quantite;
     private String categorie;

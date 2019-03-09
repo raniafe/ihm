@@ -11,6 +11,7 @@ public class VentesController extends Controller {
     public void initialize() {
 
         loadList(Controller.getModelListOfProduit().getListOfProduitsVentes(), produitsListView);
+        listenTo(produitsListView);
 
     }
 }
