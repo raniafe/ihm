@@ -34,11 +34,11 @@
                         <Menu mnemonicParsing="false">
 
                               <graphic>
-                                 <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
+                               <!--  <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
                                     <image>
                                        <Image url="@../images/icon-130a.png" />
                                     </image>
-                                 </ImageView>
+                                 </ImageView>-->
                               </graphic>
 
                            <items>

@@ -59,7 +59,7 @@ public class BoutiqueController extends Controller {
     public void initialize(){
 
         loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
-        listenTo(produitsListView, View.Produit);
+        listenTo(produitsListView, View.Produit,"produitR");
 
         acceuil.setOnAction(event -> displayAccueil());
         //boutique.setOnAction(event->displayBoutique());

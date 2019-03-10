@@ -106,7 +106,7 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" prefHeight="361.0" prefWidth="775.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="310.0" styleClass="Button" text="Mes alertes" translateX="150.0" translateY="-20.0">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="310.0" styleClass="Button" fx:id="alertes" text="Mes alertes" translateX="150.0" translateY="-20.0">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>

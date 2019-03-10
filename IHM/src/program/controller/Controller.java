@@ -126,8 +126,10 @@ public   class Controller {
         root.getStylesheets().add("/resources/Accueil.css");
         stage.setScene(new Scene(root, 770, 475));
         switch (controller){
-            case "produit": ((ProduitReservationController) loader.getController()).setProduit(produit);
+            case "produitR": ((ProduitReservationController) loader.getController()).setProduit(produit);break;
+            case "produitS" :  ((ProduitStockController) loader.getController()).setProduit(produit);break;
         }
+        System.out.println(produit);
         stage.show();
     }
 
@@ -164,12 +166,12 @@ public   class Controller {
 
     }
 
-    public void listenTo(ListView listView, String fxml) {
+    public void listenTo(ListView listView, String fxml, String prodT) {
         listView.getSelectionModel().selectedItemProperty().addListener(
                 (ChangeListener<ProduitModel>) (observable, oldValue, newValue) -> {
-
                     try {
-                        redirection(rootPane, fxml, newValue, "produit");
+                        System.out.println(newValue);
+                        redirection(rootPane, fxml, newValue, prodT);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

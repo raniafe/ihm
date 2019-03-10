@@ -3,6 +3,8 @@ package program.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ModelListOfProduit {
@@ -112,7 +114,8 @@ public class ModelListOfProduit {
     public ObservableList<Integer> getQuantList() {return quantlist ; }
 
     public ObservableList<ProduitModel> filtrerListParCategorie(String Categorie, String list) {
-        ObservableList<ProduitModel> listOfProduitAFiltrer ;
+
+        ObservableList<ProduitModel> listOfProduitAFiltrer = null;
         ObservableList<ProduitModel> listOfProduitFiltre = FXCollections.observableList( new ArrayList<>());
         switch (list)
         {
@@ -122,9 +125,50 @@ public class ModelListOfProduit {
             case "boutique":
                 listOfProduitAFiltrer = this.listOfProduitsBoutique ;
                     break;
+            default:
+                listOfProduitAFiltrer = this.listOfProduitsStock ;
         }
+        listOfProduitAFiltrer.forEach (produitModel -> {
+            if(produitModel.getCategorie().equals(Categorie))
+            {
+                listOfProduitFiltre.add(produitModel) ;
+            }
+        } );
 
         return listOfProduitFiltre;
+    }
+
+    public ObservableList<ProduitModel> getProduitsAlertes() {
+        ObservableList<ProduitModel> listOfProduitAlertes = FXCollections.observableList( new ArrayList<>());
+        listOfProduitsStock.forEach(produitModel -> {
+            Date d = null;
+            Date d1 = null ;
+            Date todayDate = null ;
+
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+              todayDate = dateFormatter.parse(dateFormatter.format(new Date() ));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            try {
+                d = dateFormatter.parse(produitModel.getDate().toString());
+                d1 = dateFormatter.parse(todayDate.toString());
+                if(d1.getTime()<d.getTime()){// not expired
+                    listOfProduitAlertes.add(produitModel) ;
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+
+        });
+
+        return listOfProduitAlertes ;
+
     }
 
 

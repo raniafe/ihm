@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 import program.View;
@@ -17,6 +14,7 @@ import program.model.ModelListOfProduit;
 import program.model.ProduitModel;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class StockController extends Controller {
 
@@ -24,7 +22,7 @@ public class StockController extends Controller {
     private int rangeSelectedItem = -1 ;
 
     @FXML
-    private Button fapButton;
+    private Button alertes;
 
     @FXML
     private ComboBox comboBox ;
@@ -33,16 +31,25 @@ public class StockController extends Controller {
     private BorderPane rootPane ;
 
     @FXML
+    private DatePicker Date ;
+
+    @FXML
     private ListView produitsListView;
 
-    public void initialize() {
 
+    public void initialize() {
         comboBox.setItems(modelListOfProduit.getCategorieList());
         loadList(Controller.getModelListOfProduit().getListOfProduitsStock(), produitsListView);
-        listenTo(produitsListView, View.ProduitStock);
+        listenTo(produitsListView, View.ProduitStock,"produitS");
         //fapButton.setOnAction(event -> displayFAP());
         //Fonction à déclarer avec les autres Display() ;je ne l'ai pas fait car qqn travaillait dessus
         listenToComBox(comboBox);
+        listenToDate(Date);
+        alertes.setOnAction(event -> {
+            loadList(modelListOfProduit.getProduitsAlertes(),produitsListView) ;
+            listenTo(produitsListView, View.Produit,"produitS");
+        });
+
     }
 
     public void listenToComBox (ComboBox listView) {
@@ -50,9 +57,17 @@ public class StockController extends Controller {
                 (ChangeListener<String>) (observable, oldValue, newValue) -> {
 
                     rangeSelectedItem = modelListOfProduit.getCategorieList().indexOf(newValue);
-                    System.out.println(rangeSelectedItem);
+                    System.out.println(newValue) ;
+                    loadList(modelListOfProduit.filtrerListParCategorie(newValue,"stock"), produitsListView);
+                    listenTo( produitsListView,View.ProduitStock ,"produitS");
+
                    // filtrerList(modelListOfProduit.getCategorieList().get(rangeSelectedItem)) ;
                 });
+    }
+
+    public void listenToDate(DatePicker date)
+    {
+
     }
 
 

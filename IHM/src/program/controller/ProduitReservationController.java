@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import program.model.ProduitModel;
 
-public class ProduitReservationController extends HomeController {
+public class ProduitReservationController extends Controller {
 
 
     private ProduitModel produit;
@@ -27,7 +27,7 @@ public class ProduitReservationController extends HomeController {
     }
 
     public void initialize() {
-        quantity.setItems(modelListOfProduit.getQuantList());
+       // quantity.setItems(modelListOfProduit.getQuantList());
     }
 
 

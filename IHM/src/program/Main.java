@@ -50,6 +50,7 @@ public class Main extends Application {
 
 
         loader.setController(controller);
+
         //controller.initialize();
         primaryStage.setTitle("Gaspi-Miam");
         primaryStage.setScene(new Scene(root, 770, 475));

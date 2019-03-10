@@ -34,6 +34,9 @@ public class ProduitModel {
         return image ;
     }
 
+    public String getCategorie() {return categorie ; }
 
-
+    public Date getDate() {
+        return date;
+    }
 }
