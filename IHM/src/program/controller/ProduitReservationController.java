@@ -1,5 +1,6 @@
 package program.controller;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -15,6 +16,9 @@ public class ProduitReservationController extends Controller {
     private ImageView image ;
     @FXML
     private ChoiceBox quantity;
+    @FXML
+    private Button reserver ;
+
     public ProduitReservationController(){
 
     }
@@ -27,6 +31,15 @@ public class ProduitReservationController extends Controller {
     }
 
     public void initialize() {
+
+        reserver.setOnAction(event -> {
+            modelListOfProduit.addReseservation(produit);
+            try {
+                displayMesReservation();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
        // quantity.setItems(modelListOfProduit.getQuantList());
     }
 

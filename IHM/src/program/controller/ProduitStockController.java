@@ -30,7 +30,7 @@ public class ProduitStockController extends Controller {
     }
 
     public void initialize() {
-        // quantity.setItems(modelListOfProduit.getQuantList());
+        //quantity.setItems(modelListOfProduit.getQuantList());
         //name.setValue("Salut");
     }
 
