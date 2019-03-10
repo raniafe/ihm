@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 
 public class ModelListOfProduit {
@@ -25,7 +27,7 @@ public class ModelListOfProduit {
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
         listOfProduitsRéservation = FXCollections.observableList(new ArrayList<>());
 
-        listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", new Date(13 / 03 / 2019), "/resources/images/framboise1.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", new Date(13/03/2019), "/resources/images/framboise1.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16 / 03 / 2019), "/resources/images/oranges.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("Eggs", 2, "Autres", new Date(17 / 03 / 2019), "/resources/images/eggs.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("yaourt", 8, "Autres", new Date(12 / 03 / 2019), "/resources/images/yaourt1.jpg"));
@@ -33,8 +35,8 @@ public class ModelListOfProduit {
         listOfProduitsBoutique.add(new ProduitModel("poulet", 1, "Autres", new Date(15 / 03 / 2019), "/resources/images/chicken.jpg"));
 
 
-        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit", new Date(13 / 03 / 2019), "/resources/images/passion.jpg"));
-        listOfProduitsStock.add(new ProduitModel("salade", 2, "Legume", new Date(16 / 03 / 2019), "/resources/images/salad.jpg"));
+        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit", new Date(13 / 03 / 2018), "/resources/images/passion.jpg"));
+        listOfProduitsStock.add(new ProduitModel("salade", 2, "Legume", new Date(11 / 03 / 2019), "/resources/images/salad.jpg"));
         listOfProduitsStock.add(new ProduitModel("banane", 12, "Fruit", new Date(17 / 03 / 2019), "/resources/images/banana.jpg"));
 
         listOfProduitsVentes.add(new ProduitModel("cerise", 9, "Fruit", new Date(13 / 03 / 2019), "/resources/images/cerise.jpg"));
@@ -98,6 +100,12 @@ public class ModelListOfProduit {
         listOfProduitsBoutique.add( person );
     }
 
+    public void addReseservation(ProduitModel produit){
+
+        listOfProduitsRéservation.add(produit) ;
+
+    }
+
     public ObservableList<ProduitModel> getListOfProduitsStock() {
         return listOfProduitsStock;
     }
@@ -145,31 +153,36 @@ public class ModelListOfProduit {
     public ObservableList<ProduitModel> getProduitsAlertes() {
         ObservableList<ProduitModel> listOfProduitAlertes = FXCollections.observableList( new ArrayList<>());
         listOfProduitsStock.forEach(produitModel -> {
-            Date d = null;
-            Date d1 = null ;
-            Date todayDate = null ;
 
-            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-            try {
-              todayDate = dateFormatter.parse(dateFormatter.format(new Date() ));
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            Date date = new Date();
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int year = localDate.getYear();
+            int month = localDate.getMonthValue();
+            int day = localDate.getDayOfMonth();
 
+            LocalDate localDate2 = produitModel.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int year1  = localDate2.getYear();
+            int month1 = localDate2.getMonthValue();
+            int day1   = localDate2.getDayOfMonth();
 
-            try {
-                //d = dateFormatter.parse(produitModel.getDate().toString());
-                d1 = dateFormatter.parse(todayDate.toString());
-                if(d1.getTime()<d.getTime()){// not expired
-                    listOfProduitAlertes.add(produitModel) ;
-                }
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            System.out.println(produitModel.getDate());
+            System.out.println(year1);
+            System.out.println(month1);
 
 
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(produitModel.getDate());
+            int dayProduit = calendar.get(Calendar.DAY_OF_MONTH);
+            int monthProduit = calendar.get(Calendar.MONTH) ;
+            int yearProduit = calendar.get(Calendar.YEAR);
 
-        });
+
+
+            if ((day - dayProduit <=3) && (month == monthProduit) && (year==yearProduit) )
+                listOfProduitAlertes.add(produitModel) ;
+
+
+        } );
 
         return listOfProduitAlertes ;
 
