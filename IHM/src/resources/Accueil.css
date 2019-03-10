@@ -18,53 +18,35 @@
 }
 
 
-#aa{
-    -fx-text-fill: #000000;
-
-
-    -fx-font-size: 20px;
-
-}
-.listV:visited{
-    -fx-pannable:True;
-    -fx-vertical:True;
-}
-
-.VBox{ -fx-border-color: #2A2E37;}
-
-
-.text-field {
-    -fx-background-color: -fx-text-box-border, -fx-background ;
-    -fx-background-insets: 0, 0 0 1 0 ;
-    -fx-background-radius: 0 ;
-}
-.text-field:focused {
-    -fx-background-color: -fx-focus-color, -fx-background ;
-}
-
-
-label{
-    -fx-background-color:#B2B2B2;
-}
-.text-field{
-    -fx-font-family: "Quicksand";
-    -fx-font-size: 18;
-    -fx-padding: 1,1,1,1;
-    -fx-border-color: grey;
-    -fx-border-width: 2;
-    -fx-border-radius: 1;
-    -fx-border: gone;
-    -fx-background-color: transparent;
-    -fx-text-fill: black;
-}
-/*
-.button {
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#D473D4 0%, #D473D4 25%, #D473D4 75%, #D473D4 100%);
     -fx-text-fill: white;
-    -fx-font-family: "Arial Narrow";
-    -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-}*/
+}
+.label {
+    -fx-effect: dropshadow(two-pass-box , darkgray, 10, 0.0 , 4, 5);
+}
+
+
+.date-picker .month-year-pane{
+    -fx-background-color: #92bd1e;
+    -fx-padding: 5 5 5 5;
+}
+.date-picker .day-name-cell{
+    -fx-background-color: black;
+    -fx-text-fill:#D473D4;
+
+}
+
+.list-cell:odd {
+    -fx-cell-hover-color: #D473D4;
+    -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+    -fx-cell-hover-color: #D473D4;
+    -fx-text-fill: white;
+}
+
 .menue:hover{
     -fx-text-fill: #92bd1e;
     -fx-font-weight: bold;
@@ -94,11 +76,5 @@ label{
 }
 
 
-.divelm{
 
-    -fx-text-fill: #53ab0c;
-    -fx-font-weight: bold;
-    -fx-font-size: 20px;
-
-}
 

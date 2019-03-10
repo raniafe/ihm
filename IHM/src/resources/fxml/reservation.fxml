@@ -32,11 +32,11 @@
                                 <Insets />
                             </HBox.margin>
                         </ImageView>
-                        <Button mnemonicParsing="false" styleClass="menue" onAction="#displayAccueil" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
-                        <Button mnemonicParsing="false" styleClass="menue" onAction="#displayBoutique" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
-                        <Button mnemonicParsing="false" styleClass="menue" onAction="#displayMesReservation" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
-                        <Button mnemonicParsing="false" styleClass="menue" onAction="#displayMonStock" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
-                        <Button mnemonicParsing="false" styleClass="menue" onAction="#displayMesVentes" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                        <Button mnemonicParsing="false" onAction="#displayAccueil" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Acceuil" />
+                        <Button mnemonicParsing="false" onAction="#displayBoutique" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Boutique" />
+                        <Button mnemonicParsing="false" onAction="#displayMesReservation" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mes réservations" />
+                        <Button mnemonicParsing="false" onAction="#displayMonStock" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mon stock" />
+                        <Button mnemonicParsing="false" onAction="#displayMesVentes" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mes Ventes" />
                         <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                             <menus>
                                 <Menu mnemonicParsing="false">
@@ -79,7 +79,10 @@
                 </HBox>
                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
                     <children>
-                        <ListView fx:id="produitsListView" prefHeight="164.0" prefWidth="693.0" translateX="-10.0" />
+                        <ListView fx:id="produitsListView" prefHeight="164.0" prefWidth="693.0" translateX="-10.0">
+                     <VBox.margin>
+                        <Insets left="200.0" right="200.0" />
+                     </VBox.margin></ListView>
                     </children>
                     <VBox.margin>
                         <Insets left="20.0" />
