@@ -25,7 +25,7 @@ public class ProduitStockController extends Controller {
         this.produit=produit;
     }
     public void setProduit(ProduitModel prod){
-
+        this.produit=prod;
          image.setImage(new Image(produit.getImage()));
         // name.setTextContent("Salut");
     }
