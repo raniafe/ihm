@@ -33,11 +33,17 @@
                                 <Insets />
                             </HBox.margin>
                         </ImageView>
-                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
-                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
-                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
-                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
-                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="115.0"
+                                style="-fx-background-color: #ffffff;" text="Acceuil" onAction="#displayAccueil"/>
+                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="139.0"
+                                style="-fx-background-color: #ffffff;" text="Boutique" onAction="#displayBoutique"/>
+                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="170.0"
+                                style="-fx-background-color: #ffffff;" text="Mes réservations"
+                                onAction="#displayMesReservation"/>
+                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="127.0"
+                                style="-fx-background-color: #ffffff;" text="Mon stock" onAction="#displayMonStock"/>
+                        <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="122.0"
+                                style="-fx-background-color: #ffffff;" text="Mes Ventes" onAction="#displayMesVentes"/>
                         <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                             <menus>
                                 <Menu mnemonicParsing="false">
