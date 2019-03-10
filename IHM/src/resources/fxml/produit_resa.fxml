@@ -101,13 +101,20 @@
                                         </font>
                                     </Text>
                                     <Button fx:id="reserver" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="450.0" translateY="40.0" />
-                               <TextArea fx:id="quantity" prefHeight="0.0" prefWidth="10.0" translateX="600.0"
-                                         translateY="50.0"/>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="400.0" translateY="30.0">
-                                        <font>
-                                            <Font size="16.0" />
-                                        </font>
-                                    </Text>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                     <TextArea fx:id="quantity" prefHeight="22.0" prefWidth="63.0" translateX="550.0" translateY="50.0">
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </HBox.margin>
+                                    </TextArea>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="320.0" translateY="50.0">
+                                              <font>
+                                                  <Font size="16.0" />
+                                              </font>
+                                          </Text>
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                           </children>
