@@ -35,7 +35,7 @@
                                 <Insets />
                             </HBox.margin>
                         </ImageView>
-                        
+
                         <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="115.0"
                                 style="-fx-background-color: #ffffff;" text="Acceuil" onAction="#displayAccueil"/>
                         <Button mnemonicParsing="false" styleClass="menue" prefHeight="79.0" prefWidth="139.0"
@@ -122,7 +122,7 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Donner" textFill="BLACK" translateX="180.0">
+                                <Button fx:id="donner" mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Donner" textFill="BLACK" translateX="180.0">
                                     <HBox.margin>
                                         <Insets top="5.0" />
                                     </HBox.margin>

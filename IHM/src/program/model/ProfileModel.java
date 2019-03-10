@@ -74,4 +74,36 @@ public class ProfileModel {
     public String getNumeroMobile() {
         return numeroMobile;
     }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setNumeroMobile(String numeroMobile) {
+        this.numeroMobile = numeroMobile;
+    }
 }

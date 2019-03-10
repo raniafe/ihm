@@ -1,6 +1,7 @@
 package program.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,15 +16,20 @@ public class ProduitStockController extends Controller {
 
     private ProduitModel produit;
 
-  @FXML
-  ImageView image ;
+    @FXML
+    BorderPane rootPane ;
+
+    @FXML
+    ImageView image ;
 
     @FXML
     private Button buttonManger;
     @FXML
     private Button buttonVendre;
+
+
     @FXML
-    private BorderPane rootPane;
+    private Button donner ;
 
     public ProduitStockController(){
 
@@ -59,6 +65,18 @@ public class ProduitStockController extends Controller {
 
 
 
+
+        donner.setOnAction(event -> {
+            modelListOfProduit.addBoutique(produit);
+            modelListOfProduit.addVentes(produit);
+            modelListOfProduit.deleteStock(produit);
+            try {
+                redirection(rootPane, View.MesVentes,new VentesController());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        });
     }
 
 

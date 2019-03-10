@@ -7,10 +7,11 @@ import java.util.ArrayList;
 
 public class ModelListOfProfile {
 
-    private ObservableList<ProfileModel> listOfProfiles;
+    private  ArrayList<ProfileModel>listOfProfiles;
 
     public ModelListOfProfile() {
-        listOfProfiles = FXCollections.observableList(new ArrayList<>());
+        //listOfProfiles = FXCollections.observableList(new ArrayList<>());
+        listOfProfiles= new ArrayList<>() ;
         listOfProfiles.add(new ProfileModel("Durand", "Jeanne", "rue des marronniers", "4400", "Nantes", "jeanne.durand@orange.fr", "jannette", "0636456767"));
     }
 
@@ -18,7 +19,7 @@ public class ModelListOfProfile {
         listOfProfiles.add(profile);
     }
 
-    public ObservableList<ProfileModel> getListOfProfiles() {
+    public ArrayList<ProfileModel> getListOfProfiles() {
         return listOfProfiles;
     }
 

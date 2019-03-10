@@ -9,6 +9,8 @@ import program.model.ModelListOfProduit;
 import program.model.ModelListOfProfile;
 import program.model.ProfileModel;
 
+import java.util.Calendar;
+
 public class CompteController extends Controller {
 
     @FXML
@@ -39,10 +41,17 @@ public class CompteController extends Controller {
     }
     */
 
-    public void initialize(ModelListOfProfile modelListOfProfile, ModelListOfProduit modelListOfProduit) {
+    public void initialize() {
         //super.initialize(modelListOfProfile,modelListOfProduit);
-        this.profile = modelListOfProfile.getListOfProfiles().get(0);
-        enregistrer.setOnAction(event -> ChangeMdp());
+        this.profile = Controller.getModelListOfProfile().getListOfProfiles().get(0);
+        setInfo();
+        enregistrer.setOnAction(event -> {ChangeMdp() ;
+            profile.setName(this.nom.getText());
+            profile.setFirstName(prenom.getText());
+            displayMonCompte();
+        });
+
+
     }
 
     public void setInfo() {
@@ -61,12 +70,14 @@ public class CompteController extends Controller {
 
         if (!(ancienMdpSaisi.equals(profile.getAncienMdp()))) {
             System.out.println("inside");
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            /*Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Saisie non valide");
             errorAlert.setContentText("Vous devez saisir votre ancien mdp");
-            errorAlert.showAndWait();
+            errorAlert.showAndWait();*/
         } else {
-            profile.getMdp().equals(this.nouveauMdp.getText());
+            profile.setMdp(this.nouveauMdp.getText());
+
         }
     }
+
 }

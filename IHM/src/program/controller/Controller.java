@@ -26,7 +26,7 @@ public   class Controller {
     private BorderPane rootPane;
 
     protected static ModelListOfProduit modelListOfProduit ;
-    ModelListOfProfile modelListOfProfile ;
+    protected static ModelListOfProfile modelListOfProfile ;
 
     public Controller(){
 
@@ -53,31 +53,14 @@ public   class Controller {
 
     public void displayBoutique()  throws Exception{
 
-        FXMLLoader loader = new FXMLLoader();
-
-        ViewBoutique view = new ViewBoutique();
-
-        //create a controller
-        BoutiqueController controller = new BoutiqueController();
-
-        //attach controller
-        loader.setController(controller);
-
-        //attach XML file
-        Parent root = loader.load(getClass().getResourceAsStream(View.BOUTIQUE));
+        try {
+            redirection(rootPane, View.BOUTIQUE,new BoutiqueController());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
-        //initialize the controller
-        controller.initialize( );
 
-        view.init( modelListOfProduit, controller );
-
-        //create the view
-        Stage primaryStage=(Stage) rootPane.getScene().getWindow();
-        primaryStage.setScene(new Scene(root, 770, 475));
-
-        //show the view
-        primaryStage.show();
     }
 
 
@@ -123,7 +106,7 @@ public   class Controller {
         Stage stage=(Stage) element.getScene().getWindow();
 //        controller.initialize();
         stage.setTitle("Gaspi-Miam");
-        stage.setScene(new Scene(root, 770, 475));
+        stage.setScene(new Scene(root, 900, 700));
         stage.show();
     }
     public void redirection(Parent element, String fxmlFile, ProduitModel produit,String controller) throws IOException {
@@ -132,7 +115,7 @@ public   class Controller {
         Stage stage = (Stage) element.getScene().getWindow();
         Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
         root.getStylesheets().add("/resources/Accueil.css");
-        stage.setScene(new Scene(root, 770, 475));
+        stage.setScene(new Scene(root, 900, 700));
         switch (controller){
             case "produitR": ((ProduitReservationController) loader.getController()).setProduit(produit);break;
             case "produitS" :  ((ProduitStockController) loader.getController()).setProduit(produit);break;
@@ -189,5 +172,7 @@ public   class Controller {
                 });
     }
 
-
+    public static ModelListOfProfile getModelListOfProfile() {
+        return modelListOfProfile;
+    }
 }

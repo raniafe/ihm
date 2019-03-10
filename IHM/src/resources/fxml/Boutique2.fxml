@@ -17,13 +17,24 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.image.Image?>
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.geometry.Rectangle2D?>
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.BoutiqueController">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_CENTER">
          <children>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
                <children>
-                  <ImageView fx:id="imageLogo" fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true" />
+                  <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo11.jpg" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
                   <Button fx:id="acceuil" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
                   <Button fx:id="boutique" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
                   <Button fx:id="reservations" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
@@ -34,11 +45,11 @@
                         <Menu mnemonicParsing="false">
 
                               <graphic>
-                               <!--  <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
+                                 <ImageView fitHeight="69.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" x="100.0">
                                     <image>
                                        <Image url="@../images/icon-130a.png" />
                                     </image>
-                                 </ImageView>-->
+                                 </ImageView>
                               </graphic>
 
                            <items>

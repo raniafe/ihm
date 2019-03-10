@@ -112,6 +112,10 @@ public class ModelListOfProduit {
 
     }
 
+    public void  addVentes(ProduitModel produit){
+        listOfProduitsVentes.add(produit) ;
+    }
+
     public ObservableList<ProduitModel> getListOfProduitsStock() {
         return listOfProduitsStock;
     }
