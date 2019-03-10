@@ -13,6 +13,8 @@ public abstract class View {
     public static final String ProduitStock = "../../resources/fxml/produit_stock.fxml";
     public static final String ProduitFormulaire = "../../resources/fxml/FormulaireAjoutProduit.fxml";
     public static final String ProduitVenteFormulaire = "../../resources/fxml/FormulaireVente.fxml";
+    public static final String Alertes = "../../resources/fxml/alert.fxml";
+
 
 
 

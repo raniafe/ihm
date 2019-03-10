@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -26,8 +27,8 @@ public class ProduitStockController extends Controller {
     private Button buttonManger;
     @FXML
     private Button buttonVendre;
-
-
+    @FXML
+    private TextArea quantity ;
     @FXML
     private Button donner ;
 
@@ -42,6 +43,7 @@ public class ProduitStockController extends Controller {
     public void setProduit(ProduitModel prod){
         this.produit=prod;
          image.setImage(new Image(produit.getImage()));
+         quantity.setText(Integer.toString(produit.getQuantite()));
         // name.setTextContent("Salut");
     }
 
@@ -49,8 +51,13 @@ public class ProduitStockController extends Controller {
         //quantity.setItems(modelListOfProduit.getQuantList());
         //name.setValue("Salut");
         buttonManger.setOnMouseClicked(event -> {
+            if((Integer.parseInt(quantity.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantity.getText())) == 0 ) )
             modelListOfProduit.deleteStock(produit);
+            else
+                produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantity.getText()));
+
             displayMonStock();
+
 
         });
 
@@ -67,14 +74,24 @@ public class ProduitStockController extends Controller {
 
 
         donner.setOnAction(event -> {
-            modelListOfProduit.addBoutique(produit);
-            modelListOfProduit.addVentes(produit);
-            modelListOfProduit.deleteStock(produit);
-            try {
-                redirection(rootPane, View.MesVentes,new VentesController());
-            } catch (IOException e) {
-                e.printStackTrace();
+            if((Integer.parseInt(quantity.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantity.getText())) == 0 ) )
+            {
+                modelListOfProduit.addBoutique(produit);
+                modelListOfProduit.addVentes(produit);
+                modelListOfProduit.deleteStock(produit);
+                try {
+                    redirection(rootPane, View.MesVentes,new VentesController());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
+        else
+            {produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantity.getText()));
+            displayMonStock(); 
+            }
+
+
+
 
         });
     }

@@ -104,7 +104,7 @@ public   class Controller {
         root.getStylesheets().add("/resources/Accueil.css");
         loader.setController(controller);
         Stage stage=(Stage) element.getScene().getWindow();
-//        controller.initialize();
+//      controller.initialize();
         stage.setTitle("Gaspi-Miam");
         stage.setScene(new Scene(root, 900, 700));
         stage.show();
@@ -174,5 +174,27 @@ public   class Controller {
 
     public static ModelListOfProfile getModelListOfProfile() {
         return modelListOfProfile;
+    }
+
+
+    public Boolean confirmation(){
+
+        FXMLLoader loader = new FXMLLoader();
+        try {
+            AlertController controler=new AlertController();
+            loader.setController(controler);
+            Stage stage=new Stage();
+            Parent rootNode = loader.load(getClass().getResourceAsStream(View.Alertes));
+            rootNode.getStylesheets().add("/resources/styles/styles.css");
+
+            stage.setScene(new Scene(rootNode));
+            stage.setTitle("confirmation");
+            stage.setMinWidth(250);
+            return controler.init(stage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

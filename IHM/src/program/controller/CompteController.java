@@ -48,7 +48,7 @@ public class CompteController extends Controller {
         enregistrer.setOnAction(event -> {ChangeMdp() ;
             profile.setName(this.nom.getText());
             profile.setFirstName(prenom.getText());
-            displayMonCompte();
+
         });
 
 
@@ -70,6 +70,9 @@ public class CompteController extends Controller {
 
         if (!(ancienMdpSaisi.equals(profile.getAncienMdp()))) {
             System.out.println("inside");
+            boolean test = confirmation() ;
+            if(!test){displayAccueil(); }
+
             /*Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Saisie non valide");
             errorAlert.setContentText("Vous devez saisir votre ancien mdp");

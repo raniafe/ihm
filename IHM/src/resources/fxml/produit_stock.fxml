@@ -16,6 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.TextArea?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0"
             prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
             fx:id="rootPane" fx:controller="program.controller.ProduitStockController">
@@ -117,7 +118,7 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Text>
-                                <ChoiceBox fx:id="quantity" opacity="0.77" prefHeight="0.0" prefWidth="32.0" style="-fx-background-color: #C7CF00;" translateX="125.0" translateY="-10.0" />
+                                <TextArea fx:id="quantity" opacity="0.77" prefHeight="0.0" prefWidth="32.0" style="-fx-background-color: #C7CF00;" translateX="125.0" translateY="-10.0" />
                             </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">

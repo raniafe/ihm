@@ -29,6 +29,8 @@ public class ProduitController extends Controller{
     @FXML
     private Label name;
 
+
+
     @FXML
     private Label nam ;
 
@@ -48,7 +50,7 @@ public class ProduitController extends Controller{
         name.setText(product.getName());
         image.setImage(new Image(product.getImage()));
 
-      //  nam.setText("Rania");
+
     }
 
     public Parent getBox() {
