@@ -1,11 +1,14 @@
 package program.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import program.View;
 import program.model.ProduitModel;
+
+import java.io.IOException;
 
 
 public class ProduitStockController extends Controller {
@@ -14,10 +17,13 @@ public class ProduitStockController extends Controller {
 
   @FXML
   ImageView image ;
-  @FXML
-  private ChoiceBox quantity;
+
     @FXML
     private Button buttonManger;
+    @FXML
+    private Button buttonVendre;
+    @FXML
+    private BorderPane rootPane;
 
     public ProduitStockController(){
 
@@ -34,12 +40,25 @@ public class ProduitStockController extends Controller {
     }
 
     public void initialize() {
-        quantity.setItems(modelListOfProduit.getQuantList());
+        //quantity.setItems(modelListOfProduit.getQuantList());
         //name.setValue("Salut");
         buttonManger.setOnMouseClicked(event -> {
             modelListOfProduit.deleteStock(produit);
             displayMonStock();
+
         });
+
+        buttonVendre.setOnMouseClicked(event ->
+        {
+            try {
+                redirection(rootPane, View.ProduitVenteFormulaire, this.produit, "produitV");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+
     }
 
 

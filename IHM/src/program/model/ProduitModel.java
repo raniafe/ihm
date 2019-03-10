@@ -17,6 +17,7 @@ public class ProduitModel {
     private String categorie;
     private Date date ;
     private String image ;
+    private int prix;
 
     public ProduitModel(String name, int quantite, String categorie, Date date, String image) {
         this.name = name;
@@ -24,6 +25,8 @@ public class ProduitModel {
         this.categorie = categorie;
         this.date = date;
         this.image = image;
+        this.prix = 0;
+
     }
 
     public String getName() {
@@ -41,6 +44,11 @@ public class ProduitModel {
     public String getCategorie() {
         return categorie;
     }
+
+    public int getPrix() {
+        return prix;
+    }
+
 
 
     public void setName(String name) {
@@ -65,4 +73,9 @@ public class ProduitModel {
     public Date getDate() {
         return date;
     }
+
+    public void setPriw(int prix) {
+        this.prix = prix;
+    }
+
 }

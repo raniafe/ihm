@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import program.model.ProduitModel;
@@ -15,7 +16,7 @@ public class ProduitReservationController extends Controller {
     @FXML
     private ImageView image ;
     @FXML
-    private ChoiceBox quantity;
+    private TextArea quantity;
     @FXML
     private Button reserver ;
 
@@ -28,6 +29,8 @@ public class ProduitReservationController extends Controller {
     public void setProduit(ProduitModel prod){
         this.produit=prod;
         image.setImage(new Image(produit.getImage()));
+        quantity.setText(Integer.toString(produit.getQuantite()));
+
     }
 
     public void initialize() {

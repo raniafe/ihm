@@ -180,4 +180,11 @@ public class ModelListOfProduit {
     }
 
 
+    public void addVente(ProduitModel produit) {
+
+        listOfProduitsVentes.add(produit);
+
+    }
+
+
 }

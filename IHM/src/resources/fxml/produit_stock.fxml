@@ -16,7 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane" fx:controller="program.controller.ProduitStockController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0"
+            prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane" fx:controller="program.controller.ProduitStockController">
     <top>
         <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_CENTER">
             <children>
@@ -132,7 +134,9 @@
                                         <Insets top="10.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" styleClass="Button" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Vendre" textFill="BLACK" translateX="220.0">
+                                <Button fx:id="buttonVendre" mnemonicParsing="false" styleClass="Button"
+                                        prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #ffffff;"
+                                        text="Vendre" textFill="BLACK" translateX="220.0">
                                     <HBox.margin>
                                         <Insets top="5.0" />
                                     </HBox.margin>
