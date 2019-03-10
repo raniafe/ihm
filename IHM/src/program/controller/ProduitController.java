@@ -26,8 +26,6 @@ public class ProduitController extends Controller{
     @FXML
     private HBox HBox;
 
-
-
     @FXML
     private Label name;
 
@@ -43,11 +41,6 @@ public class ProduitController extends Controller{
     }
 
     public void initialize() {
-
-
-
-
-
 
     }
 

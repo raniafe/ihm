@@ -90,6 +90,10 @@ public class ModelListOfProduit {
         listOfProduitsStock.add(produit);
     }
 
+    public void deleteStock(ProduitModel produit) {
+        listOfProduitsStock.remove(produit);
+    }
+
     public void addBoutique(ProduitModel person) {
         listOfProduitsBoutique.add( person );
     }
