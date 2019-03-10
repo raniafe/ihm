@@ -33,6 +33,7 @@ public   class Controller {
     }
 
     public Controller(ModelListOfProduit modelListOfProduit, ModelListOfProfile modelListOfProfile) {
+
         this.modelListOfProduit = modelListOfProduit;
         this.modelListOfProfile = modelListOfProfile;
     }

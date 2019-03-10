@@ -41,7 +41,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 700, 600));
 
         //show the view
-        primaryStage.show(); */
+        primaryStage.show();vjvh */
 
 
         ModelListOfProduit modelListOfProduit = new ModelListOfProduit();
