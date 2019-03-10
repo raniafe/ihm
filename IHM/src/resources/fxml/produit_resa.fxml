@@ -100,8 +100,6 @@
                                             <Font size="17.0" />
                                         </font>
                                     </Text>
-                                    <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="450.0" translateY="40.0" />
-                                    <ChoiceBox fx:id="quantity" style="-fx-background-color: #C7CF0033" prefHeight="33.0" prefWidth="51.0" translateX="600.0" translateY="53.0" />
                                     <Button fx:id="reserver" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="450.0" translateY="40.0" />
                                     <ChoiceBox fx:id="quantity" prefHeight="33.0" prefWidth="51.0" translateX="600.0" translateY="53.0" />
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="400.0" translateY="30.0">

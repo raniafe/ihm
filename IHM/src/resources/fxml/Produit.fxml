@@ -9,7 +9,7 @@
     <ImageView fx:id="image" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" translateX="260.0" />
    <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" translateX="-200.0" translateY="50.0">
       <children>
-          <Label fx:id="name" prefHeight="36.0" prefWidth="244.0" textFill="#5e0847" translateX="-50.0" wrapText="true">
+          <Label fx:id="name" prefHeight="36.0" prefWidth="244.0" textFill="#5e0847" translateX="-5.0" wrapText="true">
               <font>
                   <Font size="25.0" />
               </font>

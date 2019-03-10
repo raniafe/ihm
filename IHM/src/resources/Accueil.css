@@ -36,6 +36,19 @@
     -fx-text-fill:#D473D4;
 
 }
+.calendar-grid {
+    -fx-hgap: 4 ;
+    -fx-vgap: 4 ;
+    -fx-padding: 4 ;
+}
+
+.calendar-header {
+    -fx-alignment: center ;
+    -fx-font-size: 18pt ;
+    -fx-font-weight: bold ;
+}
+
+
 
 .list-cell:odd {
     -fx-cell-hover-color: #D473D4;
