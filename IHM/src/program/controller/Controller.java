@@ -27,13 +27,20 @@ public   class Controller {
 
     protected static ModelListOfProduit modelListOfProduit ;
     ModelListOfProfile modelListOfProfile ;
+
     public Controller(){
-        modelListOfProduit = new ModelListOfProduit() ;
-        modelListOfProfile = new ModelListOfProfile() ;
+
     }
-   // public void initialize(ModelListOfProduit modelListOfProduit) {}
+
+    public Controller(ModelListOfProduit modelListOfProduit, ModelListOfProfile modelListOfProfile) {
+        this.modelListOfProduit = modelListOfProduit;
+        this.modelListOfProfile = modelListOfProfile;
+    }
+
+    // public void initialize(ModelListOfProduit modelListOfProduit) {}
    // public void initialize(ModelListOfProfile modelListOfProfile) {}
     public  void initialize() {}
+
 
     public void displayAccueil(){
         try {

@@ -34,8 +34,34 @@ public class ProduitModel {
         return image ;
     }
 
-    public String getCategorie() {return categorie ; }
+    public int getQuantite() {
+        return quantite;
+    }
 
+    public String getCategorie() {
+        return categorie;
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     public Date getDate() {
         return date;
     }

@@ -5,7 +5,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import program.model.ProduitModel;
 
-import javax.xml.soap.Text;
 
 public class ProduitStockController extends Controller {
 

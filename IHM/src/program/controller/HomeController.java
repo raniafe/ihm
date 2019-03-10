@@ -32,6 +32,7 @@ public  class HomeController extends Controller {
 
 
     public void initialize(){
+
         framb.setOnMouseClicked(event -> displayProduit("framb"));
         yaour.setOnMouseClicked(event -> displayProduit("yaour"));
         tomat.setOnMouseClicked(event -> displayProduit("tomat"));

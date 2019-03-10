@@ -86,8 +86,8 @@ public class ModelListOfProduit {
         }
     }
 
-    public void addStock(ProduitModel person) {
-        listOfProduitsStock.add( person );
+    public void addStock(ProduitModel produit) {
+        listOfProduitsStock.add(produit);
     }
 
     public void addBoutique(ProduitModel person) {
@@ -154,7 +154,7 @@ public class ModelListOfProduit {
 
 
             try {
-                d = dateFormatter.parse(produitModel.getDate().toString());
+                //d = dateFormatter.parse(produitModel.getDate().toString());
                 d1 = dateFormatter.parse(todayDate.toString());
                 if(d1.getTime()<d.getTime()){// not expired
                     listOfProduitAlertes.add(produitModel) ;

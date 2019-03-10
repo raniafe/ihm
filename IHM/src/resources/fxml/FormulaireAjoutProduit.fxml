@@ -17,7 +17,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/10.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.ProduitFormulaireController">
    <top>
       <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -34,11 +36,17 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0" style="-fx-background-color: #ffffff;" text="Mes Ventes" />
+                   <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0"
+                           style="-fx-background-color: #ffffff;" text="Acceuil" onAction="#displayAccueil"/>
+                   <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0"
+                           style="-fx-background-color: #ffffff;" text="Boutique" onAction="#displayBoutique"/>
+                   <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0"
+                           style="-fx-background-color: #ffffff;" text="Mes réservations"
+                           onAction="#displayMesReservation"/>
+                   <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0"
+                           style="-fx-background-color: #ffffff;" text="Mon stock" onAction="#displayMonStock"/>
+                   <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="122.0"
+                           style="-fx-background-color: #ffffff;" text="Mes Ventes" onAction="#displayMesVentes"/>
                   <MenuBar prefHeight="79.0" prefWidth="96.0" style="-fx-background-color: #FFFFFF;">
                      <menus>
                         <Menu mnemonicParsing="false">
@@ -84,17 +92,18 @@
                   <HBox prefHeight="97.0" prefWidth="755.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choisis une date:" />
-                        <DatePicker id="calendar">
+                         <DatePicker id="calendar" fx:id="data">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </DatePicker>
+
                         <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisis une catégorie:">
                            <HBox.margin>
                               <Insets left="30.0" />
                            </HBox.margin>
                         </Text>
-                        <ComboBox id="category" prefWidth="150.0" promptText="sélectionner">
+                         <ComboBox id="category" prefWidth="150.0" promptText="sélectionner" fx:id="categorie">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -110,7 +119,7 @@
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin></Text>
-                        <TextField id="nameTag" prefHeight="31.0" prefWidth="216.0">
+                         <TextField id="nameTag" prefHeight="31.0" prefWidth="216.0" fx:id="name">
                            <HBox.margin>
                               <Insets left="77.0" />
                            </HBox.margin>
@@ -120,14 +129,15 @@
                               <Insets left="35.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField id="quantityTag" layoutX="132.0" layoutY="10.0" prefHeight="31.0" prefWidth="230.0">
+                         <TextField id="quantityTag" layoutX="132.0" layoutY="10.0" prefHeight="31.0" prefWidth="230.0"
+                                    fx:id="quantite2">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <Button id="addButton" mnemonicParsing="false" text="Ajouter ">
+                   <Button id="addButton" mnemonicParsing="false" text="Ajouter " fx:id="Buttonajouter">
                      <VBox.margin>
                         <Insets top="80.0" />
                      </VBox.margin>

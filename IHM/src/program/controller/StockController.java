@@ -25,6 +25,10 @@ public class StockController extends Controller {
     private Button alertes;
 
     @FXML
+    private Button fapButton;
+
+
+    @FXML
     private ComboBox comboBox ;
 
     @FXML
@@ -36,14 +40,22 @@ public class StockController extends Controller {
     @FXML
     private ListView produitsListView;
 
+    public StockController() {
+
+    }
+
 
     public void initialize() {
+
         comboBox.setItems(modelListOfProduit.getCategorieList());
         loadList(Controller.getModelListOfProduit().getListOfProduitsStock(), produitsListView);
         listenTo(produitsListView, View.ProduitStock,"produitS");
         //fapButton.setOnAction(event -> displayFAP());
         //Fonction à déclarer avec les autres Display() ;je ne l'ai pas fait car qqn travaillait dessus
         listenToComBox(comboBox);
+
+        fapButton.setOnMouseClicked(event -> displayProduitFormulaire());
+
         listenToDate(Date);
         alertes.setOnAction(event -> {
             loadList(modelListOfProduit.getProduitsAlertes(),produitsListView) ;
@@ -65,6 +77,13 @@ public class StockController extends Controller {
                 });
     }
 
+    public void displayProduitFormulaire() {
+        try {
+            redirection(rootPane, View.ProduitFormulaire, new ProduitFormulaireController());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void listenToDate(DatePicker date)
     {
 
