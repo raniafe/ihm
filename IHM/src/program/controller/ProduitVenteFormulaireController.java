@@ -39,6 +39,7 @@ public class ProduitVenteFormulaireController extends Controller {
             modelListOfProduit.addVente(produit);
             try {
                 produit.setQuantite(produit.getQuantite() - Integer.parseInt(quantite.getText()));
+                produit.setPriw(Integer.parseInt(prix.getText()));
                 displayMesVentes();
             } catch (Exception e) {
                 e.printStackTrace();

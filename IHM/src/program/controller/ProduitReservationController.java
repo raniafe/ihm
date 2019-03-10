@@ -19,6 +19,8 @@ public class ProduitReservationController extends Controller {
     private TextArea quantity;
     @FXML
     private Button reserver ;
+    @FXML
+    private TextArea prix;
 
     public ProduitReservationController(){
 
@@ -30,7 +32,7 @@ public class ProduitReservationController extends Controller {
         this.produit=prod;
         image.setImage(new Image(produit.getImage()));
         quantity.setText(Integer.toString(produit.getQuantite()));
-
+        prix.setText(Integer.toString(produit.getPrix()));
     }
 
     public void initialize() {
