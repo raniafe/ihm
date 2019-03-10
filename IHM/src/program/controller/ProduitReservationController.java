@@ -25,9 +25,10 @@ public class ProduitReservationController extends Controller {
     public ProduitReservationController(){
 
     }
-    public ProduitReservationController(ProduitModel produit){
-        this.produit=produit;
+    public void initialize() {
+        reserver.setOnMouseClicked(event -> displayMesReservation());
     }
+
     public void setProduit(ProduitModel prod){
         this.produit=prod;
         image.setImage(new Image(produit.getImage()));
@@ -35,18 +36,16 @@ public class ProduitReservationController extends Controller {
         prix.setText(Integer.toString(produit.getPrix()));
     }
 
-    public void initialize() {
-
-        reserver.setOnAction(event -> {
-            modelListOfProduit.addReseservation(produit);
-            try {
-                displayMesReservation();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-       // quantity.setItems(modelListOfProduit.getQuantList());
+    public void reserverProduit() {
+        modelListOfProduit.addReseservation(produit);
+        try {
+            displayMesReservation();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
 
 
 }

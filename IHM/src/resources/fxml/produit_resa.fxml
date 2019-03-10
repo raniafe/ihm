@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.ProduitReservationController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.ProduitReservationController">
     <top>
         <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_CENTER">
             <children>
@@ -63,14 +63,17 @@
     <center>
         <VBox prefHeight="411.0" prefWidth="775.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="775.0" translateX="-100.0">
+                <HBox alignment="TOP_CENTER" maxHeight="-Infinity" prefHeight="53.0" prefWidth="775.0" translateX="-100.0">
                     <children>
                         <Text fill="#7b1083" strokeType="OUTSIDE" strokeWidth="0.0" text="Produit" textAlignment="CENTER" translateX="150.0" translateY="15.0">
                             <font>
                                 <Font name="Trebuchet MS Bold" size="33.0" />
                             </font>
                         </Text>
-                        <TextArea fx:id="prix" prefHeight="16.0" prefWidth="93.0" translateX="144.0" translateY="70.0"/>
+                        <TextArea fx:id="prix" maxHeight="20.0" prefHeight="10.0" prefWidth="129.0" translateX="144.0" translateY="70.0">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></TextArea>
                     </children>
                 </HBox>
                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -90,7 +93,7 @@
                                           <Insets left="100.0" />
                                       </HBox.margin>
                                   </Label>
-                        <Label fx:id="descri1" alignment="TOP_LEFT" prefHeight="75.0" prefWidth="401.0" text="Prix:" translateX="-330.0" translateY="50.0" wrapText="true">
+                        <Label fx:id="descri1" alignment="TOP_LEFT" prefHeight="75.0" prefWidth="401.0" text="Prix:" translateX="-380.0" translateY="50.0" wrapText="true">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -101,26 +104,27 @@
                           <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                                    <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaites-tu réserver :" textAlignment="CENTER" translateX="100.0" translateY="30.0" wrappingWidth="774.803405046463">
-                                        <font>
-                                            <Font size="17.0" />
-                                        </font>
-                                    </Text>
-                                    <Button fx:id="reserver" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="450.0" translateY="40.0" />
-                              <HBox prefHeight="100.0" prefWidth="200.0">
+                               <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaites-tu réserver :" textAlignment="CENTER" translateY="30.0" wrappingWidth="774.803405046463">
+                                   <font>
+                                       <Font size="17.0" />
+                                   </font>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                               </Text>
+
+                              <VBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                     <TextArea fx:id="quantity" prefHeight="22.0" prefWidth="63.0" translateX="550.0" translateY="50.0">
-                                       <HBox.margin>
-                                          <Insets bottom="20.0" />
-                                       </HBox.margin>
-                                    </TextArea>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="320.0" translateY="50.0">
-                                              <font>
-                                                  <Font size="16.0" />
-                                              </font>
-                                          </Text>
+                                     <Button fx:id="reserver" mnemonicParsing="false" onAction="#reserverProduit" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="300.0" translateY="40.0" />
+                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="300.0" translateY="50.0">
+                                         <font>
+                                             <Font size="16.0" />
+                                         </font>
+                                     </Text>
+                                     <TextArea fx:id="quantity" maxWidth="150.0" prefHeight="29.0" prefWidth="50.0" translateX="300.0" translateY="50.0" />
+
                                  </children>
-                              </HBox>
+                              </VBox>
                            </children>
                         </VBox>
                           </children>

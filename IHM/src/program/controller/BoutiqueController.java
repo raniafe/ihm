@@ -1,11 +1,13 @@
 package program.controller;
 
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
@@ -47,6 +49,9 @@ public class BoutiqueController extends Controller {
     @FXML
     private ImageView imageLogo;
 
+    @FXML
+    private ComboBox comboBox ;
+
 
     private ObservableList observableList = FXCollections.observableArrayList();
 
@@ -58,6 +63,9 @@ public class BoutiqueController extends Controller {
 
     public void initialize(){
 
+        comboBox.setItems(modelListOfProduit.getCategorieList());
+        listenToComBox(comboBox);
+
         loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
         listenTo(produitsListView, View.Produit,"produitR");
 
@@ -68,6 +76,15 @@ public class BoutiqueController extends Controller {
         ventes.setOnAction(event -> displayMesVentes());
 
 
+    }
+
+    public void listenToComBox (ComboBox listView) {
+        listView.getSelectionModel().selectedItemProperty().addListener(
+                (ChangeListener<String>) (observable, oldValue, newValue) -> {
+                    loadList(modelListOfProduit.filtrerListParCategorie(newValue,"stock"), produitsListView);
+                    listenTo( produitsListView,View.ProduitStock ,"produitS");
+
+                });
     }
 
 

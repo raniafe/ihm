@@ -188,7 +188,7 @@ public   class Controller {
             rootNode.getStylesheets().add("/resources/styles/styles.css");
 
             stage.setScene(new Scene(rootNode));
-            stage.setTitle("confirmation");
+            stage.setTitle("Alerte");
             stage.setMinWidth(250);
             return controler.init(stage);
         } catch (IOException e) {

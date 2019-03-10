@@ -87,7 +87,7 @@ public class ProduitStockController extends Controller {
             }
         else
             {produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantity.getText()));
-            displayMonStock(); 
+            displayMonStock();
             }
 
 

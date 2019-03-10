@@ -48,6 +48,7 @@ public class CompteController extends Controller {
         enregistrer.setOnAction(event -> {ChangeMdp() ;
             profile.setName(this.nom.getText());
             profile.setFirstName(prenom.getText());
+            displayAccueil();
 
         });
 
@@ -68,16 +69,13 @@ public class CompteController extends Controller {
 
         String ancienMdpSaisi = this.ancienMdp.getText();
 
-        if (!(ancienMdpSaisi.equals(profile.getAncienMdp()))) {
-            System.out.println("inside");
+        if (!(ancienMdpSaisi.equals(profile.getMdp()))) {
+            System.out.println(profile.getMdp());
             boolean test = confirmation() ;
+
             if(!test){displayAccueil(); }
 
-            /*Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Saisie non valide");
-            errorAlert.setContentText("Vous devez saisir votre ancien mdp");
-            errorAlert.showAndWait();*/
-        } else {
+        } else if(ancienMdpSaisi.equals(profile.getAncienMdp())){
             profile.setMdp(this.nouveauMdp.getText());
 
         }
