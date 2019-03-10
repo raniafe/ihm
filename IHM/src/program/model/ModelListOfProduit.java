@@ -27,17 +27,21 @@ public class ModelListOfProduit {
         listOfProduitsVentes = FXCollections.observableList(new ArrayList<>());
         listOfProduitsRéservation = FXCollections.observableList(new ArrayList<>());
 
-        listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", new Date(13/03/2019), "/resources/images/framboise1.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16 / 03 / 2019), "/resources/images/oranges.jpg"));
+        SimpleDateFormat conversion = new SimpleDateFormat("yyyy-mm-dd");
+
+        try {
+            listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", conversion.parse("01-03-2018"), "/resources/images/framboise1.jpg"));
+
+        listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16/03/2019), "/resources/images/oranges.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("Eggs", 2, "Autres", new Date(17 / 03 / 2019), "/resources/images/eggs.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("yaourt", 8, "Autres", new Date(12 / 03 / 2019), "/resources/images/yaourt1.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("tomat", 6, "Legume", new Date(13 / 03 / 2019), "/resources/images/tomatoes.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("poulet", 1, "Autres", new Date(15 / 03 / 2019), "/resources/images/chicken.jpg"));
 
 
-        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit", new Date(13 / 03 / 2018), "/resources/images/passion.jpg"));
-        listOfProduitsStock.add(new ProduitModel("salade", 2, "Legume", new Date(11 / 03 / 2019), "/resources/images/salad.jpg"));
-        listOfProduitsStock.add(new ProduitModel("banane", 12, "Fruit", new Date(17 / 03 / 2019), "/resources/images/banana.jpg"));
+        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit",conversion.parse("2018-03-29"), "/resources/images/passion.jpg"));
+        listOfProduitsStock.add(new ProduitModel("salade", 2, "Legume",conversion.parse("2018-03-11"), "/resources/images/salad.jpg"));
+        listOfProduitsStock.add(new ProduitModel("banane", 12, "Fruit", conversion.parse("2018-03-13"), "/resources/images/banana.jpg"));
 
         listOfProduitsVentes.add(new ProduitModel("cerise", 9, "Fruit", new Date(13 / 03 / 2019), "/resources/images/cerise.jpg"));
         listOfProduitsVentes.add(new ProduitModel("abricot", 2, "Fruit", new Date(17 / 03 / 2019), "/resources/images/abricot.jpg"));
@@ -49,7 +53,9 @@ public class ModelListOfProduit {
         listOfProduitsRéservation.add(new ProduitModel("pêche", 12, "Fruit", new Date(13 / 03 / 2019), "/resources/images/peach.jpg"));
 
 
-    }
+    }catch (ParseException e) {
+            e.printStackTrace();
+        }}
 
     public ProduitModel getByName(String produitName){
         switch (produitName){
@@ -156,29 +162,14 @@ public class ModelListOfProduit {
 
             Date date = new Date();
             LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            int year = localDate.getYear();
-            int month = localDate.getMonthValue();
             int day = localDate.getDayOfMonth();
 
             LocalDate localDate2 = produitModel.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            int year1  = localDate2.getYear();
-            int month1 = localDate2.getMonthValue();
             int day1   = localDate2.getDayOfMonth();
 
-            System.out.println(produitModel.getDate());
-            System.out.println(year1);
-            System.out.println(month1);
 
 
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(produitModel.getDate());
-            int dayProduit = calendar.get(Calendar.DAY_OF_MONTH);
-            int monthProduit = calendar.get(Calendar.MONTH) ;
-            int yearProduit = calendar.get(Calendar.YEAR);
-
-
-
-            if ((day - dayProduit <=3) && (month == monthProduit) && (year==yearProduit) )
+            if ((day1 - day <=3) && (day1 -day >=0 ) )
                 listOfProduitAlertes.add(produitModel) ;
 
 

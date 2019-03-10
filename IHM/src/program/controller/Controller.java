@@ -136,6 +136,7 @@ public   class Controller {
         switch (controller){
             case "produitR": ((ProduitReservationController) loader.getController()).setProduit(produit);break;
             case "produitS" :  ((ProduitStockController) loader.getController()).setProduit(produit);break;
+
         }
         System.out.println(produit);
         stage.show();

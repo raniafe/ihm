@@ -27,6 +27,9 @@ public class StockController extends Controller {
     @FXML
     private Button fapButton;
 
+    @FXML
+    private Button tousProd ;
+
 
     @FXML
     private ComboBox comboBox ;
@@ -55,11 +58,16 @@ public class StockController extends Controller {
         listenToComBox(comboBox);
 
         fapButton.setOnMouseClicked(event -> displayProduitFormulaire());
-
         listenToDate(Date);
+
         alertes.setOnAction(event -> {
             loadList(modelListOfProduit.getProduitsAlertes(),produitsListView) ;
             listenTo(produitsListView, View.Produit,"produitS");
+        });
+
+        tousProd.setOnAction(event -> {
+            loadList(Controller.getModelListOfProduit().getListOfProduitsStock(), produitsListView);
+            listenTo(produitsListView, View.ProduitStock,"produitS");
         });
 
     }
