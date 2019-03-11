@@ -74,6 +74,7 @@ public class CompteController extends Controller {
             boolean test = confirmation() ;
 
             if(!test){displayAccueil(); }
+            else displayMonCompte();
 
         } else if(ancienMdpSaisi.equals(profile.getAncienMdp())){
             profile.setMdp(this.nouveauMdp.getText());
