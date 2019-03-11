@@ -51,8 +51,10 @@ public class ProduitStockController extends Controller {
         //quantity.setItems(modelListOfProduit.getQuantList());
         //name.setValue("Salut");
         buttonManger.setOnMouseClicked(event -> {
-            if((Integer.parseInt(quantity.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantity.getText())) == 0 ) )
-            modelListOfProduit.deleteStock(produit);
+            if((Integer.parseInt(quantity.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantity.getText())) <= 0 ) )
+            { modelListOfProduit.deleteStock(produit);
+              produit.setQuantite(0);
+            }
             else
                 produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantity.getText()));
 
@@ -74,11 +76,12 @@ public class ProduitStockController extends Controller {
 
 
         donner.setOnAction(event -> {
-            if((Integer.parseInt(quantity.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantity.getText())) == 0 ) )
+            if((Integer.parseInt(quantity.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantity.getText())) <= 0 ) )
             {
                 modelListOfProduit.addBoutique(produit);
                 modelListOfProduit.addVentes(produit);
                 modelListOfProduit.deleteStock(produit);
+                produit.setQuantite(0);
                 try {
                     redirection(rootPane, View.MesVentes,new VentesController());
                 } catch (IOException e) {

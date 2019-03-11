@@ -37,12 +37,13 @@ public class ProduitVenteFormulaireController extends Controller {
 
     public void initialize() {
         buttonVendre.setOnMouseClicked(event -> {
-            if((Integer.parseInt(quantite.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantite.getText())) == 0 ) )
+            if((Integer.parseInt(quantite.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantite.getText())) <= 0 ) )
             {
                 modelListOfProduit.addBoutique(produit);
                 modelListOfProduit.addVentes(produit);
                 modelListOfProduit.deleteStock(produit);
                 produit.setPriw(Integer.parseInt(prix.getText()));
+                produit.setQuantite(0);
                 displayMesVentes();
 
             }
