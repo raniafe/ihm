@@ -32,7 +32,7 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#displayAccueil" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Acceuil" />
+                  <Button mnemonicParsing="false" onAction="#displayAccueil" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Accueil" />
                   <Button mnemonicParsing="false" onAction="#displayBoutique" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Boutique" />
                   <Button mnemonicParsing="false" onAction="#displayMesReservation" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mes réservations" />
                   <Button mnemonicParsing="false" onAction="#displayMonStock" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" styleClass="menue" text="Mon stock" />

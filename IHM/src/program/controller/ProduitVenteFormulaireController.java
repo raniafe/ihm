@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import program.View;
 import program.model.ProduitModel;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class ProduitVenteFormulaireController extends Controller {
@@ -36,13 +37,20 @@ public class ProduitVenteFormulaireController extends Controller {
 
     public void initialize() {
         buttonVendre.setOnMouseClicked(event -> {
-            modelListOfProduit.addVente(produit);
-            try {
-                produit.setQuantite(produit.getQuantite() - Integer.parseInt(quantite.getText()));
-                produit.setPriw(Integer.parseInt(prix.getText()));
+            if((Integer.parseInt(quantite.getText())== produit.getQuantite() ) || ((produit.getQuantite()- Integer.parseInt(quantite.getText())) == 0 ) )
+            {
+                modelListOfProduit.addBoutique(produit);
+                modelListOfProduit.addVentes(produit);
+                modelListOfProduit.deleteStock(produit);
                 displayMesVentes();
-            } catch (Exception e) {
-                e.printStackTrace();
+
+            }
+            else
+            {
+                modelListOfProduit.addBoutique(produit);
+                modelListOfProduit.addVentes(produit);
+                produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantite.getText()));
+                displayMesVentes();
             }
         });
     }

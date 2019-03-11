@@ -24,7 +24,7 @@
          <children>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
                <children>
-                  <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true">
+                  <ImageView fitHeight="80.0" fitWidth="144.0" nodeOrientation="INHERIT" preserveRatio="true" >
                      <image>
                         <Image url="@../images/logo11.jpg" />
                      </image>
@@ -35,7 +35,7 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <Button fx:id="acceuil" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Acceuil" />
+                  <Button fx:id="acceuil" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="115.0" style="-fx-background-color: #ffffff;" text="Accueil" />
                   <Button fx:id="boutique" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="139.0" style="-fx-background-color: #ffffff;" text="Boutique" />
                   <Button fx:id="reservations" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="170.0" style="-fx-background-color: #ffffff;" text="Mes réservations" />
                   <Button fx:id="stock" styleClass="menue" mnemonicParsing="false" prefHeight="79.0" prefWidth="127.0" style="-fx-background-color: #ffffff;" text="Mon stock" />

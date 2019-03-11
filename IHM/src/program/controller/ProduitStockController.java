@@ -86,8 +86,11 @@ public class ProduitStockController extends Controller {
                 }
             }
         else
-            {produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantity.getText()));
-            displayMonStock();
+            {
+                modelListOfProduit.addBoutique(produit);
+                modelListOfProduit.addVentes(produit);
+                produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantity.getText()));
+                displayMonStock();
             }
 
 
