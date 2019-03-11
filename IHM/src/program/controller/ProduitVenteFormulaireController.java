@@ -42,6 +42,7 @@ public class ProduitVenteFormulaireController extends Controller {
                 modelListOfProduit.addBoutique(produit);
                 modelListOfProduit.addVentes(produit);
                 modelListOfProduit.deleteStock(produit);
+                produit.setPriw(Integer.parseInt(prix.getText()));
                 displayMesVentes();
 
             }
@@ -50,6 +51,7 @@ public class ProduitVenteFormulaireController extends Controller {
                 modelListOfProduit.addBoutique(produit);
                 modelListOfProduit.addVentes(produit);
                 produit.setQuantite(produit.getQuantite()-Integer.parseInt(quantite.getText()));
+                produit.setPriw(Integer.parseInt(prix.getText()));
                 displayMesVentes();
             }
         });
