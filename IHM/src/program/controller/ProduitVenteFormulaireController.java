@@ -2,10 +2,10 @@ package program.controller;
 
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DataFormat;
@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import program.View;
 import program.model.ProduitModel;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.Date;
 
@@ -22,7 +23,7 @@ public class ProduitVenteFormulaireController extends Controller {
     @FXML
     private BorderPane rootPane;
     @FXML
-    private TextArea quantite;
+    private Label quantite;
     @FXML
     private TextArea prix;
     @FXML
@@ -59,8 +60,10 @@ public class ProduitVenteFormulaireController extends Controller {
     }
 
     public void setProduit(ProduitModel prod) {
+
         this.produit = prod;
         image.setImage(new Image(produit.getImage()));
+
         quantite.setText(Integer.toString(produit.getQuantite()));
         prix.setText(Integer.toString(produit.getPrix()));
     }

@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.ProduitReservationController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.controller.ProduitReservationController">
     <top>
         <VBox alignment="TOP_CENTER" prefHeight="69.0" prefWidth="775.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_CENTER">
             <children>
@@ -115,13 +115,13 @@
 
                               <VBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
+                                    <Label fx:id="quantity" prefHeight="21.0" prefWidth="267.0" text="bhim" />
                                      <Button fx:id="reserver" mnemonicParsing="false" onAction="#reserverProduit" prefHeight="31.0" prefWidth="170.0" styleClass="Button" text="Réserver" translateX="300.0" translateY="40.0" />
                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renseigne la quantité:" translateX="300.0" translateY="50.0">
                                          <font>
                                              <Font size="16.0" />
                                          </font>
                                      </Text>
-                                     <TextArea fx:id="quantity" maxWidth="150.0" prefHeight="29.0" prefWidth="50.0" translateX="300.0" translateY="50.0" />
 
                                  </children>
                               </VBox>

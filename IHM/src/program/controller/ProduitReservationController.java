@@ -1,9 +1,6 @@
 package program.controller;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import program.model.ProduitModel;
@@ -16,7 +13,7 @@ public class ProduitReservationController extends Controller {
     @FXML
     private ImageView image ;
     @FXML
-    private TextArea quantity;
+    private Label quantity;
     @FXML
     private Button reserver ;
     @FXML
