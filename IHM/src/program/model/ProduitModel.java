@@ -28,6 +28,15 @@ public class ProduitModel {
         this.prix = 0;
 
     }
+    public ProduitModel(String name, int quantite, String categorie, Date date, String image,int prix) {
+        this.name = name;
+        this.quantite = quantite;
+        this.categorie = categorie;
+        this.date = date;
+        this.image = image;
+        this.prix = prix;
+
+    }
 
     public String getName() {
         return name;

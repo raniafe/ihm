@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -52,6 +49,12 @@ public class BoutiqueController extends Controller {
     @FXML
     private ComboBox comboBox ;
 
+    @FXML
+    private CheckBox checkbox ;
+
+    @FXML
+    private RadioButton radioButton ;
+
 
     private ObservableList observableList = FXCollections.observableArrayList();
 
@@ -68,9 +71,14 @@ public class BoutiqueController extends Controller {
 
         loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
         listenTo(produitsListView, View.Produit,"produitR");
+        radioButton.setOnMouseClicked(event -> {
+            loadList(modelListOfProduit.filtreParPrix("stock"), produitsListView);
+            listenTo( produitsListView,View.ProduitStock ,"produitR");
+
+
+        });
 
         acceuil.setOnAction(event -> displayAccueil());
-        //boutique.setOnAction(event->displayBoutique());
         reservations.setOnAction(event -> displayMesReservation());
         stock.setOnAction(event -> displayMonStock());
         ventes.setOnAction(event -> displayMesVentes());
@@ -82,10 +90,11 @@ public class BoutiqueController extends Controller {
         listView.getSelectionModel().selectedItemProperty().addListener(
                 (ChangeListener<String>) (observable, oldValue, newValue) -> {
                     loadList(modelListOfProduit.filtrerListParCategorie(newValue,"stock"), produitsListView);
-                    listenTo( produitsListView,View.ProduitStock ,"produitS");
+                    listenTo( produitsListView,View.ProduitStock ,"produitR");
 
                 });
     }
+
 
 
 

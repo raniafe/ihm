@@ -1,14 +1,17 @@
 package program.controller;
 
+import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -19,9 +22,11 @@ import program.model.ModelListOfProfile;
 import program.model.ProduitModel;
 import program.view.ViewBoutique;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
-public   class Controller {
+public   class Controller extends Application {
     @FXML
     private BorderPane rootPane;
 
@@ -32,14 +37,16 @@ public   class Controller {
 
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+    }
+
     public Controller(ModelListOfProduit modelListOfProduit, ModelListOfProfile modelListOfProfile) {
 
         this.modelListOfProduit = modelListOfProduit;
         this.modelListOfProfile = modelListOfProfile;
     }
 
-    // public void initialize(ModelListOfProduit modelListOfProduit) {}
-   // public void initialize(ModelListOfProfile modelListOfProfile) {}
     public  void initialize() {}
 
 
@@ -58,9 +65,6 @@ public   class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
     }
 
 
@@ -71,7 +75,6 @@ public   class Controller {
             e.printStackTrace();
         }
     }
-
 
     public void displayMonStock() {
         try {
@@ -96,6 +99,10 @@ public   class Controller {
             e.printStackTrace();
         }
     }
+    public void displayServicesClient(){
+        final TextField textField = new TextField("gaspi-miam@gmail.com");
+        getHostServices().showDocument("mailto:"+textField.getText());
+    }
 
 
     public void redirection(Parent element,String fxmlFile, Controller controller) throws IOException {
@@ -104,7 +111,6 @@ public   class Controller {
         root.getStylesheets().add("/resources/Accueil.css");
         loader.setController(controller);
         Stage stage=(Stage) element.getScene().getWindow();
-//      controller.initialize();
         stage.setTitle("Gaspi-Miam");
         stage.setScene(new Scene(root, 900, 700));
         stage.show();
@@ -164,7 +170,6 @@ public   class Controller {
         listView.getSelectionModel().selectedItemProperty().addListener(
                 (ChangeListener<ProduitModel>) (observable, oldValue, newValue) -> {
                     try {
-                        System.out.println(newValue);
                         redirection(rootPane, fxml, newValue, prodT);
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -197,4 +202,6 @@ public   class Controller {
 
         return false;
     }
+
+
 }

@@ -52,6 +52,7 @@
                            </graphic>
                            <items>
                               <MenuItem mnemonicParsing="false"  text="Mon compte" onAction="#displayMonCompte" />
+                              <MenuItem mnemonicParsing="false" onAction="#displayServicesClient" text="Service Clients" />
                               <MenuItem mnemonicParsing="false" text="Déconnexion" />
                            </items>
                         </Menu>
@@ -62,13 +63,6 @@
          </children>
       </VBox>
    </top>
-   <bottom>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Developped by GaspiMiam Society" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Text>
-   </bottom>
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
@@ -303,4 +297,11 @@
          </content>
       </ScrollPane>
    </center>
+   <bottom>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Developped by GaspiMiam Society" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+   </bottom>
 </BorderPane>

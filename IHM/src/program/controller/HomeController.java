@@ -1,17 +1,13 @@
 package program.controller;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import program.View;
 
 
-public  class HomeController extends Controller {
+public  class HomeController extends Controller{
 
     @FXML
     private BorderPane rootPane;
@@ -31,6 +27,11 @@ public  class HomeController extends Controller {
     private ImageView orang ;
 
 
+
+    @FXML
+    private MenuItem services ;
+
+
     public void initialize(){
 
         framb.setOnMouseClicked(event -> displayProduit("framb"));
@@ -39,6 +40,8 @@ public  class HomeController extends Controller {
         oeufs.setOnMouseClicked(event -> displayProduit("oeufs"));
         poulet.setOnMouseClicked(event -> displayProduit("poulet"));
         orang.setOnMouseClicked(event -> displayProduit("orang"));
+
+
     }
 
     public void displayProduit(String produitName){
@@ -48,6 +51,8 @@ public  class HomeController extends Controller {
             e.printStackTrace();
         }
     }
+
+
 
 
 

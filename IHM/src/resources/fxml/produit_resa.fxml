@@ -50,6 +50,7 @@
                                     </graphic>
                                     <items>
                                         <MenuItem mnemonicParsing="false" onAction="#displayMonCompte" text="Mon compte" />
+                                        <MenuItem mnemonicParsing="false" onAction="#displayServicesClient" text="Service Clients" />
                                         <MenuItem mnemonicParsing="false" text="Déconnexion" />
                                     </items>
                                 </Menu>
@@ -134,4 +135,11 @@
             </children>
         </VBox>
     </center>
+    <bottom>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Developped by GaspiMiam Society" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Text>
+    </bottom>
 </BorderPane>

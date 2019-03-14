@@ -59,6 +59,7 @@
                            </graphic>
                            <items>
                               <MenuItem mnemonicParsing="false" text="Mon compte" />
+                              <MenuItem mnemonicParsing="false" onAction="#displayServicesClient" text="Service Clients" />
                               <MenuItem mnemonicParsing="false" text="Déconnexion" />
                            </items>
                         </Menu>

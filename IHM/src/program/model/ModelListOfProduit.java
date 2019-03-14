@@ -32,9 +32,9 @@ public class ModelListOfProduit {
         try {
             listOfProduitsBoutique.add(new ProduitModel("Framboises", 3, "Fruit", conversion.parse("01-03-2018"), "/resources/images/framboise1.jpg"));
 
-        listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16/03/2019), "/resources/images/oranges.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("Eggs", 2, "Autres", new Date(17 / 03 / 2019), "/resources/images/eggs.jpg"));
-        listOfProduitsBoutique.add(new ProduitModel("yaourt", 8, "Autres", new Date(12 / 03 / 2019), "/resources/images/yaourt1.jpg"));
+        listOfProduitsBoutique.add(new ProduitModel("Oranges", 12, "Fruit", new Date(16/03/2019), "/resources/images/oranges.jpg",5));
+        listOfProduitsBoutique.add(new ProduitModel("Eggs", 2, "Autres", new Date(17 / 03 / 2019), "/resources/images/eggs.jpg",8));
+        listOfProduitsBoutique.add(new ProduitModel("yaourt", 8, "Autres", new Date(12 / 03 / 2019), "/resources/images/yaourt1.jpg",9));
         listOfProduitsBoutique.add(new ProduitModel("tomat", 6, "Legume", new Date(13 / 03 / 2019), "/resources/images/tomatoes.jpg"));
         listOfProduitsBoutique.add(new ProduitModel("poulet", 1, "Autres", new Date(15 / 03 / 2019), "/resources/images/chicken.jpg"));
 
@@ -187,6 +187,32 @@ public class ModelListOfProduit {
     public void addVente(ProduitModel produit) {
 
         listOfProduitsVentes.add(produit);
+
+    }
+
+    public ObservableList<ProduitModel>  filtreParPrix( String list){
+
+        ObservableList<ProduitModel> listOfProduitAFiltrer ;
+        ObservableList<ProduitModel> listOfProduitFiltre = FXCollections.observableList( new ArrayList<>());
+        switch (list)
+        {
+            case "stock" :
+                listOfProduitAFiltrer = this.listOfProduitsStock ;
+                break;
+            case "boutique":
+                listOfProduitAFiltrer = this.listOfProduitsBoutique ;
+                break;
+            default:
+                listOfProduitAFiltrer = this.listOfProduitsStock ;
+        }
+        listOfProduitAFiltrer.forEach (produitModel -> {
+            if(produitModel.getPrix() == 0)
+            {
+                listOfProduitFiltre.add(produitModel) ;
+            }
+        } );
+
+        return listOfProduitAFiltrer ;
 
     }
 
