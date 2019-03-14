@@ -93,7 +93,7 @@ private Text text;
             else if (produit.getQuantite()- Integer.parseInt(quantity.getText()) < 0) {
                 quantity.setStyle("-fx-background-color: red;");
             }
-            else
+            else if ((Integer.parseInt(quantity.getText()) < produit.getQuantite() ))
             {
                 modelListOfProduit.addBoutique(produit);
                 modelListOfProduit.addVentes(produit);

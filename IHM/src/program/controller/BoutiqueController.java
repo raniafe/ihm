@@ -72,8 +72,12 @@ public class BoutiqueController extends Controller {
         loadList(Controller.getModelListOfProduit().getListOfProduitsBoutique(),produitsListView);
         listenTo(produitsListView, View.Produit,"produitR");
         radioButton.setOnMouseClicked(event -> {
-            loadList(modelListOfProduit.filtreParPrix("stock"), produitsListView);
-            listenTo( produitsListView,View.ProduitStock ,"produitR");
+            if (radioButton.isSelected())
+            { loadList(modelListOfProduit.filtreParPrix("stock"), produitsListView);
+            listenTo( produitsListView,View.ProduitStock ,"produitR");}
+            else{
+                loadList(modelListOfProduit.getListOfProduitsBoutique(), produitsListView);
+                listenTo( produitsListView,View.ProduitStock ,"produitR");}
 
 
         });

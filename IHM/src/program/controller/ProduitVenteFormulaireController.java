@@ -15,6 +15,7 @@ import program.View;
 import program.model.ProduitModel;
 
 import java.awt.*;
+import java.awt.TextField;
 import java.io.IOException;
 import java.util.Date;
 
@@ -23,7 +24,7 @@ public class ProduitVenteFormulaireController extends Controller {
     @FXML
     private BorderPane rootPane;
     @FXML
-    private Label quantite;
+    private TextArea quantite;
     @FXML
     private TextArea prix;
     @FXML
