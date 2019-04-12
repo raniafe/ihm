@@ -1,5 +1,6 @@
 package com.example.gaspimiamva;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_accueil) {
             // Handle the camera action
         } else if (id == R.id.nav_boutique) {
+            openActivityBoutique() ;
 
         } else if (id == R.id.nav_mesventes) {
 
@@ -100,5 +102,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void openActivityBoutique()
+    {
+        Intent intent = new Intent(this,Boutique.class) ;
+        startActivity(intent) ;
     }
 }
