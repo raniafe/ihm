@@ -39,9 +39,10 @@ public class ModelListOfProduit {
         listOfProduitsBoutique.add(new ProduitModel("poulet", 1, "Autres", new Date(15 / 03 / 2019), "/resources/images/chicken.jpg"));
 
 
-        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit",conversion.parse("2018-03-29"), "/resources/images/passion.jpg"));
-        listOfProduitsStock.add(new ProduitModel("salade", 2, "Legume",conversion.parse("2018-03-11"), "/resources/images/salad.jpg"));
-        listOfProduitsStock.add(new ProduitModel("banane", 12, "Fruit", conversion.parse("2018-03-13"), "/resources/images/banana.jpg"));
+        listOfProduitsStock.add(new ProduitModel("fruit", 7, "Fruit",conversion.parse("2018-03-25"), "/resources/images/passion.jpg"));
+        listOfProduitsStock.add(new ProduitModel("salade", 2, "Legume",conversion.parse("2018-03-23"), "/resources/images/salad.jpg"));
+        listOfProduitsStock.add(new ProduitModel("banane", 12, "Fruit", conversion.parse("2018-03-21"), "/resources/images/banana.jpg"));
+        listOfProduitsStock.add(new ProduitModel("poulet", 1, "Autres", conversion.parse("2018-03-19"), "/resources/images/chicken.jpg"));
 
         listOfProduitsVentes.add(new ProduitModel("cerise", 9, "Fruit", new Date(13 / 03 / 2019), "/resources/images/cerise.jpg"));
         listOfProduitsVentes.add(new ProduitModel("abricot", 2, "Fruit", new Date(17 / 03 / 2019), "/resources/images/abricot.jpg"));
