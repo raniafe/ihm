@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_accueil"
+            android:icon="@drawable/home"
+            android:title="Accueil" />
+        <item
+            android:id="@+id/nav_boutique"
+            android:icon="@drawable/boutique"
+            android:title="Boutique" />
+        <item
+            android:id="@+id/nav_mesventes"
+            android:icon="@drawable/mesventes1"
+            android:title="Mes ventes" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/map"
+            android:title="Map" />
+        <item
+            android:id="@+id/nav_stock"
+            android:icon="@drawable/monstock"
+            android:title="Mon Stock" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_moncompte"
+                android:icon="@drawable/moncompte"
+                android:title="Mon Compte" />
+            <item
+                android:id="@+id/nav_deconnexion"
+                android:icon="@drawable/deconnexion"
+                android:title="Déconnexion" />
+        </menu>
+    </item>
+
+</menu>
