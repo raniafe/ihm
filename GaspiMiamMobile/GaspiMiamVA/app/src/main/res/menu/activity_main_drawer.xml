@@ -7,35 +7,35 @@
         <item
             android:id="@+id/nav_accueil"
             android:icon="@drawable/home"
-            android:title="Accueil" />
+            android:title="@string/accueil" />
         <item
             android:id="@+id/nav_boutique"
             android:icon="@drawable/boutique"
-            android:title="Boutique" />
+            android:title="@string/boutique" />
         <item
             android:id="@+id/nav_mesventes"
             android:icon="@drawable/mesventes1"
-            android:title="Mes ventes" />
+            android:title="@string/mes_ventes" />
         <item
             android:id="@+id/nav_map"
             android:icon="@drawable/map"
-            android:title="Map" />
+            android:title="@string/map" />
         <item
             android:id="@+id/nav_stock"
             android:icon="@drawable/monstock"
-            android:title="Mon Stock" />
+            android:title="@string/mon_stock" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_moncompte"
                 android:icon="@drawable/moncompte"
-                android:title="Mon Compte" />
+                android:title="@string/mon_compte" />
             <item
                 android:id="@+id/nav_deconnexion"
                 android:icon="@drawable/deconnexion"
-                android:title="Déconnexion" />
+                android:title="@string/d_connexion" />
         </menu>
     </item>
 
