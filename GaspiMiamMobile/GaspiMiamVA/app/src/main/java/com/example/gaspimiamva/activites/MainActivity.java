@@ -23,6 +23,8 @@ import com.example.gaspimiamva.fragments.MesVentesFragment;
 import com.example.gaspimiamva.fragments.MonCompteFragment;
 import com.example.gaspimiamva.fragments.StockFragment;
 
+import static com.example.gaspimiamva.R.id.toolbar;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

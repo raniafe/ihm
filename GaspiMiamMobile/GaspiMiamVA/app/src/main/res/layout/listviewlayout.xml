@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="198dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="170dp"
+            android:layout_height="213dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="0dp" />
+
+
+
+        <TextView
+            android:id="@+id/tvproduit"
+            style="@style/BlackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="text"
+            android:textSize="26sp"></TextView>
+
+        <TextView
+            android:id="@+id/tvprix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="text"
+            android:textSize="26sp"
+            style="@style/BlackText"></TextView>
+
+        <TextView
+            android:id="@+id/tvdescri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="text"
+            android:textSize="24sp"
+            style="@style/BlackText" ></TextView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+
+
