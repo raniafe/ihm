@@ -29,7 +29,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:text="text"
-            android:textSize="26sp"></TextView>
+            android:textSize="12sp"></TextView>
 
         <TextView
             android:id="@+id/tvprix"
@@ -39,7 +39,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:text="text"
-            android:textSize="26sp"
+            android:textSize="12sp"
             style="@style/BlackText"></TextView>
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:text="text"
-            android:textSize="24sp"
+            android:textSize="12sp"
             style="@style/BlackText" ></TextView>
 
     </LinearLayout>
