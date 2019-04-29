@@ -23,6 +23,7 @@ import com.example.gaspimiamva.fragments.MesVentesFragment;
 import com.example.gaspimiamva.fragments.MonCompteFragment;
 import com.example.gaspimiamva.fragments.StockFragment;
 
+
 import static com.example.gaspimiamva.R.id.toolbar;
 
 public class MainActivity extends AppCompatActivity
@@ -90,35 +91,35 @@ public class MainActivity extends AppCompatActivity
             openActivity() ;
         } else if (id == R.id.nav_boutique) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame
+                    .replace(R.id.cont_frame
                             , new BoutiqueFragment())
                     .commit();
 
         }  else if (id == R.id.nav_mesventes) {
 
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame
+                    .replace(R.id.cont_frame
                             , new MesVentesFragment())
                     .commit();
 
 
         }else if (id == R.id.nav_stock) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame
+                    .replace(R.id.cont_frame
                             , new StockFragment())
                     .commit();
 
 
         } else if (id == R.id.nav_moncompte) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame
+                    .replace(R.id.cont_frame
                             , new MonCompteFragment())
                     .commit();
 
 
         } else if (id == R.id.nav_map) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame
+                    .replace(R.id.cont_frame
                             , new MapFragment())
                     .commit();
 

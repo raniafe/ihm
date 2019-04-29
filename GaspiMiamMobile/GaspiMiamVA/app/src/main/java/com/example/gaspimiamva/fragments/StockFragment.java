@@ -7,65 +7,34 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.gaspimiamva.R;
+import com.example.gaspimiamva.adapters.CustomListView;
+import com.example.gaspimiamva.adapters.CustumOfStockListView;
 
 
 public class StockFragment extends Fragment {
 
     View myView;
+    ListView listView;
+    String[] product={"Carotte","Noix de coco","Pêche","Fraises","Tomate", "Yaourt"};
+    String[] description={"de plein champs","de Martinique","du Maroc","des bois", "de plein champs", "fermier"};
+    Integer[] image={R.drawable.carot,R.drawable.coconut, R.drawable.peach,R.drawable.strawberry,R.drawable.tomatoe,R.drawable.yogourt};
+    String[] price={"2,5 €","7€","3,85€","2,4€","1,2€","3€"};
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_stock, container, false);
-        return myView;
-    }
-}
+        listView = (ListView) myView.findViewById(R.id.list_stock);
 
-/*
-public class StockFragment extends Fragment {
-    View myView ;
+        CustomListView customListView= new CustomListView(getActivity(),product,image,description,price);
+        listView.setAdapter(customListView);
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.fragment_boutique, container, false);
         return myView;
     }
 
-    private GridView gridView;
-    private ArrayAdapter<String> adapter;
-
-    private static String [] produits_stocks={"patate", "courgette", "poire"};
-
-
-    public static StockFragment newInstance(){
-        StockFragment stock_fragment = new StockFragment();
-        return stock_fragment;
-    }
-
-  /*  @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.stock, null);
-
-        gridView = (GridView) view.findViewById(R.id.produits_stock);
-
-        gridView.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1
-        ,  produits_stocks));
-
-        gridView.setOnClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), produits_stocks[position],Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        return view;
-    }
-
-
 }
 
-*/
