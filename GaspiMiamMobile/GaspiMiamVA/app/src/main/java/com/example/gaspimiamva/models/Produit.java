@@ -8,13 +8,13 @@ public class Produit {
     private int quantite;
     private String categorie;
     private Date date ;
-    private String image ;
+    private Integer image ;
     private int prix;
     private String localisation; // pour les produits de la Boutique
 
     // constructeur pour la ListStock
 
-    public Produit(String name, int quantite, String categorie, Date date, String image) {
+    public Produit(String name, int quantite, String categorie, Date date, Integer image) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
@@ -24,7 +24,7 @@ public class Produit {
 
     // constructeur pour la Listvente, ListBoutique, ListReservation
 
-    public Produit(String name, int quantite, String categorie, Date date, String image, int prix, String localisation) {
+    public Produit(String name, int quantite, String categorie, Date date, Integer image, int prix, String localisation) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
@@ -66,11 +66,11 @@ public class Produit {
         this.date = date;
     }
 
-    public String getImage() {
+    public Integer getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Integer image) {
         this.image = image;
     }
 
