@@ -1,8 +1,11 @@
 package com.example.gaspimiamva.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Date;
 
-public class Produit {
+public class Produit implements Parcelable {
 
     private String name;
     private int quantite;
@@ -33,6 +36,31 @@ public class Produit {
         this.prix = prix;
         this.localisation = localisation;
     }
+
+    protected Produit(Parcel in) {
+        name = in.readString();
+        quantite = in.readInt();
+        categorie = in.readString();
+        if (in.readByte() == 0) {
+            image = null;
+        } else {
+            image = in.readInt();
+        }
+        prix = in.readInt();
+        localisation = in.readString();
+    }
+
+    public static final Creator<Produit> CREATOR = new Creator<Produit>() {
+        @Override
+        public Produit createFromParcel(Parcel in) {
+            return new Produit(in);
+        }
+
+        @Override
+        public Produit[] newArray(int size) {
+            return new Produit[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -88,5 +116,25 @@ public class Produit {
 
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeInt(quantite);
+        parcel.writeString(categorie);
+        if (image == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(image);
+        }
+        parcel.writeInt(prix);
+        parcel.writeString(localisation);
     }
 }

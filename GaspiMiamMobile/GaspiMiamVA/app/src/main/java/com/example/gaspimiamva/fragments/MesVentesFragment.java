@@ -9,8 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gaspimiamva.R;
+import com.example.gaspimiamva.models.Produit;
+
+import java.util.ArrayList;
 
 public class MesVentesFragment extends Fragment {
+
+     ArrayList<Produit> lst ;
+
+
 
     View myView;
 
