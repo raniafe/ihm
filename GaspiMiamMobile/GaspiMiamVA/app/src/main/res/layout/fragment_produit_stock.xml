@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="158dp">
+
+        <TextView
+            android:id="@+id/nomProduit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="120dp"
+            android:text="Produit"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:typeface="serif" />
+
+        <ImageView
+            android:id="@+id/imageViewProduit"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/ic_menu_gallery" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:backgroundTint="#DCDCDC"
+            android:breakStrategy="balanced"
+            android:fitsSystemWindows="true"
+            android:gravity="top"
+            android:hint="Message to describe the product"
+            android:inputType="textMultiLine"
+            android:typeface="serif"
+            android:textSize="13dp"
+            android:padding="5dp"
+            android:singleLine="false" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="5dp"
+            android:text="Ajoute la quantité"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:typeface="serif" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="13dp"
+            android:padding="5dp"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonVendre"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="40dp"
+                android:text="Vendre" />
+
+            <Button
+                android:id="@+id/butttonDonner"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="40dp"
+                android:text="Donner" />
+
+            <Button
+                android:id="@+id/buttonManger"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Manger" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

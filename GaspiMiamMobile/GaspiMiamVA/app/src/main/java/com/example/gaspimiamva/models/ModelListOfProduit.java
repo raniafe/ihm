@@ -23,22 +23,22 @@ public class ModelListOfProduit implements Parcelable {
         listProduitsStock.clear();
         listProduitVente.clear();
 
-        listProduitsStock.add(new Produit("Carotte", 19, "Légume", new Date(9/06/19), R.drawable.carot, 2, "Nice" ));
-        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", new Date(7/05/19), R.drawable.escalope, 9, "Nice" ));
-        listProduitsStock.add(new Produit("Pêche", 5, "Fruit", new Date(7/06/19), R.drawable.peach, 3, "Nice" ));
-        listProduitsStock.add(new Produit("Fraises", 8, "Fruit", new Date(3/06/19), R.drawable.strawberry, 4, "Antibes" ));
-        listProduitsStock.add(new Produit("Tomate", 3, "Légume", new Date(9/06/19), R.drawable.tomatoe, 2, "Nice" ));
-        listProduitsStock.add(new Produit("Yaourt", 19, "Autre", new Date(9/06/19), R.drawable.yaourt, 6, "Nice" ));
+        listProduitsStock.add(new Produit("Carotte", 19, "Légume", new Date(9/06/19), R.drawable.carot, 2, "Nice" , "carottes de plein champs"));
+        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", new Date(7/05/19), R.drawable.escalope, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ));
+        listProduitsStock.add(new Produit("Pêche", 5, "Fruit", new Date(7/06/19), R.drawable.peach, 3, "Nice", "du Tarn et Garonne" ));
+        listProduitsStock.add(new Produit("Fraises", 8, "Fruit", new Date(3/06/19), R.drawable.strawberry, 4, "Antibes","fraises des bois, non traitées" ));
+        listProduitsStock.add(new Produit("Tomate", 3, "Légume", new Date(9/06/19), R.drawable.tomatoe, 2, "Nice", "sans pesticides" ));
+        listProduitsStock.add(new Produit("Yaourt", 19, "Autre", new Date(9/06/19), R.drawable.yaourt, 6, "Nice", "au lait fermier entier et fermenté" ));
 
-        listProduitsBoutique.add(new Produit("Posson", 8, "Autre", new Date(2/06/19), R.drawable.poisson, 12, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", new Date(2/06/19), R.drawable.apple, 0, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Grapes", 8, "Fruit", new Date(2/06/19), R.drawable.grapes, 0, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Mango", 8, "Fruit", new Date(2/06/19), R.drawable.mango, 0, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Papaya", 8, "Fruit", new Date(2/06/19), R.drawable.papaya, 0, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Water Melon", 8, "Fruit", new Date(2/06/19), R.drawable.watermelon, 0, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Avocat", 6, "Legume", new Date(3/06/19), R.drawable.avocat, 14, "Antibes" ));
-        listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", new Date(2/06/19), R.drawable.yaourt, 34, "Antibes" ));
-        listProduitsBoutique.add(new Produit("Escalope", 30, "Autre", new Date(2/06/19), R.drawable.escalope, 0, "Antibes" ));
+        listProduitsBoutique.add(new Produit("Poisson", 8, "Autre", new Date(2/06/19), R.drawable.poisson, 12, "Antibes" , "récolte du jour. Poisson frais"));
+        listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", new Date(2/06/19), R.drawable.apple, 0, "Antibes" , "idéales en compote"));
+        listProduitsBoutique.add(new Produit("Grapes", 8, "Fruit", new Date(2/06/19), R.drawable.grapes, 0, "Antibes" ,"à conserver au frais"));
+        listProduitsBoutique.add(new Produit("Mango", 8, "Fruit", new Date(2/06/19), R.drawable.mango, 0, "Antibes", "récoltées sur l'arbre à maturité. Transport en avion" ));
+        listProduitsBoutique.add(new Produit("Papaya", 8, "Fruit", new Date(2/06/19), R.drawable.papaya, 0, "Antibes", "transport en avion" ));
+        listProduitsBoutique.add(new Produit("Water Melon", 8, "Fruit", new Date(2/06/19), R.drawable.watermelon, 0, "Antibes", "Melon Espagnol, gros calibre" ));
+        listProduitsBoutique.add(new Produit("Avocat", 6, "Legume", new Date(3/06/19), R.drawable.avocat, 14, "Antibes", "Récolté au Mexique. Agriculture raisonnée" ));
+        listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", new Date(2/06/19), R.drawable.yaourt, 34, "Antibes", "lait fermier"));
+        listProduitsBoutique.add(new Produit("Escalope", 30, "Autre", new Date(2/06/19), R.drawable.escalope, 0, "Antibes", "Elevage non intensif" ));
 
 
     }

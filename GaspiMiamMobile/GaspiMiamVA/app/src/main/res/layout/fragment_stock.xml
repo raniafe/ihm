@@ -10,6 +10,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Mon stock"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:typeface="serif"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView

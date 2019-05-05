@@ -14,20 +14,22 @@ public class Produit implements Parcelable {
     private Integer image ;
     private Integer prix;
     private String localisation; // pour les produits de la Boutique
+    private String description;
 
     // constructeur pour la ListStock
 
-    public Produit(String name, Integer quantite, String categorie, Date date, Integer image) {
+    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, String description) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
         this.date = date;
         this.image = image;
+        this.description = description;
     }
 
     // constructeur pour la Listvente, ListBoutique, ListReservation
 
-    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, Integer prix, String localisation) {
+    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, Integer prix, String localisation, String description) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
@@ -35,6 +37,7 @@ public class Produit implements Parcelable {
         this.image = image;
         this.prix = prix;
         this.localisation = localisation;
+        this.description = description;
     }
 
     protected Produit(Parcel in) {
@@ -116,6 +119,14 @@ public class Produit implements Parcelable {
 
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
