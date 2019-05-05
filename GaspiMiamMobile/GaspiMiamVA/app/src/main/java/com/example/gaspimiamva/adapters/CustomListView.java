@@ -13,25 +13,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gaspimiamva.R;
+import com.example.gaspimiamva.models.Produit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class CustomListView extends ArrayAdapter<String> {
-    private String[] produit;
-    private String[] descri;
-    private String[] prix;
-    private Integer[] image;
+public class CustomListView extends ArrayAdapter<Produit> {
+    private ArrayList<Produit> Listproduit;
+    private int id;
+
     private Activity context;
 
-    public CustomListView(Activity  context,String[] produit,Integer[] image,String[] descri, String[] prix) {
-        super(context, R.layout.listviewlayout,produit);
+    public CustomListView(Activity  context, ArrayList<Produit> ListProduit, int id) {
+        super(context, R.layout.listviewlayout,ListProduit);
         this.context=context;
-        this.produit=produit;
-        this.descri=descri;
-        this.image=image;
-        this.prix=prix;
+        this.Listproduit = ListProduit;
+        this.id = id;
     }
-
-
 
     @NonNull
     @Override
@@ -46,24 +45,26 @@ public class CustomListView extends ArrayAdapter<String> {
         }
         else{
             viewHolder=(ViewHolder) r.getTag();
-
-
         }
-        viewHolder.img.setImageResource(image[position]);
-        viewHolder.tvprod.setText(produit[position]);
-        viewHolder.tvprix.setText(prix[position]);
-        viewHolder.tvdescri.setText(descri[position]);
+        viewHolder.img.setImageResource(Listproduit.get(position).getImage());
+        viewHolder.tvprod.setText(Listproduit.get(position).getName());
+        viewHolder.tvdescri.setText(Listproduit.get(position).getCategorie());
 
+        if (id ==1){
+            viewHolder.tvid.setText((Listproduit.get(position).getPrix()).toString() + "€");
+        }else{
+            viewHolder.tvid.setText((Listproduit.get(position).getQuantite()).toString());
+        }
         return r;
     }
     class ViewHolder{
-        TextView tvprix;
+        TextView tvid;
         TextView tvprod;
         TextView tvdescri;
         ImageView img;
         ViewHolder(View v){
             tvprod=(TextView)v.findViewById(R.id.tvproduit);
-            tvprix=(TextView)v.findViewById(R.id.tvprix);
+            tvid=(TextView)v.findViewById(R.id.tvid);
             tvdescri=(TextView)v.findViewById(R.id.tvdescri);
             img=(ImageView)v.findViewById(R.id.img);
         }

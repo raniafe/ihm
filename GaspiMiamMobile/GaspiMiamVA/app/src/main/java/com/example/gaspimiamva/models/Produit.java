@@ -8,16 +8,16 @@ import java.util.Date;
 public class Produit implements Parcelable {
 
     private String name;
-    private int quantite;
+    private Integer quantite;
     private String categorie;
     private Date date ;
     private Integer image ;
-    private int prix;
+    private Integer prix;
     private String localisation; // pour les produits de la Boutique
 
     // constructeur pour la ListStock
 
-    public Produit(String name, int quantite, String categorie, Date date, Integer image) {
+    public Produit(String name, Integer quantite, String categorie, Date date, Integer image) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
@@ -27,7 +27,7 @@ public class Produit implements Parcelable {
 
     // constructeur pour la Listvente, ListBoutique, ListReservation
 
-    public Produit(String name, int quantite, String categorie, Date date, Integer image, int prix, String localisation) {
+    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, Integer prix, String localisation) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
@@ -70,11 +70,11 @@ public class Produit implements Parcelable {
         this.name = name;
     }
 
-    public int getQuantite() {
+    public Integer getQuantite() {
         return quantite;
     }
 
-    public void setQuantite(int quantite) {
+    public void setQuantite(Integer quantite) {
         this.quantite = quantite;
     }
 
@@ -102,11 +102,11 @@ public class Produit implements Parcelable {
         this.image = image;
     }
 
-    public int getPrix() {
+    public Integer getPrix() {
         return prix;
     }
 
-    public void setPrix(int prix) {
+    public void setPrix(Integer prix) {
         this.prix = prix;
     }
 

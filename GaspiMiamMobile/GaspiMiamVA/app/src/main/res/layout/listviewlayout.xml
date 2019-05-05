@@ -32,7 +32,7 @@
             android:textSize="12sp"></TextView>
 
         <TextView
-            android:id="@+id/tvprix"
+            android:id="@+id/tvid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

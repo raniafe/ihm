@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_boutique) {
             fragmentManager.beginTransaction()
                     .replace(R.id.cont_frame
-                            , new BoutiqueFragment())
+                            , BoutiqueFragment.newInstance(this.modelListOfProduit))
                     .commit();
 
         }  else if (id == R.id.nav_mesventes) {
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_stock) {
             fragmentManager.beginTransaction()
                     .replace(R.id.cont_frame
-                            , new StockFragment())
+                            ,  StockFragment.newInstance(this.modelListOfProduit))
                     .commit();
 
 

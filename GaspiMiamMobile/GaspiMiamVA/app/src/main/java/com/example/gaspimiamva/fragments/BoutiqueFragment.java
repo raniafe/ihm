@@ -13,16 +13,23 @@ import android.widget.Toast;
 
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.adapters.CustomListView;
+import com.example.gaspimiamva.models.ModelListOfProduit;
 
 
 public class BoutiqueFragment extends Fragment {
 
     ListView lst;
-    String[] produit={"Poisson","Avocat","yaourt","escalope"};
-    String[] descri={"hi","hi","hi","hi"};
-    Integer[] image={R.drawable.poisson,R.drawable.avocat,R.drawable.yaourt,R.drawable.escalope};
-    String[] prix={"1 euro","1","A","hi","hi"};
     View myView;
+    private static final String ARG_ModelList= "argText";
+    public ModelListOfProduit modelList ;
+
+    public static BoutiqueFragment newInstance(ModelListOfProduit modelListOfProduit) {
+        BoutiqueFragment fragment = new BoutiqueFragment();
+        Bundle args = new Bundle();
+        args.putParcelable(ARG_ModelList,modelListOfProduit);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -31,8 +38,17 @@ public class BoutiqueFragment extends Fragment {
 
         lst = (ListView) myView.findViewById(R.id.list);
 
-        CustomListView customListView= new CustomListView(getActivity(),produit,image,descri,prix);
+
+        if (getArguments() != null && modelList==null) {
+            modelList = getArguments().getParcelable(ARG_ModelList);
+        }
+        CustomListView customListView= new CustomListView(getActivity(),modelList.getListProduitsBoutique(),1);
         lst.setAdapter(customListView);
+
+        return myView;
+
+        //CustomListView customListView= new CustomListView(getActivity(),produit,image,descri,prix);
+        //lst.setAdapter(customListView);
     /*    lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -61,8 +77,6 @@ public class BoutiqueFragment extends Fragment {
             }
 
         });*/
-
-        return myView;
     }
 
 

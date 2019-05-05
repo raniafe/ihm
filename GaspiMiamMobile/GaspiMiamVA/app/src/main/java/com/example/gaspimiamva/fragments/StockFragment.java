@@ -11,18 +11,23 @@ import android.widget.ListView;
 
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.adapters.CustomListView;
-import com.example.gaspimiamva.adapters.CustumOfStockListView;
+import com.example.gaspimiamva.models.ModelListOfProduit;
 
 
 public class StockFragment extends Fragment {
 
     View myView;
+    private static final String ARG_ModelList= "argText";
+    public ModelListOfProduit modelList ;
     ListView listView;
-    String[] product={"Carotte","Noix de coco","Pêche","Fraises","Tomate", "Yaourt"};
-    String[] description={"de plein champs","de Martinique","du Maroc","des bois", "de plein champs", "fermier"};
-    Integer[] image={R.drawable.carot,R.drawable.coconut, R.drawable.peach,R.drawable.strawberry,R.drawable.tomatoe,R.drawable.yogourt};
-    String[] price={"2,5 €","7€","3,85€","2,4€","1,2€","3€"};
 
+    public static StockFragment newInstance(ModelListOfProduit modelListOfProduit) {
+        StockFragment fragment = new StockFragment();
+        Bundle args = new Bundle();
+        args.putParcelable(ARG_ModelList,modelListOfProduit);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -30,10 +35,15 @@ public class StockFragment extends Fragment {
         myView = inflater.inflate(R.layout.fragment_stock, container, false);
         listView = (ListView) myView.findViewById(R.id.list_stock);
 
-        CustomListView customListView= new CustomListView(getActivity(),product,image,description,price);
+        if (getArguments() != null && modelList==null) {
+            modelList = getArguments().getParcelable(ARG_ModelList);
+        }
+
+        CustomListView customListView= new CustomListView(getActivity(),modelList.getListProduitsStock(), 0);
         listView.setAdapter(customListView);
 
         return myView;
+
     }
 
 }
