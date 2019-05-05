@@ -1,6 +1,8 @@
 package com.example.gaspimiamva.fragments;
 
 
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -51,6 +53,27 @@ public class ProduitFragment extends Fragment {
         descriptionProduit.setText(produit.getDescription());
         imageProduit.setImageResource(produit.getImage());
         quantiteProduit.setText(produit.getQuantite().toString());
+
+        buttonVendreProduit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = (getActivity()).getFragmentManager();
+                manager.beginTransaction()
+                        .replace(R.id.cont_frame
+                                , FormulaireVenteFragment.newInstance(produit))
+                        .commit();
+            }
+        });
+        buttonDonnerProduit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = (getActivity()).getFragmentManager();
+                manager.beginTransaction()
+                        .replace(R.id.cont_frame
+                                , FormulaireDonFragment.newInstance(produit))
+                        .commit();
+            }
+        });
         return myView;
     }
 }
