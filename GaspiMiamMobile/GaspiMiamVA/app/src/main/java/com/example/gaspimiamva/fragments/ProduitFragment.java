@@ -74,6 +74,17 @@ public class ProduitFragment extends Fragment {
                         .commit();
             }
         });
+        buttonMangerProduit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = (getActivity()).getFragmentManager();
+                manager.beginTransaction()
+                        .replace(R.id.cont_frame
+                                , FormulaireMangerFragment.newInstance(produit))
+                        .commit();
+            }
+        });
+
         return myView;
     }
 }
