@@ -56,12 +56,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         MapsInitializer.initialize(getActivity());
         mGoogleMap= googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mGoogleMap.setMyLocationEnabled(true);
 
 
         LatLng Olives = new LatLng(43.615280, 7.072272);
         LatLng Pommes = new LatLng(49.079255, -0.655125);
         googleMap.addMarker(new MarkerOptions().position(Olives).title("1 sac d'olives "));
-        googleMap.addMarker(new MarkerOptions().position(Pommes).title("5kg de pommmes "));
+        googleMap.addMarker(new MarkerOptions().position(Pommes).title("5kg de pommes "));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(Olives));
     }
 }
