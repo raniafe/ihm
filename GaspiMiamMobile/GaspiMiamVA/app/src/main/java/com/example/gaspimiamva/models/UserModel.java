@@ -1,6 +1,9 @@
 package com.example.gaspimiamva.models;
 
-public class UserModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class UserModel implements Parcelable {
     private String name;
     private String firstName;
     private String sexe ;
@@ -34,6 +37,29 @@ public class UserModel {
         this.ancienMdp = ancienMdp;
         this.numeroMobile = numeroMobile;
     }
+
+    protected UserModel(Parcel in) {
+        name = in.readString();
+        firstName = in.readString();
+        sexe = in.readString();
+        adresse = in.readString();
+        email = in.readString();
+        mdp = in.readString();
+        ancienMdp = in.readString();
+        numeroMobile = in.readString();
+    }
+
+    public static final Creator<UserModel> CREATOR = new Creator<UserModel>() {
+        @Override
+        public UserModel createFromParcel(Parcel in) {
+            return new UserModel(in);
+        }
+
+        @Override
+        public UserModel[] newArray(int size) {
+            return new UserModel[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -85,5 +111,22 @@ public class UserModel {
 
     public void setNumeroMobile(String numeroMobile) {
         this.numeroMobile = numeroMobile;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(firstName);
+        parcel.writeString(sexe);
+        parcel.writeString(adresse);
+        parcel.writeString(email);
+        parcel.writeString(mdp);
+        parcel.writeString(ancienMdp);
+        parcel.writeString(numeroMobile);
     }
 }

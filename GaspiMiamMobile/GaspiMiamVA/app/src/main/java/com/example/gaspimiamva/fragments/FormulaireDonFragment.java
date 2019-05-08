@@ -70,11 +70,7 @@ public class FormulaireDonFragment extends Fragment {
         buttonDonnerDonForm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager manager = (getActivity()).getFragmentManager();
-                manager.beginTransaction()
-                        .replace(R.id.content_frame
-                                , ProduitFragment.newInstance(produit))
-                        .commit();
+
             }
         });
         return myView;

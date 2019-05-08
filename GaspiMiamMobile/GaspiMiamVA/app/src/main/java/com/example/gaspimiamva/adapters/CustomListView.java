@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.fragments.BoutiqueFragment;
 import com.example.gaspimiamva.fragments.ProduitFragment;
+import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
 
 import java.util.ArrayList;
@@ -27,9 +28,17 @@ import java.util.List;
 public class CustomListView extends ArrayAdapter<Produit> {
     private ArrayList<Produit> Listproduit;
     private int id;
+    private ModelListOfProduit modelListOfProduit ;
 
     private Activity context;
 
+    public CustomListView(Activity context, ArrayList<Produit> ListProduit, int id, ModelListOfProduit modelListOfProduit) {
+        super(context, R.layout.listviewlayout,ListProduit);
+        this.context=context;
+        this.Listproduit = ListProduit;
+        this.id = id;
+        this.modelListOfProduit = modelListOfProduit ;
+    }
     public CustomListView(Activity context, ArrayList<Produit> ListProduit, int id) {
         super(context, R.layout.listviewlayout,ListProduit);
         this.context=context;
@@ -58,11 +67,15 @@ public class CustomListView extends ArrayAdapter<Produit> {
         viewHolder.img.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager manager = ((Activity)context).getFragmentManager();
+                if(id==0)
+                {FragmentManager manager = ((Activity)context).getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
-                                , ProduitFragment.newInstance(Listproduit.get(position)))
-                        .commit();
+                                , ProduitFragment.newInstance(Listproduit.get(position),modelListOfProduit))
+                        .commit();}
+                        else{
+
+                }
             }
         }));
 

@@ -1,11 +1,16 @@
 package com.example.gaspimiamva.models;
 
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
+import java.text.ParseException;
 import java.util.Date;
+import java.util.Observable;
 
-public class Produit implements Parcelable {
+public class Produit extends Observable implements Parcelable  {
 
     private String name;
     private Integer quantite;
@@ -65,6 +70,7 @@ public class Produit implements Parcelable {
         }
     };
 
+
     public String getName() {
         return name;
     }
@@ -79,6 +85,9 @@ public class Produit implements Parcelable {
 
     public void setQuantite(Integer quantite) {
         this.quantite = quantite;
+        if (quantite ==0) Log.d("quant"," null");
+
+        if (this.quantite!=0) Log.d("quant","not null");
     }
 
     public String getCategorie() {

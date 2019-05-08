@@ -27,8 +27,11 @@ import com.example.gaspimiamva.fragments.MonCompteFragment;
 import com.example.gaspimiamva.fragments.StockFragment;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
+import com.example.gaspimiamva.models.UserModel;
+import com.example.gaspimiamva.models.UsersListModel;
 
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import static com.example.gaspimiamva.R.id.toolbar;
@@ -36,10 +39,16 @@ import static com.example.gaspimiamva.R.id.toolbar;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ModelListOfProduit modelListOfProduit;
+    public static ModelListOfProduit modelListOfProduit;
+    public static UsersListModel userModel ;
 
     public MainActivity() {
-        modelListOfProduit = new ModelListOfProduit();
+        try {
+            modelListOfProduit = new ModelListOfProduit();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        userModel = new UsersListModel() ;
 
     }
 

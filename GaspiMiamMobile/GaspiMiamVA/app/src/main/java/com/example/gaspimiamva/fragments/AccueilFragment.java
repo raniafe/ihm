@@ -48,12 +48,12 @@ public class AccueilFragment extends Fragment {
             modelList = getArguments().getParcelable(ARG_ModelList);
         }
 
-        fragment = HorizontalListViewFragment.newInstance(modelList.getListProduitsBoutiqueGratuits());
+        fragment = HorizontalListViewFragment.newInstance(modelList.getListProduitsBoutiqueGratuits(),1,modelList);
         fm.beginTransaction()
                     .add(R.id.fragmentContainer, fragment)
                     .commit();
 
-        fragment2 = HorizontalListViewFragment.newInstance(modelList.getListProduitsStock());
+        fragment2 = HorizontalListViewFragment.newInstance(modelList.getListProduitsStock(),0,modelList);
         fm.beginTransaction()
                     .add(R.id.fragmentContainer1, fragment2)
                     .commit();

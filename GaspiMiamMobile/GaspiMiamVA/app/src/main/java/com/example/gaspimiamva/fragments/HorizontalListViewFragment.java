@@ -3,7 +3,9 @@ package com.example.gaspimiamva.fragments;
  * Created by anonymous on 11/4/16.
  */
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gaspimiamva.R;
+import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
 
 import java.util.ArrayList;
@@ -26,14 +29,19 @@ import java.util.ArrayList;
 public class HorizontalListViewFragment extends Fragment {
 
     RecyclerView MyRecyclerView;
-
+    ModelListOfProduit modelListOfProduit ;
     ArrayList<Produit> listOfProduits =new ArrayList<>() ;
+    private int id ;
     private static final String ARG_ModelList= "argText";
+    private static final String ARG_Model= "argModel";
+    private static final String ARG_ID= "argid";
 
-    public static HorizontalListViewFragment newInstance(ArrayList<Produit> modelListOfProduit) {
+    public static HorizontalListViewFragment newInstance(ArrayList<Produit> listOfProduit, int id, ModelListOfProduit modelListOfProduit) {
         HorizontalListViewFragment fragment = new HorizontalListViewFragment();
         Bundle args = new Bundle();
-        args.putParcelableArrayList(ARG_ModelList,modelListOfProduit);
+        args.putParcelableArrayList(ARG_ModelList,listOfProduit);
+        args.putParcelable(ARG_Model,modelListOfProduit);
+        args.putInt(ARG_ID,id);
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,10 +66,13 @@ public class HorizontalListViewFragment extends Fragment {
 
         if (getArguments() != null) {
             listOfProduits = getArguments().getParcelableArrayList(ARG_ModelList);
+            id = getArguments().getInt(ARG_ID);
+            modelListOfProduit = getArguments().getParcelable(ARG_Model);
+
         }
 
         if (listOfProduits.size() > 0 & MyRecyclerView != null) {
-            MyRecyclerView.setAdapter(new MyAdapter(listOfProduits));
+            MyRecyclerView.setAdapter(new MyAdapter(listOfProduits,id));
         }
 
         MyRecyclerView.setLayoutManager(MyLayoutManager);
@@ -77,9 +88,11 @@ public class HorizontalListViewFragment extends Fragment {
 
     public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         private ArrayList<Produit> list;
+        private int id ;
 
-        public MyAdapter(ArrayList<Produit> Data) {
+        public MyAdapter(ArrayList<Produit> Data, int id) {
             list = Data;
+            this.id =id ;
         }
 
         @Override
@@ -92,12 +105,28 @@ public class HorizontalListViewFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(final MyViewHolder holder, int position) {
+        public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
             holder.titleTextView.setText(list.get(position).getName());
             holder.coverImageView.setImageResource(list.get(position).getImage());
             holder.coverImageView.setTag(list.get(position).getImage());
             holder.likeImageView.setTag(R.drawable.ic_like);
+
+            holder.coverImageView.setOnClickListener((new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(id==0)
+                    {
+                        FragmentManager manager = getActivity().getFragmentManager();
+                        manager.beginTransaction()
+                                .replace(R.id.content_frame
+                                        , ProduitFragment.newInstance(list.get(position),modelListOfProduit))
+                                .commit();}
+                    else{
+
+                    }
+                }
+            }));
 
         }
 
@@ -123,8 +152,6 @@ public class HorizontalListViewFragment extends Fragment {
             likeImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-
                     int id = (int)likeImageView.getTag();
                     if( id == R.drawable.ic_like){
 

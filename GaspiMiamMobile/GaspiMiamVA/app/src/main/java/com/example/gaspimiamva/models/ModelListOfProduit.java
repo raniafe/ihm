@@ -1,10 +1,12 @@
 package com.example.gaspimiamva.models;
 
+import android.icu.text.SimpleDateFormat;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Pair;
 import com.example.gaspimiamva.R;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,35 +18,36 @@ public class ModelListOfProduit implements Parcelable {
     private static ArrayList<Produit> listProduitReservation = new ArrayList<>();
     private static ArrayList<Produit> listProduitVente = new ArrayList<>();
 
-    public ModelListOfProduit(){
+    public ModelListOfProduit() throws ParseException {
 
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         listProduitReservation.clear();
         listProduitsBoutique.clear();
         listProduitsStock.clear();
         listProduitVente.clear();
 
-        listProduitsStock.add(new Produit("Carotte", 19, "Légume", new Date(9/06/19), R.drawable.carot, 2, "Nice" , "carottes de plein champs"));
-        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", new Date(7/05/19), R.drawable.escalope, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ));
-        listProduitsStock.add(new Produit("Pêche", 5, "Fruit", new Date(7/06/19), R.drawable.peach, 3, "Nice", "du Tarn et Garonne" ));
-        listProduitsStock.add(new Produit("Fraises", 8, "Fruit", new Date(3/06/19), R.drawable.strawberry, 4, "Antibes","fraises des bois, non traitées" ));
-        listProduitsStock.add(new Produit("Tomate", 3, "Légume", new Date(9/06/19), R.drawable.tomatoe, 2, "Nice", "sans pesticides" ));
-        listProduitsStock.add(new Produit("Yaourt", 19, "Autre", new Date(9/06/19), R.drawable.yaourt, 6, "Nice", "au lait fermier entier et fermenté" ));
+        listProduitsStock.add(new Produit("Carotte", 19, "Légume", format.parse( "2019-06-31" ), R.drawable.carot, 2, "Nice" , "carottes de plein champs"));
+        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", format.parse( "2019-07-11" ), R.drawable.escalope, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ));
+        listProduitsStock.add(new Produit("Pêche", 5, "Fruit", format.parse( "2019-05-31" ), R.drawable.peach, 3, "Nice", "du Tarn et Garonne" ));
+        listProduitsStock.add(new Produit("Fraises", 8, "Fruit",format.parse( "2019-06-21" ), R.drawable.strawberry, 4, "Antibes","fraises des bois, non traitées" ));
+        listProduitsStock.add(new Produit("Tomate", 3, "Légume", format.parse( "2019-06-27" ), R.drawable.tomatoe, 2, "Nice", "sans pesticides" ));
+        listProduitsStock.add(new Produit("Yaourt", 19, "Autre", format.parse( "2019-06-22" ), R.drawable.yaourt, 6, "Nice", "au lait fermier entier et fermenté" ));
 
-        listProduitsBoutique.add(new Produit("Poisson", 8, "Autre", new Date(2/06/19), R.drawable.poisson, 12, "Antibes" , "récolte du jour. Poisson frais"));
-        listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", new Date(2/06/19), R.drawable.apple, 0, "Antibes" , "idéales en compote"));
-        listProduitsBoutique.add(new Produit("Grapes", 8, "Fruit", new Date(2/06/19), R.drawable.grapes, 0, "Antibes" ,"à conserver au frais"));
-        listProduitsBoutique.add(new Produit("Mango", 8, "Fruit", new Date(2/06/19), R.drawable.mango, 0, "Antibes", "récoltées sur l'arbre à maturité. Transport en avion" ));
-        listProduitsBoutique.add(new Produit("Papaya", 8, "Fruit", new Date(2/06/19), R.drawable.papaya, 0, "Antibes", "transport en avion" ));
-        listProduitsBoutique.add(new Produit("Water Melon", 8, "Fruit", new Date(2/06/19), R.drawable.watermelon, 0, "Antibes", "Melon Espagnol, gros calibre" ));
-        listProduitsBoutique.add(new Produit("Avocat", 6, "Legume", new Date(3/06/19), R.drawable.avocat, 14, "Antibes", "Récolté au Mexique. Agriculture raisonnée" ));
-        listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", new Date(2/06/19), R.drawable.yaourt, 34, "Antibes", "lait fermier"));
+        listProduitsBoutique.add(new Produit("Poisson", 8, "Autre",format.parse( "2019-05-21" ), R.drawable.poisson, 12, "Antibes" , "récolte du jour. Poisson frais"));
+        listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", format.parse( "2019-07-16" ), R.drawable.apple, 0, "Antibes" , "idéales en compote"));
+        listProduitsBoutique.add(new Produit("Grapes", 8, "Fruit", format.parse( "2019-06-23" ), R.drawable.grapes, 0, "Antibes" ,"à conserver au frais"));
+        listProduitsBoutique.add(new Produit("Mango", 8, "Fruit",format.parse( "2019-08-31" ), R.drawable.mango, 0, "Antibes", "récoltées sur l'arbre à maturité. Transport en avion" ));
+        listProduitsBoutique.add(new Produit("Papaya", 8, "Fruit", format.parse( "2019-09-31" ), R.drawable.papaya, 0, "Antibes", "transport en avion" ));
+        listProduitsBoutique.add(new Produit("Water Melon", 8, "Fruit", format.parse( "2019-08-23" ), R.drawable.watermelon, 0, "Antibes", "Melon Espagnol, gros calibre" ));
+        listProduitsBoutique.add(new Produit("Avocat", 6, "Legume", format.parse( "2019-06-24" ), R.drawable.avocat, 14, "Antibes", "Récolté au Mexique. Agriculture raisonnée" ));
+        listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", format.parse( "2019-07-25" ), R.drawable.yaourt, 34, "Antibes", "lait fermier"));
         listProduitsBoutique.add(new Produit("Escalope", 30, "Autre", new Date(2/06/19), R.drawable.escalope, 0, "Antibes", "Elevage non intensif" ));
 
-        listProduitVente.add(new Produit("Posson", 8, "Autre", new Date(2/06/19), R.drawable.poisson, 12, "Antibes" ,"Elevage non intensif" ));
-        listProduitVente.add(new Produit("Apple", 8, "Fruit", new Date(2/06/19), R.drawable.apple, 0, "Antibes" ,"Elevage non intensif" ));
-        listProduitVente.add(new Produit("Grapes", 8, "Fruit", new Date(2/06/19), R.drawable.grapes, 0, "Antibes","Elevage non intensif"  ));
-        listProduitVente.add(new Produit("Mango", 8, "Fruit", new Date(2/06/19), R.drawable.mango, 0, "Antibes" ,"Elevage non intensif" ));
-        listProduitVente.add(new Produit("Papaya", 8, "Fruit", new Date(2/06/19), R.drawable.papaya, 0, "Antibes","Elevage non intensif"  ));
+        listProduitVente.add(new Produit("Posson", 8, "Autre",format.parse( "2019-06-02" ), R.drawable.poisson, 12, "Antibes" ,"Elevage non intensif" ));
+        listProduitVente.add(new Produit("Apple", 8, "Fruit",format.parse( "2019-06-03" ), R.drawable.apple, 0, "Antibes" ,"Elevage non intensif" ));
+        listProduitVente.add(new Produit("Grapes", 8, "Fruit",format.parse( "2019-06-04" ), R.drawable.grapes, 0, "Antibes","Elevage non intensif"  ));
+        listProduitVente.add(new Produit("Mango", 8, "Fruit",format.parse( "2019-07-05" ), R.drawable.mango, 0, "Antibes" ,"Elevage non intensif" ));
+        listProduitVente.add(new Produit("Papaya", 8, "Fruit", format.parse( "2019-07-03" ), R.drawable.papaya, 0, "Antibes","Elevage non intensif"  ));
 
     }
 
@@ -63,26 +66,26 @@ public class ModelListOfProduit implements Parcelable {
         }
     };
 
-    public ArrayList<Produit> getListProduitReservation() {
+    public static ArrayList<Produit> getListProduitReservation() {
         return listProduitReservation;
     }
 
-    public ArrayList<Produit> getListProduitsStock() {
+    public static ArrayList<Produit> getListProduitsStock() {
         return listProduitsStock;
     }
 
-    public ArrayList<Produit> getListProduitsBoutiqueGratuits() {
+    public static ArrayList<Produit> getListProduitsBoutiqueGratuits() {
         ArrayList<Produit> list = new ArrayList<Produit>() ;
         for(int i=0; i<listProduitsBoutique.size();i++)
             if (listProduitsBoutique.get(i).getPrix()==0) list.add(listProduitsBoutique.get(i));
         return list;
     }
 
-    public ArrayList<Produit> getListProduitsBoutique() {
+    public static ArrayList<Produit> getListProduitsBoutique() {
         return listProduitsBoutique;
     }
 
-    public ArrayList<Produit> getListProduitVente() {
+    public static ArrayList<Produit> getListProduitVente() {
         return listProduitVente;
     }
 
@@ -123,6 +126,10 @@ public class ModelListOfProduit implements Parcelable {
 
     public void deleteStock(Produit produit) {
         listProduitsStock.remove(produit);
+    }
+
+    public void addMesVentes(Produit produit) {
+        getListProduitVente().add( produit );
     }
 
     public void addBoutique(Produit produit) {

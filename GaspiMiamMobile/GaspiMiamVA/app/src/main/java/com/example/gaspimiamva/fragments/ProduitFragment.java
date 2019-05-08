@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,15 @@ public class ProduitFragment extends Fragment {
 
     View myView;
     private static final String ARG_ModelList= "argText";
+    private static final String ARG_Model= "argModel";
     public Produit produit ;
+    private ModelListOfProduit modelListOfProduit ;
 
-    public static ProduitFragment newInstance(Produit produit) {
+    public static ProduitFragment newInstance(Produit produit, ModelListOfProduit modelListOfProduit) {
         ProduitFragment fragment = new ProduitFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_ModelList,produit);
+        args.putParcelable(ARG_Model,modelListOfProduit);
         fragment.setArguments(args);
         return fragment;
     }
@@ -39,48 +43,62 @@ public class ProduitFragment extends Fragment {
 
         TextView nomProduit = myView.findViewById(R.id.nomProduit);
         ImageView imageProduit = myView.findViewById(R.id.imageViewProduit);
-        EditText descriptionProduit = myView.findViewById(R.id.editText2);
-        EditText quantiteProduit = myView.findViewById(R.id.editText4);
+        TextView descr = myView.findViewById(R.id.de);
+        final EditText quantiteProduit = myView.findViewById(R.id.quantite);
         Button buttonVendreProduit = myView.findViewById(R.id.buttonVendre);
         Button buttonMangerProduit = myView.findViewById(R.id.buttonManger);
         Button buttonDonnerProduit = myView.findViewById(R.id.butttonDonner);
+        final TextView quant= myView.findViewById(R.id.quant);
 
 
         if (getArguments() != null && produit==null) {
             produit = getArguments().getParcelable(ARG_ModelList);
+            modelListOfProduit = getArguments().getParcelable(ARG_Model);
         }
         nomProduit.setText(produit.getName());
-        descriptionProduit.setText(produit.getDescription());
+        descr.setText(produit.getDescription());
+        quant.setText(produit.getQuantite().toString());
         imageProduit.setImageResource(produit.getImage());
-        quantiteProduit.setText(produit.getQuantite().toString());
 
         buttonVendreProduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 FragmentManager manager = (getActivity()).getFragmentManager();
+                int quant ;
+                if(quantiteProduit.getText().toString().equals(""))
+                    quant =0 ;
+                else
+                    quant =Integer.parseInt(quantiteProduit.getText().toString());
                 manager.beginTransaction()
                         .replace(R.id.content_frame
-                                , FormulaireVenteFragment.newInstance(produit))
+                                , FormulaireVenteFragment.newInstance(produit,quant,modelListOfProduit))
                         .commit();
             }
         });
         buttonDonnerProduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
+                produit.setQuantite(quanti);
+                if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
-                                , FormulaireDonFragment.newInstance(produit))
+                                , ProduitFragment.newInstance(produit,modelListOfProduit))
                         .commit();
             }
         });
         buttonMangerProduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
+                produit.setQuantite(quanti);
+                if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
-                                , FormulaireMangerFragment.newInstance(produit))
+                                , ProduitFragment.newInstance(produit,modelListOfProduit))
                         .commit();
             }
         });
