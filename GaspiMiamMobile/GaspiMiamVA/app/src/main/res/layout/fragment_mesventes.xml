@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nav_mesventes"
+        style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
-        android:text="Mes Ventes Layout"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="Mes Ventes"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="100dp"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ListView
+            android:id="@+id/list_vente"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="40dp"
+            android:divider="@color/colorPrimaryDark"
+            android:listSelector="#e7b2e7"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonfab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="350dp"
+
+        android:clickable="false"
+        app:layout_anchorGravity="bottom|right|left"
+        android:background="@color/colorPrimary"
+
+        android:src="@drawable/add" />
+
+
+
+
+
+
+
+
 </RelativeLayout>

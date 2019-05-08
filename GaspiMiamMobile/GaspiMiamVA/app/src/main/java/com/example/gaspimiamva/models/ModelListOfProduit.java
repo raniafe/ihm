@@ -40,6 +40,11 @@ public class ModelListOfProduit implements Parcelable {
         listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", new Date(2/06/19), R.drawable.yaourt, 34, "Antibes", "lait fermier"));
         listProduitsBoutique.add(new Produit("Escalope", 30, "Autre", new Date(2/06/19), R.drawable.escalope, 0, "Antibes", "Elevage non intensif" ));
 
+        listProduitVente.add(new Produit("Posson", 8, "Autre", new Date(2/06/19), R.drawable.poisson, 12, "Antibes" ,"Elevage non intensif" ));
+        listProduitVente.add(new Produit("Apple", 8, "Fruit", new Date(2/06/19), R.drawable.apple, 0, "Antibes" ,"Elevage non intensif" ));
+        listProduitVente.add(new Produit("Grapes", 8, "Fruit", new Date(2/06/19), R.drawable.grapes, 0, "Antibes","Elevage non intensif"  ));
+        listProduitVente.add(new Produit("Mango", 8, "Fruit", new Date(2/06/19), R.drawable.mango, 0, "Antibes" ,"Elevage non intensif" ));
+        listProduitVente.add(new Produit("Papaya", 8, "Fruit", new Date(2/06/19), R.drawable.papaya, 0, "Antibes","Elevage non intensif"  ));
 
     }
 

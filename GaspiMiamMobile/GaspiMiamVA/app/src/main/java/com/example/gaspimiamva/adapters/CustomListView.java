@@ -60,7 +60,7 @@ public class CustomListView extends ArrayAdapter<Produit> {
             public void onClick(View v) {
                 FragmentManager manager = ((Activity)context).getFragmentManager();
                 manager.beginTransaction()
-                        .replace(R.id.cont_frame
+                        .replace(R.id.content_frame
                                 , ProduitFragment.newInstance(Listproduit.get(position)))
                         .commit();
             }

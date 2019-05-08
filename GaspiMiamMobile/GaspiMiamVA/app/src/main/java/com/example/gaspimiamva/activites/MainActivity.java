@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
@@ -59,9 +60,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.cont_frame
+                .replace(R.id.content_frame
                         , AccueilFragment.newInstance(modelListOfProduit))
                 .commit();
+
 
     }
 
@@ -106,41 +108,41 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_accueil) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.cont_frame
+                    .replace(R.id.content_frame
                             , AccueilFragment.newInstance(this.modelListOfProduit))
                     .commit();
             System.out.print(modelListOfProduit);
         } else if (id == R.id.nav_boutique) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.cont_frame
+                    .replace(R.id.content_frame
                             , BoutiqueFragment.newInstance(this.modelListOfProduit))
                     .commit();
 
         }  else if (id == R.id.nav_mesventes) {
 
             fragmentManager.beginTransaction()
-                    .replace(R.id.cont_frame
-                            , new MesVentesFragment())
+                    .replace(R.id.content_frame
+                            , MesVentesFragment.newInstance(this.modelListOfProduit))
                     .commit();
 
 
         }else if (id == R.id.nav_stock) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.cont_frame
+                    .replace(R.id.content_frame
                             ,  StockFragment.newInstance(this.modelListOfProduit))
                     .commit();
 
 
         } else if (id == R.id.nav_moncompte) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.cont_frame
+                    .replace(R.id.content_frame
                             , new MonCompteFragment())
                     .commit();
 
 
         } else if (id == R.id.nav_map) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.cont_frame
+                    .replace(R.id.content_frame
                             , new MapFragment())
                     .commit();
 
@@ -159,4 +161,19 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, MainActivity.class) ;
         startActivity(intent) ;
     }
+
+    public void addEvent(String title, String location, long begin, long end) {
+        Intent intent = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.Events.TITLE, title)
+                .putExtra(CalendarContract.Events.EVENT_LOCATION, location)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, begin)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, end);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
 }
+
+

@@ -5,55 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="198dp"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
+
             android:id="@+id/img"
-            android:layout_width="170dp"
-            android:layout_height="213dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="0dp" />
 
+            android:layout_width="300dp"
 
+            android:layout_height="200dp"
 
-        <TextView
-            android:id="@+id/tvproduit"
-            style="@style/BlackText"
-            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+
+            android:scaleType="centerCrop" />
+
+        <FrameLayout
+
+            android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="text"
-            android:textSize="12sp"></TextView>
 
-        <TextView
-            android:id="@+id/tvid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="text"
-            android:textSize="12sp"
-            style="@style/BlackText"></TextView>
+            android:layout_gravity="left|bottom"
 
-        <TextView
-            android:id="@+id/tvdescri"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="text"
-            android:textSize="12sp"
-            style="@style/BlackText" ></TextView>
+            android:background="@android:drawable/screen_background_dark_transparent"
 
-    </LinearLayout>
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/tvproduit"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:padding="16dp"
+
+                android:textColor="#FFFFFF"
+
+                android:textSize="@dimen/text_size"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvid"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:padding="16dp"
+
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="80dp"
+
+                android:textSize="16dp"
+                android:layout_marginTop="3dp"
+
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/tvdescri"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:padding="16dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="3dp"
+
+                android:textColor="#FFFFFF"
+
+                android:textSize="16dp"
+
+                android:textStyle="bold"></TextView>
+
+
+        </FrameLayout>
+
+
+
+
+
+    </FrameLayout>
+
 
 </android.support.constraint.ConstraintLayout>
 
