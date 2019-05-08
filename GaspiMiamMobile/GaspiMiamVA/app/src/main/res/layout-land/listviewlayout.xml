@@ -20,7 +20,7 @@
 
             android:layout_width="300dp"
 
-            android:layout_height="200dp"
+            android:layout_height="300dp"
 
             android:layout_gravity="center"
 
@@ -28,11 +28,12 @@
 
         <FrameLayout
 
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
 
             android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
 
-            android:layout_gravity="left|bottom"
+            android:layout_gravity="left|bottom|right"
 
             android:background="@android:drawable/screen_background_dark_transparent"
 
