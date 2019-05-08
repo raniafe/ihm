@@ -59,7 +59,7 @@ public class ProduitFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
-                        .replace(R.id.cont_frame
+                        .replace(R.id.content_frame
                                 , FormulaireVenteFragment.newInstance(produit))
                         .commit();
             }
@@ -69,7 +69,7 @@ public class ProduitFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
-                        .replace(R.id.cont_frame
+                        .replace(R.id.content_frame
                                 , FormulaireDonFragment.newInstance(produit))
                         .commit();
             }
@@ -79,7 +79,7 @@ public class ProduitFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
-                        .replace(R.id.cont_frame
+                        .replace(R.id.content_frame
                                 , FormulaireMangerFragment.newInstance(produit))
                         .commit();
             }

@@ -72,7 +72,7 @@ public class FormulaireDonFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
-                        .replace(R.id.cont_frame
+                        .replace(R.id.content_frame
                                 , ProduitFragment.newInstance(produit))
                         .commit();
             }
