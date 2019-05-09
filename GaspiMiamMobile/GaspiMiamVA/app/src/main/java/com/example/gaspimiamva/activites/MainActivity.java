@@ -1,22 +1,28 @@
 package com.example.gaspimiamva.activites;
 
 import android.app.FragmentManager;
-import android.app.Fragment;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.ClipData;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+//import com.example.gaspimiamva.activites.Notification;
 
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.fragments.AccueilFragment;
@@ -26,21 +32,18 @@ import com.example.gaspimiamva.fragments.MesVentesFragment;
 import com.example.gaspimiamva.fragments.MonCompteFragment;
 import com.example.gaspimiamva.fragments.StockFragment;
 import com.example.gaspimiamva.models.ModelListOfProduit;
-import com.example.gaspimiamva.models.Produit;
-import com.example.gaspimiamva.models.UserModel;
 import com.example.gaspimiamva.models.UsersListModel;
 
-
 import java.text.ParseException;
-import java.util.ArrayList;
-
-import static com.example.gaspimiamva.R.id.toolbar;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static ModelListOfProduit modelListOfProduit;
     public static UsersListModel userModel ;
+    public static final String CHANNEL_ID = "channel";
+    public static final int NOTIFICATION_ID = 888888;
+    public Bundle bundle;
 
     public MainActivity() {
         try {
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -94,14 +98,24 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item ){
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        if (id == R.id.notification) {
 
+            //Notification notif = new Notification();
+            //notif.onCreate(bundle);
+            showNotification("alerte", "Courgettes en danger, pensez à les consommer");
+
+            /*
+            Intent intent = new Intent (getApplicationContext(), Notification.class);
+            startActivity(intent);
+            */
+        }
+        //noinspection SimplifiableIfStatement
 
         return super.onOptionsItemSelected(item);
     }
@@ -180,6 +194,39 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
     }
+
+
+    public void showNotification(String title, String content) {
+        System.out.println("ici notif");
+        NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.alerte)
+                .setContentTitle(title)
+                .setContentText(content)
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(NOTIFICATION_ID, notifBuilder.build());
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        // creation du chanel de notification
+        // pb de version : >26
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "Channel notification";
+            String description = "Channel destiné à notifier les évenements du telephonné";
+            // modifier le niveau d'importance : si niveau élevé, la notification apparaitra avant les autres
+            int degre_importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, degre_importance);
+            channel.setDescription(description);
+            // Manager : celui qu'on appellera pour faire la notification
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
 
 }
 

@@ -79,6 +79,8 @@ public class ProduitFragment extends Fragment {
         buttonDonnerProduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // penser à afficher un message pour avertir de saisir une quantité
+                // sinon par défaut l'utilisateur va donner tout son stock
                 Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
                 produit.setQuantite(quanti);
                 if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
@@ -92,6 +94,7 @@ public class ProduitFragment extends Fragment {
         buttonMangerProduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // idem message d'alerte
                 Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
                 produit.setQuantite(quanti);
                 if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
