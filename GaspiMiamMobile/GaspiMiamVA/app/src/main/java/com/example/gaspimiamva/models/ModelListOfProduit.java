@@ -135,8 +135,12 @@ public class ModelListOfProduit implements Parcelable {
     public void addBoutique(Produit produit) {
         listProduitsBoutique.add( produit );
     }
+    public void addReservation(Produit produit) {
+        listProduitReservation.add( produit );
+    }
 
     public void deleteBoutique(Produit produit){listProduitsBoutique.remove(produit);}
+    public void deleteReservation(Produit produit){listProduitReservation.remove(produit);}
 
     @Override
     public int describeContents() {

@@ -84,6 +84,25 @@ public class ProduitFragment extends Fragment {
                 Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
                 produit.setQuantite(quanti);
                 if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
+                int quantit ;
+                if(quantiteProduit.getText().toString().equals(""))
+                    quantit =0 ;
+                else
+                    quantit =Integer.parseInt(quantiteProduit.getText().toString());
+
+                Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription());
+                if(quantit==0)
+                {
+                    produit1.setQuantite(produit.getQuantite());
+                    produit.setQuantite(0);
+                    modelListOfProduit.deleteStock(produit);
+                }
+                else {
+                    produit1.setQuantite(quantit);
+                    produit.setQuantite(new Integer(produit.getQuantite()-quantit));
+                }
+                modelListOfProduit.addMesVentes(produit1);
+                modelListOfProduit.addBoutique(produit1);
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
@@ -95,14 +114,25 @@ public class ProduitFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // idem message d'alerte
+                int quantit ;
+                if(quantiteProduit.getText().toString().equals(""))
+                    quantit =0 ;
+                else
+                    quantit =Integer.parseInt(quantiteProduit.getText().toString());
                 Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
                 produit.setQuantite(quanti);
-                if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
                 FragmentManager manager = (getActivity()).getFragmentManager();
-                manager.beginTransaction()
+                if (quanti <=0) {
+                    modelListOfProduit.deleteStock(produit);
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , StockFragment.newInstance(modelListOfProduit))
+                            .commit();
+                }
+               else { manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , ProduitFragment.newInstance(produit,modelListOfProduit))
-                        .commit();
+                        .commit();}
             }
         });
 

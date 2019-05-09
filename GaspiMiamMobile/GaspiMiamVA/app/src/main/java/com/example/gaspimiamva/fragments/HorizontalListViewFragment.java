@@ -123,10 +123,39 @@ public class HorizontalListViewFragment extends Fragment {
                                         , ProduitFragment.newInstance(list.get(position),modelListOfProduit))
                                 .commit();}
                     else{
+                        FragmentManager manager = getActivity().getFragmentManager();
+                        manager.beginTransaction()
+                                .replace(R.id.content_frame
+                                        , ProduitBoutiqueFragment.newInstance(list.get(position),modelListOfProduit))
+                                .commit();
 
                     }
                 }
             }));
+            holder.likeImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int id = (int)holder.likeImageView.getTag();
+                    if( id == R.drawable.ic_like){
+
+                        holder.likeImageView.setTag(R.drawable.ic_liked);
+                        holder.likeImageView.setImageResource(R.drawable.ic_liked);
+                        Toast.makeText(getActivity(),holder.titleTextView.getText()+" added to your Reservations",Toast.LENGTH_SHORT).show();
+                        modelListOfProduit.addReservation(list.get(position));
+                        modelListOfProduit.deleteBoutique(list.get(position));
+
+                    }else{
+
+                        holder.likeImageView.setTag(R.drawable.ic_like);
+                        holder.likeImageView.setImageResource(R.drawable.ic_like);
+                        Toast.makeText(getActivity(),holder.titleTextView.getText()+" removed from your Reservations",Toast.LENGTH_SHORT).show();
+                        modelListOfProduit.deleteReservation(list.get(position));
+                        modelListOfProduit.addBoutique(list.get(position));
+                    }
+
+                }
+            });
+
 
         }
 
@@ -149,28 +178,6 @@ public class HorizontalListViewFragment extends Fragment {
             coverImageView = (ImageView) v.findViewById(R.id.coverImageView);
             likeImageView = (ImageView) v.findViewById(R.id.likeImageView);
             shareImageView = (ImageView) v.findViewById(R.id.shareImageView);
-            likeImageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int id = (int)likeImageView.getTag();
-                    if( id == R.drawable.ic_like){
-
-                        likeImageView.setTag(R.drawable.ic_liked);
-                        likeImageView.setImageResource(R.drawable.ic_liked);
-
-                        Toast.makeText(getActivity(),titleTextView.getText()+" added to your Reservations",Toast.LENGTH_SHORT).show();
-
-                    }else{
-
-                        likeImageView.setTag(R.drawable.ic_like);
-                        likeImageView.setImageResource(R.drawable.ic_like);
-                        Toast.makeText(getActivity(),titleTextView.getText()+" removed from your Reservations",Toast.LENGTH_SHORT).show();
-
-
-                    }
-
-                }
-            });
 
 
 

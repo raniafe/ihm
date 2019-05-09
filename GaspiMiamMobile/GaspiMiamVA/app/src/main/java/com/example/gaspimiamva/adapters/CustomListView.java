@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.fragments.BoutiqueFragment;
+import com.example.gaspimiamva.fragments.ProduitBoutiqueFragment;
 import com.example.gaspimiamva.fragments.ProduitFragment;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
@@ -74,7 +75,11 @@ public class CustomListView extends ArrayAdapter<Produit> {
                                 , ProduitFragment.newInstance(Listproduit.get(position),modelListOfProduit))
                         .commit();}
                         else{
-
+                    FragmentManager manager = ((Activity)context).getFragmentManager();
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , ProduitBoutiqueFragment.newInstance(Listproduit.get(position),modelListOfProduit))
+                            .commit();
                 }
             }
         }));
