@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     android:orientation="vertical"
     android:padding="16dp">
@@ -50,15 +51,35 @@
         android:hint="Description"
         android:inputType="textEmailAddress" />
     <Button
+    android:layout_width="wrap_content"
+    android:id="@+id/buttonajout"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/colorPrimaryDark"
+    android:elevation="4dp"
+    android:paddingLeft="70dp"
+    android:layout_marginTop="20dp"
+    android:paddingRight="70dp"
+    android:text="Ajouter"
+    android:textColor="#fff" />
+    <ImageView
+        android:id="@+id/cam"
+        android:layout_width="64dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_menu_camera" />
+    <Button
         android:layout_width="wrap_content"
-        android:id="@+id/buttonajout"
+        android:id="@+id/button3"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@color/colorPrimaryDark"
         android:elevation="4dp"
         android:paddingLeft="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:paddingRight="70dp"
-        android:text="Ajouter"
+        android:text="Ajouter à ton agenda"
         android:textColor="#fff" />
 </LinearLayout>

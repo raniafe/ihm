@@ -63,59 +63,7 @@ public class AccueilFragment extends Fragment {
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
         Fragment fragment2 = fm.findFragmentById(R.id.fragmentContainer1);
         Fragment fragment3 = fm.findFragmentById(R.id.fragmentContainer2);
-        butt= myView.findViewById(R.id.button2) ;
         Calendar beginTime = Calendar.getInstance();
-        beginTime.set(2019, 1, 1, 8, 0);
-        final long startMillis = beginTime.getTimeInMillis();
-        Calendar endTime = Calendar.getInstance();
-        endTime.set(2019, 4, 1, 8, 0);
-        final long endMillis = endTime.getTimeInMillis();
-        butt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                   /* ContentResolver cr = getActivity().getContentResolver();
-                    ContentValues eventValues = new ContentValues();
-                    eventValues.put(CalendarContract.Events.TITLE, "title");
-                    eventValues.put(CalendarContract.Events.EVENT_LOCATION, "location");
-                    eventValues.put(CalendarContract.Events.DTSTART, startMillis);
-                    eventValues.put(CalendarContract.Events.DTEND, endMillis);
-                    eventValues.put(CalendarContract.Events.CALENDAR_ID, "1");//Defaul calendar
-                    eventValues.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.SHORT);
-                    cr.insert(CalendarContract.Events.CONTENT_URI, eventValues);
-*/
-             /*   Intent intent = new Intent(Intent.ACTION_INSERT)
-                        .setData(CalendarContract.Events.CONTENT_URI)
-                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, appointment.getStartOfCompleteDateAndTimeOfEvent())
-                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, appointment.getEndOfCompleteDateAndTimeOfEvent())
-                        .putExtra(CalendarContract.Events.TITLE, appointment.mTitle)
-                        .putExtra(CalendarContract.Events.DESCRIPTION, appointment.mDescription)
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, appointment.mAddress)
-                        ;
-                startActivity(intent);*/
-                int permissionCheck = ContextCompat.checkSelfPermission(getActivity(),
-                        Manifest.permission.WRITE_CALENDAR);
-                if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                    /*long currentTimeMillis = System.currentTimeMillis();
-                    // 設定活動結束時間為15分鐘後
-                    long endTimeMillis = currentTimeMillis + 900000;
-
-                    insertEntry("hh","ll","jj",currentTimeMillis,endTimeMillis);}*/
-
-                    Log.d("calendar","I");
-                        Calendar calendarEvent = Calendar.getInstance();
-                        Intent intent = new Intent(Intent.ACTION_EDIT);
-                        intent.setType("vnd.android.cursor.item/event");
-                        intent.putExtra("beginTime", calendarEvent.getTimeInMillis());
-                        intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
-                        intent.putExtra("title", "Sample Event");
-                        intent.putExtra("allDay", true);
-                        intent.putExtra("rule", "FREQ=YEARLY");
-                        startActivity(intent);
-
-
-                }
-            }
-        });
 
 
 
