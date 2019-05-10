@@ -42,23 +42,7 @@ public class MesVentesFragment extends Fragment {
         if (getArguments() != null && modelList==null) {
             modelList = getArguments().getParcelable(ARG_ModelList);
         }
-        FloatingActionButton mFab = (FloatingActionButton) myView.findViewById(R.id.buttonfab);
-        mFab.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.content_frame
-                                , new formulaireFragment())
-                        .commit();
-
-
-
-            }
-
-        });
 
         CustomListView customListView= new CustomListView(getActivity(),modelList.getListProduitVente(), 1);
         listView.setAdapter(customListView);

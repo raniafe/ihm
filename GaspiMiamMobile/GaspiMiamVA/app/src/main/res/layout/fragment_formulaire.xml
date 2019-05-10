@@ -15,7 +15,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginTop="5dp"
         android:text="Ajouter un produit"
-        android:textColor="#ce3232"
+        android:textColor="#431354"
         android:textSize="30sp"
         android:typeface="serif" />
 
@@ -50,36 +50,65 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="Description"
         android:inputType="textEmailAddress" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:layout_marginRight="180dp"
+            android:layout_weight="1"
+            android:text="Ajouter une photo" />
+
+        <ImageView
+            android:id="@+id/cam"
+            android:layout_width="100dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="-50dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_menu_camera" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save Image" />
+
+    </LinearLayout>
+
+
     <Button
-    android:layout_width="wrap_content"
-    android:id="@+id/buttonajout"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:background="@color/colorPrimaryDark"
-    android:elevation="4dp"
-    android:paddingLeft="70dp"
-    android:layout_marginTop="20dp"
-    android:paddingRight="70dp"
-    android:text="Ajouter"
-    android:textColor="#fff" />
-    <ImageView
-        android:id="@+id/cam"
-        android:layout_width="64dp"
-        android:layout_height="34dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/ic_menu_camera" />
-    <Button
-        android:layout_width="wrap_content"
         android:id="@+id/button3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@color/colorPrimaryDark"
-        android:elevation="4dp"
-        android:paddingLeft="70dp"
-        android:layout_marginTop="50dp"
+        android:paddingLeft="100dp"
         android:paddingRight="70dp"
         android:text="Ajouter à ton agenda"
         android:textColor="#fff" />
-</LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonajout"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:text="Ajouter"
+        android:textColor="#fff" />
+    </LinearLayout>
+
+
+
+
