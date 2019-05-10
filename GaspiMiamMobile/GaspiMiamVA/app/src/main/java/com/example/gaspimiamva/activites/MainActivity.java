@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity
     public static final String CHANNEL_ID = "channel";
     public static final int NOTIFICATION_ID = 888888;
     public Bundle bundle;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     public MainActivity() {
         try {
@@ -70,7 +71,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item ){
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity
             */
         }
         //noinspection SimplifiableIfStatement
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_moncompte) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
-                            , new MonCompteFragment())
+                            , MonCompteFragment.newInstance(userModel.getListOfProfiles().get(0)))
                     .commit();
 
 
@@ -239,7 +240,6 @@ public class MainActivity extends AppCompatActivity
             notificationManager.createNotificationChannel(channel);
         }
     }
-
 
 }
 

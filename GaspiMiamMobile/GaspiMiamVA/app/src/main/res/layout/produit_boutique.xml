@@ -38,12 +38,6 @@
                     android:background="@android:drawable/screen_background_dark_transparent"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/button3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Button" />
-
                     <TextView
                         android:id="@+id/nomProduit"
                         android:layout_width="match_parent"
@@ -136,33 +130,25 @@
                 android:padding="5dp"
                 android:textSize="13dp" />
 
+            <TextView
+                android:id="@+id/Erreur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonVendre"
+                    android:id="@+id/butttonReserver"
                     android:layout_width="109dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="0dp"
+                    android:layout_marginLeft="150dp"
                     android:layout_marginTop="40dp"
-                    android:text="Vendre" />
+                    android:text="Reserver" />
 
-                <Button
-                    android:id="@+id/butttonDonner"
-                    android:layout_width="109dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Donner" />
-
-                <Button
-                    android:id="@+id/buttonManger"
-                    android:layout_width="109dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:text="Manger" />
             </LinearLayout>
 
         </LinearLayout>

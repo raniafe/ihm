@@ -27,7 +27,7 @@ public class ModelListOfProduit implements Parcelable {
         listProduitVente.clear();
 
         listProduitsStock.add(new Produit("Carotte", 19, "Légume", format.parse( "2019-06-31" ), R.drawable.carot, 2, "Nice" , "carottes de plein champs"));
-        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", format.parse( "2019-07-11" ), R.drawable.escalope, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ));
+        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", format.parse( "2019-07-11" ), R.drawable.coconut, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ));
         listProduitsStock.add(new Produit("Pêche", 5, "Fruit", format.parse( "2019-05-31" ), R.drawable.peach, 3, "Nice", "du Tarn et Garonne" ));
         listProduitsStock.add(new Produit("Fraises", 8, "Fruit",format.parse( "2019-06-21" ), R.drawable.strawberry, 4, "Antibes","fraises des bois, non traitées" ));
         listProduitsStock.add(new Produit("Tomate", 3, "Légume", format.parse( "2019-06-27" ), R.drawable.tomatoe, 2, "Nice", "sans pesticides" ));

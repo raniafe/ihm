@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gaspimiamva.R;
@@ -22,8 +23,9 @@ public class MonCompteFragment extends Fragment {
     public Button modification ;
     private static final String ARG_User= "argText";
     private UserModel user ;
-    private TextView prénom ;
+    private TextView prenom ;
     private TextView adresse ;
+    private ImageView pdp ;
 
 
     public static MonCompteFragment newInstance(UserModel user) {
@@ -47,9 +49,11 @@ public class MonCompteFragment extends Fragment {
         }
 
         modification = myView.findViewById(R.id.modifier) ;
-        prénom = myView.findViewById(R.id.prenom) ;
+        prenom = myView.findViewById(R.id.prenom) ;
         adresse = myView.findViewById(R.id.adresse) ;
-        prénom.setText(user.getFirstName());
+        pdp= myView.findViewById(R.id.pdp);
+        if(user.getPhoto()!=null) pdp.setImageBitmap(user.getPhoto());
+        prenom.setText(user.getFirstName());
         adresse.setText(user.getAdresse());
 
         modification.setOnClickListener(

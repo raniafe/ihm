@@ -1,5 +1,6 @@
 package com.example.gaspimiamva.models;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -12,6 +13,7 @@ public class UserModel implements Parcelable {
     private String mdp;
     private String ancienMdp;
     private String numeroMobile;
+    private Bitmap photo ;
 
     // Constructeur pour un nouvel utilisateur
 
@@ -128,5 +130,13 @@ public class UserModel implements Parcelable {
         parcel.writeString(mdp);
         parcel.writeString(ancienMdp);
         parcel.writeString(numeroMobile);
+    }
+
+    public void setImage(Bitmap photo) {
+        this.photo =photo;
+    }
+
+    public Bitmap getPhoto() {
+        return photo;
     }
 }

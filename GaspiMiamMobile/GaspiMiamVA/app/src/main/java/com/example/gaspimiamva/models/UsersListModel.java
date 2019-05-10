@@ -36,7 +36,7 @@ public class UsersListModel implements Parcelable {
         listOfProfiles.add(profile);
     }
 
-    public static ArrayList<UserModel> getListOfProfiles() {
+    public  ArrayList<UserModel> getListOfProfiles() {
         return listOfProfiles;
     }
 

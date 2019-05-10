@@ -1,5 +1,5 @@
 
-/*
+
 package com.example.gaspimiamva.activites;
 
 
@@ -23,14 +23,21 @@ public class Notification extends AppCompatActivity {
 
     public static final String CHANNEL_ID = "channel";
     public static final int NOTIFICATION_ID = 888888;
+    String title ;
+    String content ;
 
-/*
-    IAgenda iAgenda;
+    public Notification(){
+        this.title ="alerte" ;
+        this.content = "Courgettes en danger, pensez à les consommer" ;
+    }
 
-    String res = iAgenda.getContent();
-*/
+
+   /* IAgenda iAgenda;
+
+    String res = iAgenda.getContent();*/
+
     // Activity start : création du chanel pour la notification
-/*
+
 
     @Override
     protected void onStart() {
@@ -53,7 +60,7 @@ public class Notification extends AppCompatActivity {
     }
 
 
-    public void showNotification(String title, String content) {
+    public void showNotification() {
 
         // construction de la notification
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -71,7 +78,11 @@ public class Notification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_moncompte);
+        this.showNotification();
+
+       // showNotification("alerte", "Courgettes en danger, pensez à les consommer");
+
+      /*  setContentView(R.layout.fragment_moncompte);
 
         // button
         Button buttonNotification = findViewById(R.id.notification);
@@ -81,7 +92,7 @@ public class Notification extends AppCompatActivity {
             public void onClick(View v) {
                 showNotification("alerte", "Courgettes en danger, pensez à les consommer");
             }
-        });
+        });*/
     }
 
 }
@@ -89,4 +100,3 @@ public class Notification extends AppCompatActivity {
 
 
 
-*/

@@ -1,11 +1,15 @@
 package com.example.gaspimiamva.fragments;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +23,8 @@ import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
 
+import java.util.Calendar;
+
 public class ProduitFragment extends Fragment {
 
     View myView;
@@ -26,6 +32,7 @@ public class ProduitFragment extends Fragment {
     private static final String ARG_Model= "argModel";
     public Produit produit ;
     private ModelListOfProduit modelListOfProduit ;
+    private Button butt ;
 
     public static ProduitFragment newInstance(Produit produit, ModelListOfProduit modelListOfProduit) {
         ProduitFragment fragment = new ProduitFragment();
@@ -48,6 +55,51 @@ public class ProduitFragment extends Fragment {
         Button buttonVendreProduit = myView.findViewById(R.id.buttonVendre);
         Button buttonMangerProduit = myView.findViewById(R.id.buttonManger);
         Button buttonDonnerProduit = myView.findViewById(R.id.butttonDonner);
+        butt=myView.findViewById(R.id.button3);
+        butt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                   /* ContentResolver cr = getActivity().getContentResolver();
+                    ContentValues eventValues = new ContentValues();
+                    eventValues.put(CalendarContract.Events.TITLE, "title");
+                    eventValues.put(CalendarContract.Events.EVENT_LOCATION, "location");
+                    eventValues.put(CalendarContract.Events.DTSTART, startMillis);
+                    eventValues.put(CalendarContract.Events.DTEND, endMillis);
+                    eventValues.put(CalendarContract.Events.CALENDAR_ID, "1");//Defaul calendar
+                    eventValues.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.SHORT);
+                    cr.insert(CalendarContract.Events.CONTENT_URI, eventValues);
+*/
+             /*   Intent intent = new Intent(Intent.ACTION_INSERT)
+                        .setData(CalendarContract.Events.CONTENT_URI)
+                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, appointment.getStartOfCompleteDateAndTimeOfEvent())
+                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, appointment.getEndOfCompleteDateAndTimeOfEvent())
+                        .putExtra(CalendarContract.Events.TITLE, appointment.mTitle)
+                        .putExtra(CalendarContract.Events.DESCRIPTION, appointment.mDescription)
+                        .putExtra(CalendarContract.Events.EVENT_LOCATION, appointment.mAddress)
+                        ;
+                startActivity(intent);*/
+
+                    /*long currentTimeMillis = System.currentTimeMillis();
+                    // 設定活動結束時間為15分鐘後
+                    long endTimeMillis = currentTimeMillis + 900000;
+
+                    insertEntry("hh","ll","jj",currentTimeMillis,endTimeMillis);}*/
+
+                    Log.d("calendar","I");
+                    Calendar calendarEvent = Calendar.getInstance();
+                    Intent intent = new Intent(Intent.ACTION_EDIT);
+                    intent.setType("vnd.android.cursor.item/event");
+                    intent.putExtra("beginTime", calendarEvent.getTimeInMillis());
+                    intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
+                    intent.putExtra("title", "Sample Event");
+                    intent.putExtra("allDay", true);
+                    intent.putExtra("rule", "FREQ=YEARLY");
+                    startActivity(intent);
+
+
+
+            }
+        });
         final TextView quant= myView.findViewById(R.id.quant);
 
 

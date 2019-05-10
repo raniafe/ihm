@@ -68,7 +68,6 @@ public class HorizontalListViewFragment extends Fragment {
             listOfProduits = getArguments().getParcelableArrayList(ARG_ModelList);
             id = getArguments().getInt(ARG_ID);
             modelListOfProduit = getArguments().getParcelable(ARG_Model);
-
         }
 
         if (listOfProduits.size() > 0 & MyRecyclerView != null) {
@@ -107,7 +106,7 @@ public class HorizontalListViewFragment extends Fragment {
         @Override
         public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-            holder.titleTextView.setText(list.get(position).getName());
+            holder.titleTextView.setText(list.get(position).getName() +" "+ list.get(position).getQuantite() + " Kg");
             holder.coverImageView.setImageResource(list.get(position).getImage());
             holder.coverImageView.setTag(list.get(position).getImage());
             holder.likeImageView.setTag(R.drawable.ic_like);
@@ -132,7 +131,8 @@ public class HorizontalListViewFragment extends Fragment {
                     }
                 }
             }));
-            holder.likeImageView.setOnClickListener(new View.OnClickListener() {
+            if(id==1)
+            { holder.likeImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int id = (int)holder.likeImageView.getTag();
@@ -154,7 +154,8 @@ public class HorizontalListViewFragment extends Fragment {
                     }
 
                 }
-            });
+            });}
+            else holder.likeImageView.setImageBitmap(null);
 
 
         }

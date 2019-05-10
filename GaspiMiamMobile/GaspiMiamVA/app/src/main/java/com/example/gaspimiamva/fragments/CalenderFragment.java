@@ -188,10 +188,10 @@ public class CalenderFragment extends Fragment {
                     // 指定一個時間段，查詢以下時間內的所有活動
                     // 月份是從0開始，0-11
                     Calendar beginTime = Calendar.getInstance();
-                    beginTime.set(2017, 0, 1, 8, 0);
+                    beginTime.set(2019, 0, 1, 8, 0);
                     long startMillis = beginTime.getTimeInMillis();
                     Calendar endTime = Calendar.getInstance();
-                    endTime.set(2017, 4, 1, 8, 0);
+                    endTime.set(2019, 4, 1, 8, 0);
                     long endMillis = endTime.getTimeInMillis();
                     // 查詢活動
                     Cursor cur = null;
