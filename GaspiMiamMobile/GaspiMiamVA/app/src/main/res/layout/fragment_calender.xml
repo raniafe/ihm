@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gaspimiamva.fragments.CalenderFragment">
+
+    <Button
+        android:id="@+id/request_permission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="permission"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+    <Button
+        android:id="@+id/query_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" requete Compte"
+
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+
+    <EditText
+        android:id="@+id/account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="compte"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/query_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calendrier de requête"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <EditText
+        android:id="@+id/calendar_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de calendrier"
+        android:ems="10"
+        android:inputType="textPersonName" />
+    <Button
+        android:id="@+id/query_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列出活動"
+
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="112dp" />
+
+
+
+
+    <EditText
+        android:id="@+id/event_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Activité ID"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="titre"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/start_date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date et heure de début de l'activité"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/insert_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter un événement"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="112dp" />
+    <Button
+        android:id="@+id/update_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mettre à jour l'activité"
+        android:onClick="update_event"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="160dp" />
+    <Button
+        android:id="@+id/delete_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Supprimer l'événement"
+        android:onClick="delete_event"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+</LinearLayout>

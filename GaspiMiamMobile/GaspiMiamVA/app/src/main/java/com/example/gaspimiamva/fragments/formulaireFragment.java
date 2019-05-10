@@ -53,7 +53,7 @@ public class formulaireFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         myview = inflater.inflate(R.layout.fragment_formulaire,container,false);
-        
+
         tvprod=myview.findViewById(R.id.tvproduit);
        // tvprod.setText(produit);
         tvdescri=myview.findViewById(R.id.tvdescri);
@@ -62,5 +62,6 @@ public class formulaireFragment extends Fragment {
         //img.setImageResource(image);
 
         return inflater.inflate(R.layout.fragment_formulaire, container, false);
+
     }
 }

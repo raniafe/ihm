@@ -51,7 +51,7 @@ public class MesVentesFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.content_frame
-                                , new formulaireFragment())
+                                , new CalenderFragment())
                         .commit();
 
 

@@ -52,8 +52,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+            <intent-filter>
+
+                <action android:name="andoid.provider.calendar.action.HANDLE_CUSTOM_EVENT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                
+
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
