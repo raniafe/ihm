@@ -6,6 +6,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Observable;
@@ -20,6 +22,7 @@ public class Produit extends Observable implements Parcelable  {
     private Integer prix;
     private String localisation; // pour les produits de la Boutique
     private String description;
+    private LatLng positiongps;
 
     // constructeur pour la ListStock
 
@@ -34,7 +37,7 @@ public class Produit extends Observable implements Parcelable  {
 
     // constructeur pour la Listvente, ListBoutique, ListReservation
 
-    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, Integer prix, String localisation, String description) {
+    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, Integer prix, String localisation, String description, LatLng positiongps) {
         this.name = name;
         this.quantite = quantite;
         this.categorie = categorie;
@@ -43,6 +46,7 @@ public class Produit extends Observable implements Parcelable  {
         this.prix = prix;
         this.localisation = localisation;
         this.description = description;
+        this.positiongps=positiongps;
     }
 
     protected Produit(Parcel in) {
@@ -136,6 +140,10 @@ public class Produit extends Observable implements Parcelable  {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public LatLng getPositiongps() {
+        return positiongps;
     }
 
     @Override

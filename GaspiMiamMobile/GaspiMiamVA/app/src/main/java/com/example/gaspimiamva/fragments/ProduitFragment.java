@@ -98,7 +98,7 @@ public class ProduitFragment extends Fragment {
                 else
                     quantit =Integer.parseInt(quantiteProduit.getText().toString());
                 Integer quanti = produit.getQuantite() - quantit ;
-                Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription());
+                Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription(),produit.getPositiongps());
                 if(quantit<=0 || quantit>produit.getQuantite())
                 {
                     erreur.setText("Erreur, Veuillez saisir une quantité valable");
