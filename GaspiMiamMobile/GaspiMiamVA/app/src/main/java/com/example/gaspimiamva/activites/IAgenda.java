@@ -9,7 +9,7 @@ public interface IAgenda {
     String event = "";
     */
 
-     public String getContent();
+     abstract   String getContent();
 
     }
 

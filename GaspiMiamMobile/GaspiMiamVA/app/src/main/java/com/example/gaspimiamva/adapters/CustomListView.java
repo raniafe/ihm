@@ -68,6 +68,7 @@ public class CustomListView extends ArrayAdapter<Produit> {
         viewHolder.img.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // id = 0 : on n'affiche pas le prix
                 if(id==0)
                 {FragmentManager manager = ((Activity)context).getFragmentManager();
                 manager.beginTransaction()
@@ -85,6 +86,7 @@ public class CustomListView extends ArrayAdapter<Produit> {
         }));
 
         if (id ==1){
+            // id = 1 : on affiche le prix
             viewHolder.tvid.setText((Listproduit.get(position).getPrix()).toString() + "€");
         }else{
             viewHolder.tvid.setText((Listproduit.get(position).getQuantite()).toString());
