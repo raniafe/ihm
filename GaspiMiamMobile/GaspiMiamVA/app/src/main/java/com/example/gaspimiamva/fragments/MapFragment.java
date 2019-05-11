@@ -1,6 +1,8 @@
 package com.example.gaspimiamva.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -30,6 +32,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     MapView mMapView;
     View myView;
     public ModelListOfProduit modelList;
+
+    private Activity context;
 
     public MapFragment(){
 
@@ -82,15 +86,22 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         //googleMap.addMarker(new MarkerOptions().position(Olives).title("1 sac d'olives "));
         //googleMap.addMarker(new MarkerOptions().position(locperso).title("5kg de pommes "));
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(Olives));
-
+        int i=0;
         for(Produit produit : modelList.getListProduitsBoutique()){
-            googleMap.addMarker(new MarkerOptions().position(produit.getPositiongps()).title(produit.getName()));
+            googleMap.addMarker(new MarkerOptions().position(produit.getPositiongps()).title(produit.getName()).zIndex(i));
+            i++;
         }
 
         mGoogleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
                 System.out.println(marker.getTitle());
+
+                FragmentManager manager = getFragmentManager();
+                manager.beginTransaction()
+                        .replace(R.id.content_frame
+                                , ProduitBoutiqueFragment.newInstance(modelList.getListProduitsBoutique().get(Math.round(marker.getZIndex())),modelList))
+                        .commit();
             }
         });
     }}
