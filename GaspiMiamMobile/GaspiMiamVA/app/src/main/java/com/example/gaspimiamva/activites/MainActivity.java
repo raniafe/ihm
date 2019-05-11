@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "Channel notification";
-            String description = "Channel destiné à notifier les évenements du telephonné";
+            String description = "Channel destiné à notifier les évenements du telephonne";
             // modifier le niveau d'importance : si niveau élevé, la notification apparaitra avant les autres
             int degre_importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, degre_importance);

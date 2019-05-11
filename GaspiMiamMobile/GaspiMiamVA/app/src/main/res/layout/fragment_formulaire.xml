@@ -107,8 +107,4 @@
         android:paddingRight="70dp"
         android:text="Ajouter"
         android:textColor="#fff" />
-    </LinearLayout>
-
-
-
-
+</LinearLayout>
