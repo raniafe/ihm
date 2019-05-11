@@ -39,7 +39,6 @@ import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 
 
-@SuppressLint("ValidFragment")
 public class formulaireFragment extends Fragment {
 
     private String produit;
@@ -69,68 +68,25 @@ public class formulaireFragment extends Fragment {
     private final int PERMISSION_REQUEST_READ_MEDIA = 100;
 
 
-    public formulaireFragment() {
-    }
 
-    public formulaireFragment(String produit, Integer image, String descri, String prix) {
-        // Required empty public constructor
-        this.produit = produit;
-        this.descrip = descri;
-        this.image = image;
-        this.prix = prix;
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         myview = inflater.inflate(R.layout.fragment_formulaire, container, false);
-
-        tvprod = myview.findViewById(R.id.tvproduit);
-        // tvprod.setText(produit);
-        tvdescri = myview.findViewById(R.id.tvdescri);
-        // tvdescri.setText(descrip);
-        img = myview.findViewById(R.id.img);
-        //img.setImageResource(image);
         butt = myview.findViewById(R.id.button3);
         butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("calender","i");
-                   /* ContentResolver cr = getActivity().getContentResolver();
-                    ContentValues eventValues = new ContentValues();
-                    eventValues.put(CalendarContract.Events.TITLE, "title");
-                    eventValues.put(CalendarContract.Events.EVENT_LOCATION, "location");
-                    eventValues.put(CalendarContract.Events.DTSTART, startMillis);
-                    eventValues.put(CalendarContract.Events.DTEND, endMillis);
-                    eventValues.put(CalendarContract.Events.CALENDAR_ID, "1");//Defaul calendar
-                    eventValues.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.SHORT);
-                    cr.insert(CalendarContract.Events.CONTENT_URI, eventValues);
-*/
-             /*   Intent intent = new Intent(Intent.ACTION_INSERT)
-                        .setData(CalendarContract.Events.CONTENT_URI)
-                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, appointment.getStartOfCompleteDateAndTimeOfEvent())
-                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, appointment.getEndOfCompleteDateAndTimeOfEvent())
-                        .putExtra(CalendarContract.Events.TITLE, appointment.mTitle)
-                        .putExtra(CalendarContract.Events.DESCRIPTION, appointment.mDescription)
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, appointment.mAddress)
-                        ;
-                startActivity(intent);*/
-
-                    /*long currentTimeMillis = System.currentTimeMillis();
-                    // 設定活動結束時間為15分鐘後
-                    long endTimeMillis = currentTimeMillis + 900000;
-
-                    insertEntry("hh","ll","jj",currentTimeMillis,endTimeMillis);}*/
-
                 Log.d("calendar", "I");
                 Calendar calendarEvent = Calendar.getInstance();
                 Intent intent = new Intent(Intent.ACTION_EDIT);
                 intent.setType("vnd.android.cursor.item/event");
                 intent.putExtra("beginTime", calendarEvent.getTimeInMillis());
                 intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
-                intent.putExtra("title", "Sample Event");
+                intent.putExtra("title", "Date d'expiration de tes ... ");
                 intent.putExtra("allDay", true);
                 intent.putExtra("rule", "FREQ=YEARLY");
                 startActivity(intent);
@@ -165,33 +121,7 @@ public class formulaireFragment extends Fragment {
             }
         });
 
-
-       /* loadImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int permissionCheck = ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                if(permissionCheck!=PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},PERMISSION_REQUEST_READ_MEDIA);
-                }
-                else
-                {
-                  // loadImageFromStorage("/data/user/0/com.example.gaspimiam");
-                }
-            }
-        });*/
-
-
-        if (getArguments() != null && user == null) {
-            user = getArguments().getParcelable(ARG_User);
-        }
-
-
-
-
-
-
-
-        return inflater.inflate(R.layout.fragment_formulaire, container, false);
+        return myview;
 
     }
 
@@ -201,10 +131,7 @@ public class formulaireFragment extends Fragment {
         if (requestCode == REQUEST_ID_IMAGE_CAPTURE) {
             if (resultCode == RESULT_OK) {
                 photo = (Bitmap) data.getExtras().get("data");
-                pdp.setImageBitmap(photo);
                 saveImage.setAlpha(1f);
-                user.setImage(photo);
-
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getContext(), "Action Cancelled", Toast.LENGTH_LONG);
             } else {

@@ -88,6 +88,14 @@ public class ModelListOfProduit implements Parcelable {
     public static ArrayList<Produit> getListProduitVente() {
         return listProduitVente;
     }
+    public ArrayList<Produit> filtrerListParCategorie(final String categorie, ArrayList<Produit> list){
+        final ArrayList<Produit> listFiltre = new ArrayList<>();
+        for(int i=0; i<list.size();i++){
+            if(list.get(i).getCategorie().equals(categorie)) listFiltre.add(list.get(i)) ;
+        }
+
+        return listFiltre ;
+    }
 
     public Produit getByName(String produitName){
         switch (produitName){

@@ -32,7 +32,7 @@ public class ProduitFragment extends Fragment {
     private static final String ARG_Model= "argModel";
     public Produit produit ;
     private ModelListOfProduit modelListOfProduit ;
-    private Button butt ;
+    private TextView erreur;
 
     public static ProduitFragment newInstance(Produit produit, ModelListOfProduit modelListOfProduit) {
         ProduitFragment fragment = new ProduitFragment();
@@ -55,8 +55,9 @@ public class ProduitFragment extends Fragment {
         Button buttonVendreProduit = myView.findViewById(R.id.buttonVendre);
         Button buttonMangerProduit = myView.findViewById(R.id.buttonManger);
         Button buttonDonnerProduit = myView.findViewById(R.id.butttonDonner);
-
+        erreur=myView.findViewById(R.id.erreur);
         final TextView quant= myView.findViewById(R.id.quant);
+
 
 
         if (getArguments() != null && produit==null) {
@@ -89,58 +90,74 @@ public class ProduitFragment extends Fragment {
             public void onClick(View v) {
                 // penser à afficher un message pour avertir de saisir une quantité
                 // sinon par défaut l'utilisateur va donner tout son stock
-                Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
-                produit.setQuantite(quanti);
-                if( Integer.parseInt( quant.getText().toString())!=5) Log.d("Quantité","c'est pas nul");
+
                 int quantit ;
                 if(quantiteProduit.getText().toString().equals(""))
-                    quantit =0 ;
+                { quantit=0 ;
+                }
                 else
                     quantit =Integer.parseInt(quantiteProduit.getText().toString());
-
+                Integer quanti = produit.getQuantite() - quantit ;
                 Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription());
-                if(quantit==0)
+                if(quantit<=0 || quantit>produit.getQuantite())
                 {
+                    erreur.setText("Erreur, Veuillez saisir une quantité valable");
+                }else if(quanti==0){
                     produit1.setQuantite(produit.getQuantite());
                     produit.setQuantite(0);
                     modelListOfProduit.deleteStock(produit);
+                    FragmentManager manager = (getActivity()).getFragmentManager();
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , MesVentesFragment.newInstance(modelListOfProduit))
+                            .commit();
+                    modelListOfProduit.addMesVentes(produit1);
+                    modelListOfProduit.addBoutique(produit1);
                 }
-                else {
+                else if(quanti>0){
                     produit1.setQuantite(quantit);
                     produit.setQuantite(new Integer(produit.getQuantite()-quantit));
+                    FragmentManager manager = (getActivity()).getFragmentManager();
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , ProduitFragment.newInstance(produit,modelListOfProduit))
+                            .commit();
+                    modelListOfProduit.addMesVentes(produit1);
+                    modelListOfProduit.addBoutique(produit1);
                 }
-                modelListOfProduit.addMesVentes(produit1);
-                modelListOfProduit.addBoutique(produit1);
-                FragmentManager manager = (getActivity()).getFragmentManager();
-                manager.beginTransaction()
-                        .replace(R.id.content_frame
-                                , ProduitFragment.newInstance(produit,modelListOfProduit))
-                        .commit();
+
+
             }
         });
         buttonMangerProduit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // idem message d'alerte
                 int quantit ;
                 if(quantiteProduit.getText().toString().equals(""))
                     quantit =0 ;
                 else
                     quantit =Integer.parseInt(quantiteProduit.getText().toString());
-                Integer quanti = produit.getQuantite() - Integer.parseInt( quantiteProduit.getText().toString()) ;
-                produit.setQuantite(quanti);
+                Integer quanti = produit.getQuantite() - quantit ;
+
                 FragmentManager manager = (getActivity()).getFragmentManager();
-                if (quanti <=0) {
+                if (quanti <0 || quanti == produit.getQuantite()) {
+                    erreur.setText("Erreur, Veuillez saisir une quantité valable");
+
+                }
+                else if( quanti ==0 ){
                     modelListOfProduit.deleteStock(produit);
                     manager.beginTransaction()
                             .replace(R.id.content_frame
                                     , StockFragment.newInstance(modelListOfProduit))
                             .commit();
                 }
-               else { manager.beginTransaction()
-                        .replace(R.id.content_frame
-                                , ProduitFragment.newInstance(produit,modelListOfProduit))
-                        .commit();}
+                else {
+
+                    produit.setQuantite(quanti);
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , ProduitFragment.newInstance(produit,modelListOfProduit))
+                            .commit();}
             }
         });
 

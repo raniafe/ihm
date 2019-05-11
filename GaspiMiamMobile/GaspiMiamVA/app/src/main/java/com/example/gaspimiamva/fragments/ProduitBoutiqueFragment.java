@@ -62,9 +62,8 @@ public class ProduitBoutiqueFragment extends Fragment {
                 if (quantiteProduit.getText().toString().equals("") )
                 {
                     erreur.setText("Veuillez saisir la quantité désirer");
-
                 }
-                else if(Integer.parseInt(quantiteProduit.getText().toString())<=0)
+                else if(Integer.parseInt(quantiteProduit.getText().toString())<=0 || Integer.parseInt(quantiteProduit.getText().toString())> produit.getQuantite())
                 {
                     erreur.setText("La quantité saisie est hors norme");
                 }
@@ -72,12 +71,12 @@ public class ProduitBoutiqueFragment extends Fragment {
                 {
                     quantit = Integer.parseInt(quantiteProduit.getText().toString());
                     Produit produit1 = new Produit(produit.getName(),quantit,produit.getCategorie(),produit.getDate(),produit.getImage(),produit.getDescription());
-                    if(quantit> produit.getQuantite()) {
-                        quantit=produit.getQuantite() ;
+                    if(quantit== produit.getQuantite()) {
                         produit1.setQuantite(quantit);
                         modelListOfProduit.deleteBoutique(produit);
                     }
                     modelListOfProduit.addReservation(produit1);
+                    produit.setQuantite(produit.getQuantite()-quantit);
 
                     FragmentManager manager = (getActivity()).getFragmentManager();
                     manager.beginTransaction()
