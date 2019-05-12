@@ -35,15 +35,15 @@ public class ModelListOfProduit implements Parcelable {
         listProduitsStock.add(new Produit("Tomate", 3, "Légume", format.parse( "2019-06-27" ), R.drawable.tomatoe, 2, "Nice", "sans pesticides",new LatLng(43.515280, 7.172272)));
         listProduitsStock.add(new Produit("Yaourt", 19, "Autre", format.parse( "2019-06-22" ), R.drawable.yaourt, 6, "Nice", "au lait fermier entier et fermenté",new LatLng(43.515280, 7.002272) ));
 
-        listProduitsBoutique.add(new Produit("Poisson", 8, "Autre",format.parse( "2019-05-21" ), R.drawable.poisson, 12, "Antibes" , "récolte du jour. Poisson frais",new LatLng(43.215280, 7.072272)));
-        listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", format.parse( "2019-07-16" ), R.drawable.apple, 0, "Antibes" , "idéales en compote",new LatLng(42.515280, 7.072272)));
-        listProduitsBoutique.add(new Produit("Grapes", 8, "Fruit", format.parse( "2019-06-23" ), R.drawable.grapes, 0, "Antibes" ,"à conserver au frais",new LatLng(41.515280, 7.072272)));
-        listProduitsBoutique.add(new Produit("Mango", 8, "Fruit",format.parse( "2019-08-31" ), R.drawable.mango, 0, "Antibes", "récoltées sur l'arbre à maturité. Transport en avion",new LatLng(43.115280, 7.072272) ));
-        listProduitsBoutique.add(new Produit("Papaya", 8, "Fruit", format.parse( "2019-09-31" ), R.drawable.papaya, 0, "Antibes", "transport en avion",new LatLng(43.515280, 8.072272) ));
-        listProduitsBoutique.add(new Produit("Water Melon", 8, "Fruit", format.parse( "2019-08-23" ), R.drawable.watermelon, 0, "Antibes", "Melon Espagnol, gros calibre",new LatLng(39.515280, 7.072272) ));
-        listProduitsBoutique.add(new Produit("Avocat", 6, "Legume", format.parse( "2019-06-24" ), R.drawable.avocat, 14, "Antibes", "Récolté au Mexique. Agriculture raisonnée",new LatLng(41.615280, 7.072272) ));
-        listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", format.parse( "2019-07-25" ), R.drawable.yaourt, 34, "Antibes", "lait fermier",new LatLng(43.515280, 8.272272)));
-        listProduitsBoutique.add(new Produit("Escalope", 30, "Autre", new Date(2/06/19), R.drawable.escalope, 0, "Antibes", "Elevage non intensif" ,new LatLng(40.515280, 7.072272)));
+        listProduitsBoutique.add(new Produit("Poisson", 8, "Autre",format.parse( "2019-05-21" ), R.drawable.poisson, 12, "Marseille" , "récolte du jour. Poisson frais",new LatLng(43.2699185, 5.395928)));
+        listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", format.parse( "2019-07-16" ), R.drawable.apple, 0, "Amiens" , "idéales en compote",new LatLng(49.8948549, 2.3019093)));
+        listProduitsBoutique.add(new Produit("Grapes", 8, "Fruit", format.parse( "2019-06-23" ), R.drawable.grapes, 0, "Lille" ,"à conserver au frais",new LatLng(50.6081594, 3.1376585)));
+        listProduitsBoutique.add(new Produit("Mango", 8, "Fruit",format.parse( "2019-08-31" ), R.drawable.mango, 0, "Antibes", "récoltées sur l'arbre à maturité. Transport en avion",new LatLng(43.6157082, 7.0737165) ));
+        listProduitsBoutique.add(new Produit("Papaya", 8, "Fruit", format.parse( "2019-09-31" ), R.drawable.papaya, 0, "Antibes", "transport en avion",new LatLng(43.6182677, 7.0759757) ));
+        listProduitsBoutique.add(new Produit("Water Melon", 8, "Fruit", format.parse( "2019-08-23" ), R.drawable.watermelon, 0, "Madrid", "Melon Espagnol, gros calibre",new LatLng(40.3953004, -3.757726) ));
+        listProduitsBoutique.add(new Produit("Avocat", 6, "Legume", format.parse( "2019-06-24" ), R.drawable.avocat, 14, "Antibes", "Récolté au Mexique. Agriculture raisonnée",new LatLng(43.6183584, 7.042719) ));
+        listProduitsBoutique.add(new Produit("yaourt", 8, "Autre", format.parse( "2019-07-25" ), R.drawable.yaourt, 34, "Berneuil-en-bray", "lait fermier",new LatLng(49.3656931, 2.0486548)));
+        listProduitsBoutique.add(new Produit("Escalope", 30, "Autre", new Date(2/06/19), R.drawable.escalope, 0, "Beauvais", "Elevage non intensif" ,new LatLng(49.4236079, 2.0987459)));
 
         listProduitVente.add(new Produit("Posson", 8, "Autre",format.parse( "2019-06-02" ), R.drawable.poisson, 12, "Antibes" ,"Elevage non intensif",new LatLng(43.515480, 7.072272) ));
         listProduitVente.add(new Produit("Apple", 8, "Fruit",format.parse( "2019-06-03" ), R.drawable.apple, 0, "Antibes" ,"Elevage non intensif" ,new LatLng(43.515220, 7.072272)));
