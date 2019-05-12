@@ -61,11 +61,11 @@ public class ProduitBoutiqueFragment extends Fragment {
                 int quantit;
                 if (quantiteProduit.getText().toString().equals("") )
                 {
-                    erreur.setText("Veuillez saisir la quantité désirer");
+                    erreur.setText("Veuillez saisir la quantité désirée.");
                 }
                 else if(Integer.parseInt(quantiteProduit.getText().toString())<=0 || Integer.parseInt(quantiteProduit.getText().toString())> produit.getQuantite())
                 {
-                    erreur.setText("La quantité saisie est hors norme");
+                    erreur.setText("La quantité saisie est hors-norme.");
                 }
                 else
                 {

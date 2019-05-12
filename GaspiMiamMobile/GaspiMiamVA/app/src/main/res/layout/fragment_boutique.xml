@@ -49,7 +49,7 @@
                     android:layout_height="22dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="53dp"
-                    android:text="Produits Gratuits" />
+                    android:text="Produits gratuits" />
 
             </RadioGroup>
 

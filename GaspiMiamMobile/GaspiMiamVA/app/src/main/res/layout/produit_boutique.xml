@@ -94,7 +94,7 @@
                         android:layout_width="108dp"
                         android:layout_height="47dp"
                         android:layout_weight="1"
-                        android:text="Quanitité : "
+                        android:text="Quantité : "
                         android:textColor="@android:color/holo_green_dark"
                         android:textColorLink="@color/Green"
                         android:textSize="@dimen/text_size" />

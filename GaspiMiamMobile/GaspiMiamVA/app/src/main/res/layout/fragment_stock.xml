@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Mon stock"
+        android:text="Mon Stock"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:typeface="serif"

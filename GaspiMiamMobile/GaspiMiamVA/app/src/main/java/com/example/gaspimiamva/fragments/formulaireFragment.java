@@ -186,7 +186,7 @@ public class formulaireFragment extends Fragment implements IAgenda {
                 prixProduit = myview.findViewById(R.id.prixProduit);
                 TextView erreur = myview.findViewById(R.id.erreur);
                 if(categorie.equals("") || nomProduit.getText().equals("") ||quantiteProduit.getText().equals("") || descriptionProduit.getText().equals("")||prixProduit.getText().equals(""))
-                {erreur.setText("Veuillez saisir tous les champs");}
+                {erreur.setText("Veuillez saisir tous les champs.");}
                 else {
                     produit.setName(nomProduit.getText().toString());
                     produit.setQuantite(Integer.parseInt(quantiteProduit.getText().toString()));
@@ -221,9 +221,9 @@ public class formulaireFragment extends Fragment implements IAgenda {
                 saveImage.setAlpha(1f);
                 pdp.setImageBitmap(photo);
             } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(getContext(), "Action Cancelled", Toast.LENGTH_LONG);
+                Toast.makeText(getContext(), "Action cancelled", Toast.LENGTH_LONG);
             } else {
-                Toast.makeText(getContext(), "Action Failed", Toast.LENGTH_LONG);
+                Toast.makeText(getContext(), "Action failed", Toast.LENGTH_LONG);
             }
         }
 

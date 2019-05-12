@@ -101,7 +101,7 @@ public class ProduitFragment extends Fragment {
                 Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription(),produit.getPositiongps());
                 if(quantit<=0 || quantit>produit.getQuantite())
                 {
-                    erreur.setText("Erreur, Veuillez saisir une quantité valable");
+                    erreur.setText("Erreur. Veuillez saisir une quantité valable.");
                 }else if(quanti==0){
                     produit1.setQuantite(produit.getQuantite());
                     produit.setQuantite(0);
@@ -141,7 +141,7 @@ public class ProduitFragment extends Fragment {
 
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 if (quanti <0 || quanti == produit.getQuantite()) {
-                    erreur.setText("Erreur, Veuillez saisir une quantité valable");
+                    erreur.setText("Erreur. Veuillez saisir une quantité valable.");
 
                 }
                 else if( quanti ==0 ){
