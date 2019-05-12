@@ -49,7 +49,7 @@ public class StockFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.content_frame
-                                , new formulaireFragment())
+                                , formulaireFragment.newInstance(modelList))
                         .commit();
 
 

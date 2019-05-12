@@ -1,14 +1,12 @@
 package com.example.gaspimiamva.models;
 
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
+import com.example.gaspimiamva.R;
 import com.google.android.gms.maps.model.LatLng;
 
-import java.text.ParseException;
 import java.util.Date;
 import java.util.Observable;
 
@@ -25,6 +23,9 @@ public class Produit extends Observable implements Parcelable  {
     private LatLng positiongps;
 
     // constructeur pour la ListStock
+    public Produit(){
+        image = R.drawable.test;
+    }
 
     public Produit(String name, Integer quantite, String categorie, Date date, Integer image, String description) {
         this.name = name;

@@ -27,8 +27,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.app.Fragment;
 import android.widget.Toast;
@@ -40,6 +42,10 @@ import android.content.Context;
 
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.activites.IAgenda;
+import com.example.gaspimiamva.adapters.CalendarManager;
+import com.example.gaspimiamva.adapters.CustomListView;
+import com.example.gaspimiamva.models.ModelListOfProduit;
+import com.example.gaspimiamva.models.Produit;
 import com.example.gaspimiamva.models.UserModel;
 
 import java.io.File;
@@ -56,22 +62,13 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class formulaireFragment extends Fragment implements IAgenda {
 
-    private String produit;
-    private String descrip;
-    private String prix;
-    private Integer image;
-    private Activity context;
-    private UserModel user;
+
     private static final String ARG_User = "argText";
-    private EditText nom;
-    private EditText prenom;
-    private EditText adresse;
-    private EditText mdp;
-    private EditText telephone;
-    TextView tvprix;
-    TextView tvprod;
-    TextView tvdescri;
-    ImageView img;
+    private EditText nomProduit;
+    private EditText quantiteProduit;
+    private EditText descriptionProduit;
+    private EditText prixProduit;
+    private String categorie="";
     View myview;
     Button butt;
     private Button saveImage;
@@ -81,136 +78,78 @@ public class formulaireFragment extends Fragment implements IAgenda {
     private String pictureName = "profile_pic";
     private final int REQUEST_ID_IMAGE_CAPTURE = 100;
     private final int PERMISSION_REQUEST_READ_MEDIA = 100;
-/*
-    public static final String[] EVENT_PROJECTION = new String[] {
-            CalendarContract.Calendars._ID,                           // 0
-            CalendarContract.Calendars.ACCOUNT_NAME,                  // 1
-            CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,         // 2
-            CalendarContract.Calendars.OWNER_ACCOUNT                  // 3
-    };
-    // The indices for the projection array above.
-    private static final int PROJECTION_ID_INDEX = 0;
-    private static final int PROJECTION_ACCOUNT_NAME_INDEX = 1;
-    private static final int PROJECTION_DISPLAY_NAME_INDEX = 2;
-    private static final int PROJECTION_OWNER_ACCOUNT_INDEX = 3;
-    */
+    private Produit produit;
+    Button buttonAjoutStock;
+    private RadioButton filtFr ;
+    private RadioButton filtLe ;
+    private RadioButton filtAutre ;
+
+    private static final String ARG_ModelList = "argText";
+    public ModelListOfProduit modelList;
+    private CalendarManager calendarManager;
+    private CalendarView calendar;
 
 
+    public static formulaireFragment newInstance(ModelListOfProduit modelListOfProduit) {
+        formulaireFragment fragment = new formulaireFragment();
+        Bundle args = new Bundle();
+        args.putParcelable(ARG_ModelList, modelListOfProduit);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         myview = inflater.inflate(R.layout.fragment_formulaire, container, false);
-        butt = myview.findViewById(R.id.button3);
-        butt.setOnClickListener(new View.OnClickListener() {
+        produit = new Produit();
+        calendar = myview.findViewById(R.id.calendarView);
+
+        if (getArguments() != null && modelList == null) {
+            modelList = getArguments().getParcelable(ARG_ModelList);
+        }
+        Date currentDate = new Date(calendar.getDate());
+        produit.setDate(currentDate);
+
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
-            public void onClick(View view) {
-
-                // Specify the date
-
-                /*
-
-                long calID = 3;
-                long startMillis = 0;
-                long endMillis = 0;
-                Calendar beginTime = Calendar.getInstance();
-                beginTime.set(2019, 1, 1, 8, 0);
-                startMillis = beginTime.getTimeInMillis();
-                Calendar endTime = Calendar.getInstance();
-                endTime.set(2020, 12, 31, 0, 0);
-                endMillis = endTime.getTimeInMillis();
-
-
-                ContentResolver cr = getActivity().getContentResolver();
-                ContentValues values = new ContentValues();
-                values.put(CalendarContract.Events.DTSTART, startMillis);
-                values.put(CalendarContract.Events.DTEND, endMillis);
-                values.put(CalendarContract.Events.TITLE, "Jazzercise");
-                values.put(CalendarContract.Events.DESCRIPTION, "Group workout");
-                values.put(CalendarContract.Events.CALENDAR_ID, calID);
-                values.put(CalendarContract.Events.EVENT_TIMEZONE, "America/Los_Angeles");
-                Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
-
-// get the event ID that is the last element in the Uri
-                long eventID = Long.parseLong(uri.getLastPathSegment());
-                System.out.println(eventID);
-//
-// ... do something with event ID
-//
-//*/
-
-                Calendar beginTime = Calendar.getInstance();
-                long calID = 3;
-                long eventID = 208;
-                beginTime.set(2012, 0, 19, 7, 30);
-                Calendar endTime = Calendar.getInstance();
-                endTime.set(2012, 0, 19, 8, 30);
-                Intent intent = new Intent(Intent.ACTION_INSERT)
-                        .setData(CalendarContract.Events.CONTENT_URI)
-                        .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-                        .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
-                        .putExtra(CalendarContract.Events.TITLE, "Nom du produit")
-                        .putExtra(CalendarContract.Events.DESCRIPTION, "Group class")
-                        .putExtra(CalendarContract.Events.EVENT_LOCATION, "Frigo")
-                        // recuperer l'id du calendrier
-                        .putExtra(CalendarContract.Events.CALENDAR_ID, calID)
-                        .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-                        // adresses gmail auxquelles ont fait la publication
-                        .putExtra(Intent.EXTRA_EMAIL, "jeanneDurant@example.com,fannykali@example.com")
-                        .putExtra(CalendarContract.Events._ID, eventID);
-
-// recuperer l'id de l'event
-                // forcer la permission
-                final int callbackId = 42;
-                checkPermissions(callbackId, Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR);
-
-                ContentResolver cr = getActivity().getContentResolver(); // fait beuguer : demande des droits alors qu'on les a
-                ContentValues values = new ContentValues();
-                Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
-
-// get the event ID that is the last element in the Uri
-                long recupEventID = Long.parseLong(uri.getLastPathSegment());
-                // TODO : utiliser l'id de l'event pour accéder au contenu donc a la date selectionnée
-
-                startActivity(intent);
-
-
-                /*
-
-                INTENT DE BOUBOU
-
-
-                Log.d("calender","i");
-                Log.d("calendar", "I");
-                Calendar calendarEvent = Calendar.getInstance();
-                Intent intent = new Intent(Intent.ACTION_EDIT);
-                intent.setType("vnd.android.cursor.item/event");
-                intent.putExtra("beginTime", calendarEvent.getTimeInMillis());
-                intent.putExtra("endTime", calendarEvent.getTimeInMillis() + 60 * 60 * 1000);
-                intent.putExtra("title", "Date d'expiration de tes ... ");
-                intent.putExtra("allDay", true);
-                intent.putExtra("rule", "FREQ=YEARLY");
-                startActivity(intent);
-
-                */
-/*
-
-                ESSAIS DE FANOU
-
-                Date date = calendarEvent.getTime();
-                System.out.println(date);
-                calendarEvent.getDisplayNames();
-
-
-                String id = intent.getStringExtra("id");
-                System.out.println("id" +id);
-                String name = intent.getStringExtra("name");
-                System.out.println("name"+name);
-                */
-
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                produit.setDate(new Date(year - 1900, month, dayOfMonth));
             }
         });
+
+        //Request permissions
+        ActivityCompat.requestPermissions(getActivity(),
+                new String[]{Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR}, 1);
+
+        calendarManager = new CalendarManager(getActivity());
+        calendarManager.init();
+        filtFr = myview.findViewById(R.id.fruit) ;
+        filtLe = myview.findViewById(R.id.legumes) ;
+        filtAutre = myview.findViewById(R.id.autres) ;
+
+        filtFr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRadioButtonClicked(filtFr);
+            }
+        });
+
+        filtLe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRadioButtonClicked(filtLe);
+            }
+        });
+
+        filtAutre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRadioButtonClicked(filtAutre);
+            }
+        });
+
 
         saveImage = myview.findViewById(R.id.save);
         takephoto = myview.findViewById(R.id.cam);
@@ -237,6 +176,38 @@ public class formulaireFragment extends Fragment implements IAgenda {
             }
         });
 
+        buttonAjoutStock = myview.findViewById(R.id.buttonajout);
+        buttonAjoutStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nomProduit = myview.findViewById(R.id.nomProduit);
+                quantiteProduit = myview.findViewById(R.id.quantite);
+                descriptionProduit = myview.findViewById(R.id.description);
+                prixProduit = myview.findViewById(R.id.prixProduit);
+                TextView erreur = myview.findViewById(R.id.erreur);
+                if(categorie.equals("") || nomProduit.getText().equals("") ||quantiteProduit.getText().equals("") || descriptionProduit.getText().equals("")||prixProduit.getText().equals(""))
+                {erreur.setText("Veuillez saisir tous les champs");}
+                else {
+                    produit.setName(nomProduit.getText().toString());
+                    produit.setQuantite(Integer.parseInt(quantiteProduit.getText().toString()));
+                    produit.setDescription(descriptionProduit.getText().toString());
+                    produit.setPrix(Integer.parseInt(prixProduit.getText().toString()));
+                    produit.setCategorie(categorie);
+                    addEventToCalendar();
+                    FragmentManager manager = (getActivity()).getFragmentManager();
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , StockFragment.newInstance(modelList))
+                            .commit();
+
+
+                }
+
+
+                modelList.addStock(produit);
+            }
+        });
+
         return myview;
 
     }
@@ -248,6 +219,7 @@ public class formulaireFragment extends Fragment implements IAgenda {
             if (resultCode == RESULT_OK) {
                 photo = (Bitmap) data.getExtras().get("data");
                 saveImage.setAlpha(1f);
+                pdp.setImageBitmap(photo);
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getContext(), "Action Cancelled", Toast.LENGTH_LONG);
             } else {
@@ -316,4 +288,36 @@ public class formulaireFragment extends Fragment implements IAgenda {
         if (!permissions)
             ActivityCompat.requestPermissions(getActivity(), permissionsId, callbackId);
     }
+    public void onRadioButtonClicked(RadioButton view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.fruit:
+                if(checked)
+                { categorie="Fruit";}
+                break;
+            case R.id.legumes:
+                if(checked)
+                { categorie="Légume";}
+                break;
+            case R.id.autres :
+                if(checked)
+                { categorie="Autre";}
+                break;
+
+        }
+    }
+
+    private void addEventToCalendar(){
+        if (ActivityCompat.checkSelfPermission(getContext(),
+                Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            System.out.println("Holidays in United States");
+            return;
+        } else calendarManager.insert(produit);
+    }
+
+
+
 }

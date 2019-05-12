@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.MainActivity">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,6 +26,7 @@
         android:typeface="serif" />
 
     <EditText
+        android:id="@+id/nomProduit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
@@ -27,6 +34,7 @@
         android:inputType="textPersonName" />
 
     <EditText
+        android:id="@+id/prixProduit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -36,6 +44,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
+        android:id="@+id/quantite"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorPrimaryDark"
@@ -43,6 +52,7 @@
         android:inputType="phone" />
 
     <EditText
+        android:id="@+id/description"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -57,12 +67,11 @@
         android:layout_height="75dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="38dp"
-            android:layout_marginRight="180dp"
-            android:layout_weight="1"
-            android:text="Ajouter une photo" />
+        <ImageView
+            android:id="@+id/pdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <ImageView
             android:id="@+id/cam"
@@ -78,22 +87,70 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Save Image" />
+            android:background="@color/colorPrimaryDark"
+            android:text="Enregistrer Image" />
 
     </LinearLayout>
 
 
-    <Button
-        android:id="@+id/button3"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Catégorie : "
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp" />
+
+        <RadioGroup
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/fruit"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignParentTop="true"
+                android:text="Fruits" />
+
+            <RadioButton
+                android:id="@+id/legumes"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignParentTop="true"
+                android:text="Légumes" />
+
+            <RadioButton
+                android:id="@+id/autres"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:text="Autres" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/erreur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:paddingLeft="100dp"
-        android:paddingRight="70dp"
-        android:text="Ajouter à ton agenda"
-        android:textColor="#fff" />
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="5dp" />
 
 
     <Button
@@ -108,3 +165,4 @@
         android:text="Ajouter"
         android:textColor="#fff" />
 </LinearLayout>
+</ScrollView>

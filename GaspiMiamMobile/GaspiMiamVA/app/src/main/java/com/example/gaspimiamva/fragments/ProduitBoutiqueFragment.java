@@ -74,6 +74,7 @@ public class ProduitBoutiqueFragment extends Fragment {
                     if(quantit== produit.getQuantite()) {
                         produit1.setQuantite(quantit);
                         modelListOfProduit.deleteBoutique(produit);
+
                     }
                     modelListOfProduit.addReservation(produit1);
                     produit.setQuantite(produit.getQuantite()-quantit);
