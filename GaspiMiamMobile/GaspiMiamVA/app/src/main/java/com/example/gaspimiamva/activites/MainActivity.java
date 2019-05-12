@@ -40,6 +40,7 @@ import com.example.gaspimiamva.fragments.BoutiqueFragment;
 import com.example.gaspimiamva.fragments.MapFragment;
 import com.example.gaspimiamva.fragments.MesVentesFragment;
 import com.example.gaspimiamva.fragments.MonCompteFragment;
+import com.example.gaspimiamva.fragments.ContactFragment;
 import com.example.gaspimiamva.fragments.StockFragment;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity
                     .commit();
 
 
-        }else if (id == R.id.nav_stock) {
+        } else if (id == R.id.nav_stock) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             ,  StockFragment.newInstance(this.modelListOfProduit))
@@ -178,6 +179,13 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , MonCompteFragment.newInstance(userModel.getListOfProfiles().get(0)))
+                    .commit();
+
+
+        } else if (id == R.id.nav_contacts) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame
+                            , ContactFragment.newInstance())
                     .commit();
 
 
