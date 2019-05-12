@@ -75,7 +75,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mGoogleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
-                mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(latLng.latitude, latLng.longitude)).title("Marker of Finder"));
+                mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(latLng.latitude, latLng.longitude)).title("Ajouter un produit ici"));
 
             }
         });
@@ -96,12 +96,19 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onInfoWindowClick(Marker marker) {
                 System.out.println(marker.getTitle());
-
+                if ( ! marker.getTitle().equals("Ajouter un produit ici")){
                 FragmentManager manager = getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , ProduitBoutiqueFragment.newInstance(modelList.getListProduitsBoutique().get(Math.round(marker.getZIndex())),modelList))
                         .commit();
+            }else{
+                    FragmentManager manager = getFragmentManager();
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , FormulaireVenteFragment.newInstance(modelList.getListProduitsBoutique().get(Math.round(marker.getZIndex())),1,modelList))
+                            .commit();
+                }
             }
         });
     }}
