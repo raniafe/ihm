@@ -1,9 +1,11 @@
 package com.example.gaspimiamva.activites;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,6 +42,7 @@ import com.example.gaspimiamva.fragments.MesVentesFragment;
 import com.example.gaspimiamva.fragments.MonCompteFragment;
 import com.example.gaspimiamva.fragments.StockFragment;
 import com.example.gaspimiamva.models.ModelListOfProduit;
+import com.example.gaspimiamva.models.Produit;
 import com.example.gaspimiamva.models.UsersListModel;
 
 import java.util.ArrayList;
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity
     public static ModelListOfProduit modelListOfProduit;
     public static UsersListModel userModel ;
     public static final String CHANNEL_ID = "channel";
-    public static final int NOTIFICATION_ID = 888888;
+    public static int NOTIFICATION_ID = 888888;
     public Bundle bundle;
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -119,9 +122,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.notification) {
 
+                alertDialog();
+
+
             //Notification notif = new Notification();
             //notif.onCreate(bundle);
-            showNotification("alerte", "Courgettes en danger, pensez à les consommer");
+
 
             /*
             Intent intent = new Intent (getApplicationContext(), Notification.class);
@@ -210,15 +216,19 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    public void showNotification(String title, String content) {
-        System.out.println("ici notif");
-        NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.alerte)
-                .setContentTitle(title)
-                .setContentText(content)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(NOTIFICATION_ID, notifBuilder.build());
+    public void showNotification(String title, String content,int id) {
+        //System.out.println("ici notif");
+
+              // System.out.println("ici");
+               //System.out.println(modelListOfProduit.getProduitsNotification().get(i).getName() + modelListOfProduit.getProduitsNotification().get(i).getDate());
+               NotificationCompat.Builder notifBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                       .setSmallIcon(R.drawable.alerte)
+                       .setContentTitle(title)
+                       .setContentText(content+" en danger "+"pensez à les consommer");
+               NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+               notificationManager.notify(id, notifBuilder.build());
+
+
     }
 
     @Override
@@ -239,6 +249,43 @@ public class MainActivity extends AppCompatActivity
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+
+    protected void alertDialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(true);
+        builder.setTitle("Organiser mes alertes");
+        builder.setMessage("Quelles alertes voulez-vous afficher ?");
+        builder.setPositiveButton(" 3 jours ou moins",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ArrayList<Produit> list = modelListOfProduit.getProduitsNotification();
+                        if (list != null) {
+                            for (int i=0; i<list.size(); i++){
+                                showNotification("alerte", list.get(i).getName(), ++NOTIFICATION_ID);}
+                        }
+                    }
+                }
+                );
+        builder.setNegativeButton(" la semaine",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ArrayList<Produit> list = modelListOfProduit.getProduitsNotifMore();
+                        if (list != null) {
+                            for (int i=0; i<list.size(); i++){
+                                showNotification("alerte", list.get(i).getName(), ++NOTIFICATION_ID);}
+                        }
+
+                    }
+                }
+        );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
     }
 
 }

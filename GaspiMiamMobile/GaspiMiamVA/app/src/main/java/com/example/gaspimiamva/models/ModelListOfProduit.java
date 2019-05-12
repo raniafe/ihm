@@ -9,6 +9,8 @@ import com.example.gaspimiamva.R;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +22,8 @@ public class ModelListOfProduit implements Parcelable {
     private static ArrayList<Produit> listProduitReservation = new ArrayList<>();
     private static ArrayList<Produit> listProduitVente = new ArrayList<>();
 
+
+
     public ModelListOfProduit() throws ParseException {
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -28,12 +32,14 @@ public class ModelListOfProduit implements Parcelable {
         listProduitsStock.clear();
         listProduitVente.clear();
 
-        listProduitsStock.add(new Produit("Carotte", 19, "Légume", format.parse( "2019-06-31" ), R.drawable.carot, 2, "Nice" , "carottes de plein champs",new LatLng(43.415280, 7.072272)));
-        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", format.parse( "2019-07-11" ), R.drawable.coconut, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ,new LatLng(43.515280, 7.072272)));
-        listProduitsStock.add(new Produit("Pêche", 5, "Fruit", format.parse( "2019-05-31" ), R.drawable.peach, 3, "Nice", "du Tarn et Garonne",new LatLng(43.516280, 7.072272) ));
-        listProduitsStock.add(new Produit("Fraises", 8, "Fruit",format.parse( "2019-06-21" ), R.drawable.strawberry, 4, "Antibes","fraises des bois, non traitées",new LatLng(43.565280, 7.072272) ));
-        listProduitsStock.add(new Produit("Tomate", 3, "Légume", format.parse( "2019-06-27" ), R.drawable.tomatoe, 2, "Nice", "sans pesticides",new LatLng(43.515280, 7.172272)));
-        listProduitsStock.add(new Produit("Yaourt", 19, "Autre", format.parse( "2019-06-22" ), R.drawable.yaourt, 6, "Nice", "au lait fermier entier et fermenté",new LatLng(43.515280, 7.002272) ));
+        listProduitsStock.add(new Produit("Carotte", 19, "Légume", format.parse( "2019-05-15" ), R.drawable.carot, 2, "Nice" , "carottes de plein champs",new LatLng(43.415280, 7.072272)));
+        listProduitsStock.add(new Produit("Noix de coco", 9, "Fruit", format.parse( "2019-05-15" ), R.drawable.coconut, 9, "Nice", "récoltées en Martinique. Savoureuses, chair croquante" ,new LatLng(43.515280, 7.072272)));
+        listProduitsStock.add(new Produit("Pêche", 5, "Fruit", format.parse( "2019-05-15" ), R.drawable.peach, 3, "Nice", "du Tarn et Garonne",new LatLng(43.516280, 7.072272) ));
+        listProduitsStock.add(new Produit("Fraises", 8, "Fruit",format.parse( "2019-05-12" ), R.drawable.strawberry, 4, "Antibes","fraises des bois, non traitées",new LatLng(43.565280, 7.072272) ));
+        listProduitsStock.add(new Produit("Tomate", 3, "Légume", format.parse( "2019-05-19" ), R.drawable.tomatoe, 2, "Nice", "sans pesticides",new LatLng(43.515280, 7.172272)));
+        listProduitsStock.add(new Produit("Yaourt", 19, "Autre", format.parse( "2019-05-12" ), R.drawable.yaourt, 6, "Nice", "au lait fermier entier et fermenté",new LatLng(43.515280, 7.002272) ));
+
+
 
         listProduitsBoutique.add(new Produit("Poisson", 8, "Autre",format.parse( "2019-05-21" ), R.drawable.poisson, 12, "Marseille" , "récolte du jour. Poisson frais",new LatLng(43.2699185, 5.395928)));
         listProduitsBoutique.add(new Produit("Apple", 8, "Fruit", format.parse( "2019-07-16" ), R.drawable.apple, 0, "Amiens" , "idéales en compote",new LatLng(49.8948549, 2.3019093)));
@@ -90,6 +96,7 @@ public class ModelListOfProduit implements Parcelable {
     public static ArrayList<Produit> getListProduitVente() {
         return listProduitVente;
     }
+
     public ArrayList<Produit> filtrerListParCategorie(final String categorie, ArrayList<Produit> list){
         final ArrayList<Produit> listFiltre = new ArrayList<>();
         for(int i=0; i<list.size();i++){
@@ -160,4 +167,70 @@ public class ModelListOfProduit implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
     }
+
+    public ArrayList<Produit> getProduitsNotification(){
+
+        ArrayList<Produit>  listProduitNotification = new ArrayList<>();
+
+        for (int i=0; i<listProduitsStock.size(); i++) {
+
+            Date date = new Date();
+
+            // date de l'application: date du jour
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int day = localDate.getDayOfMonth();
+            //System.out.println("date de l'appli" + day);
+
+            // date du produit
+
+            LocalDate localDate2 = listProduitsStock.get(i).getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int day1   = localDate2.getDayOfMonth();
+            //System.out.println(" date de la liste stock " + day1);
+
+
+            /*Date day2 = listProduitsStock.get(i).getDate();
+            System.out.println("date du produit + " + day2);
+            int day3 = day2.getDay();
+            */
+
+            // si on a 3 jours d'écart ou moins, et si on est pas le même jour
+            if ((day1 - day <=3) && (day1 -day >=0 ) )
+            {
+                listProduitNotification.add(listProduitsStock.get(i)) ; System.out.println("produit liste notif ajouté ");}
+        // System.out.println("produit liste notif ajouté "+ listProduitNotification.get(i));
+        }
+        return listProduitNotification;
+        }
+
+        public ArrayList<Produit > getProduitsNotifMore(){
+
+        ArrayList<Produit> listProduitNotifMore = new ArrayList<>();
+
+        for (int i=0; i<listProduitsStock.size(); i++){
+            Date date = new Date();
+
+            // date de l'application: date du jour
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int day = localDate.getDayOfMonth();
+            //System.out.println("date de l'appli" + day);
+
+            // date du produit
+
+            LocalDate localDate2 = listProduitsStock.get(i).getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int day1   = localDate2.getDayOfMonth();
+
+
+            // si on a 3 jours d'écart ou plus
+            if ((day1 - day <=7)  )
+            {
+                listProduitNotifMore.add(listProduitsStock.get(i)) ; System.out.println("produit liste notif ajouté ");}
+            // System.out.println("produit liste notif ajouté "+ listProduitNotification.get(i));
+        }
+            return listProduitNotifMore;
+        }
+
 }
+
+
+
+
