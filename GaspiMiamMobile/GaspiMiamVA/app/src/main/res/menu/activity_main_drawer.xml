@@ -33,6 +33,10 @@
                 android:icon="@drawable/moncompte"
                 android:title="@string/mon_compte" />
             <item
+                android:id="@+id/nav_contacts"
+                android:icon="@drawable/alerte"
+                android:title="@string/contact" />
+            <item
                 android:id="@+id/nav_deconnexion"
                 android:icon="@drawable/deconnexion"
                 android:title="@string/d_connexion" />
