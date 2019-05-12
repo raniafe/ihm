@@ -106,7 +106,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     FragmentManager manager = getFragmentManager();
                     manager.beginTransaction()
                             .replace(R.id.content_frame
-                                    , FormulaireVenteFragment.newInstance(modelList.getListProduitsBoutique().get(Math.round(marker.getZIndex())),1,modelList))
+                                    , new formulaireFragment())
                             .commit();
                 }
             }
