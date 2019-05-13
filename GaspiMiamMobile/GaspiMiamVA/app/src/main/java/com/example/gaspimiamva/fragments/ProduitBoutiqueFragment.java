@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gaspimiamva.R;
+import com.example.gaspimiamva.activites.Contact;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
 
@@ -42,6 +43,7 @@ public class ProduitBoutiqueFragment extends Fragment {
         TextView descr = myView.findViewById(R.id.de);
         final EditText quantiteProduit = myView.findViewById(R.id.quantite);
         Button buttonReserverProduit = myView.findViewById(R.id.butttonReserver);
+        Button buttonContact=myView.findViewById(R.id.add);
         final TextView quant = myView.findViewById(R.id.quant);
         final TextView erreur = myView.findViewById(R.id.Erreur);
 
@@ -86,6 +88,16 @@ public class ProduitBoutiqueFragment extends Fragment {
                         .commit();}
             }
         });
+        buttonContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    FragmentManager manager = (getActivity()).getFragmentManager();
+                    manager.beginTransaction()
+                            .replace(R.id.content_frame
+                                    , ContactFragment.newInstance())
+                            .commit();}
+            });
         return myView;
 
     }
