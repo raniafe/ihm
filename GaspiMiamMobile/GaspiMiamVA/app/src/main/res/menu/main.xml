@@ -8,6 +8,7 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never"
-        app:srcCompat="@drawable/update" />
+        app:srcCompat="@drawable/update"
+        />
 
 </menu>

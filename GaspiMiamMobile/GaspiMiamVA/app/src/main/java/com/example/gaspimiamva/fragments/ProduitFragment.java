@@ -104,7 +104,6 @@ public class ProduitFragment extends Fragment {
                     erreur.setText("Erreur. Veuillez saisir une quantité valable.");
                 }else if(quanti==0){
                     produit1.setQuantite(produit.getQuantite());
-                    produit.setQuantite(0);
                     modelListOfProduit.deleteStock(produit);
                     FragmentManager manager = (getActivity()).getFragmentManager();
                     manager.beginTransaction()
