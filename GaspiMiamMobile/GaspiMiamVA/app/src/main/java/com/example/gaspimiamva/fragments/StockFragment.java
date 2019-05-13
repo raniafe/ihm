@@ -14,6 +14,7 @@ import android.widget.ListView;
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.adapters.CustomListView;
 import com.example.gaspimiamva.models.ModelListOfProduit;
+import com.example.gaspimiamva.models.Produit;
 
 
 public class StockFragment extends Fragment {

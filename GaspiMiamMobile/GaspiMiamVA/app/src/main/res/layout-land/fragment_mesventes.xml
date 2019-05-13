@@ -4,25 +4,28 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
+    <TextView
+        android:id="@+id/nav_mesventes"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="270dp"
+        android:text="Mes Ventes"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
         <ListView
             android:id="@+id/list_vente"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="30dp"
-            android:divider="#f00"
-            android:listSelector="#ce3232"/>
+            android:divider="@color/colorPrimaryDark"
+            android:listSelector="@color/colorPrimaryDark"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/buttonfab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="500dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="150dp"
-        android:src="@drawable/add"
-        android:clickable="false"
-        app:layout_anchorGravity="bottom|right|left" />
+
 
 
 
