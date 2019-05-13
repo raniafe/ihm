@@ -9,7 +9,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
-        android:text="Astuce : Cliquez sur la carte pour ajouter un produit."
+        android:text="Astuce : Appuyez sur la carte pour ajouter un produit."
         android:textColor="@color/colorPrimary"
         android:textSize="10sp"
         android:typeface="serif"
