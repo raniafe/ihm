@@ -76,7 +76,7 @@ public class ProduitFragment extends Fragment {
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 int quant ;
                 if(quantiteProduit.getText().toString().equals(""))
-                    quant =0 ;
+                    quant =produit.getQuantite() ;
                 else
                     quant =Integer.parseInt(quantiteProduit.getText().toString());
                 manager.beginTransaction()
