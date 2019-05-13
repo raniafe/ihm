@@ -153,6 +153,11 @@
                 android:textSize="13dp"
                 android:typeface="normal"
                 android:textCursorDrawable="@color/colorPrimaryDark"/>
+            <TextView
+                android:id="@+id/erreur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_dark" />
 
 
             <Button

@@ -68,6 +68,8 @@ public class FormulaireVenteFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 int quant ;
+                int prix ;
+                TextView erreur = myView.findViewById(R.id.erreur);
                 FragmentManager manager = (getActivity()).getFragmentManager();
                 if(quantiteN.getText().toString().equals("") && quantite ==0 )
                     manager.beginTransaction()
@@ -77,32 +79,38 @@ public class FormulaireVenteFragment extends Fragment {
                 else
                 {
                     if(!quantiteN.getText().toString().equals(""))
-                        quant = quantite +  Integer.parseInt(quantiteN.getText().toString());
+                        quant =  Integer.parseInt(quantiteN.getText().toString());
 
                     else
                         quant = quantite;
-                    if(produit.getQuantite() - quant <= 0)
+                    if(!prixProduit.getText().toString().equals(""))
+                        prix=Integer.parseInt(prixProduit.getText().toString());
+                    else
+                        prix=0 ;
+                    if(produit.getQuantite() - quant < 0)
                     {
-                        modelListOfProduit.deleteStock(produit);
-                        produit.setQuantite(quant);
-                        produit.setPrix(Integer.parseInt(prixProduit.getText().toString()));
+                        erreur.setText("Veuillez saisir une quantité valable");
 
+                    }
+                    else if(prix<0){
+                        erreur.setText("Veuillez saisir un prix valable");
                     }
 
                     else
                     {
 
                         produit.setQuantite(produit.getQuantite() - quant);
-                        Produit produit1 = new Produit(produit.getName(), quant,produit.getCategorie(), produit.getDate(), produit.getImage(),Integer.parseInt(prixProduit.getText().toString()),"", produit.getDescription(),produit.getPositiongps()) ;
+                        Produit produit1 = new Produit(produit.getName(), quant,produit.getCategorie(), produit.getDate(), produit.getImage(),prix,"", produit.getDescription(),produit.getPositiongps()) ;
                         modelListOfProduit.addBoutique(produit1);
                         modelListOfProduit.addMesVentes(produit1);
+                        modelListOfProduit.addBoutique(produit);
+                        manager.beginTransaction()
+                                .replace(R.id.content_frame
+                                        , MesVentesFragment.newInstance(modelListOfProduit))
+                                .commit();
 
                     }
-                    modelListOfProduit.addBoutique(produit);
-                    manager.beginTransaction()
-                            .replace(R.id.content_frame
-                                    , MesVentesFragment.newInstance(modelListOfProduit))
-                            .commit();
+
 
 
                 }

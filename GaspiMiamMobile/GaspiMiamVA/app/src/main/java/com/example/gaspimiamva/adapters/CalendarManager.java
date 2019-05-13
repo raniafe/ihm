@@ -16,6 +16,7 @@ public class CalendarManager {
     private ContentResolver cr;
     private String id;
 
+
     public CalendarManager(Activity activity){
         this.activity = activity;
         this.cr = activity.getContentResolver();
