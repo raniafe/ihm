@@ -50,6 +50,17 @@ public class Produit extends Observable implements Parcelable  {
         this.positiongps=positiongps;
     }
 
+    public Produit(String name, Integer quantite, String categorie, Date date, Integer image, Integer prix, String localisation, String description) {
+        this.name = name;
+        this.quantite = quantite;
+        this.categorie = categorie;
+        this.date = date;
+        this.image = image;
+        this.prix = prix;
+        this.localisation = localisation;
+        this.description = description;
+    }
+
     protected Produit(Parcel in) {
         name = in.readString();
         quantite = in.readInt();
@@ -101,6 +112,10 @@ public class Produit extends Observable implements Parcelable  {
 
     public void setCategorie(String categorie) {
         this.categorie = categorie;
+    }
+
+    public void setPositiongps(LatLng lat){
+        this.positiongps=lat;
     }
 
     public Date getDate() {
