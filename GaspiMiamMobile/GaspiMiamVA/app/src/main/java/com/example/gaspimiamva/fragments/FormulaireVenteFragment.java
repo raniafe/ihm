@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
+import com.google.android.gms.maps.model.LatLng;
 
 public class FormulaireVenteFragment extends Fragment {
 
@@ -100,7 +101,7 @@ public class FormulaireVenteFragment extends Fragment {
                     {
 
                         produit.setQuantite(produit.getQuantite() - quant);
-                        Produit produit1 = new Produit(produit.getName(), quant,produit.getCategorie(), produit.getDate(), produit.getImage(),prix,"", produit.getDescription(),produit.getPositiongps()) ;
+                        Produit produit1 = new Produit(produit.getName(), quant,produit.getCategorie(), produit.getDate(), produit.getImage(),prix,"", produit.getDescription(),new LatLng(43.6183584, 7.042719)) ;
                         modelListOfProduit.addBoutique(produit1);
                         modelListOfProduit.addMesVentes(produit1);
                         modelListOfProduit.addBoutique(produit);

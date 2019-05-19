@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.example.gaspimiamva.R;
 import com.example.gaspimiamva.models.ModelListOfProduit;
 import com.example.gaspimiamva.models.Produit;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.Calendar;
 
@@ -98,7 +99,7 @@ public class ProduitFragment extends Fragment {
                 else
                     quantit =Integer.parseInt(quantiteProduit.getText().toString());
                 Integer quanti = produit.getQuantite() - quantit ;
-                Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription(),produit.getPositiongps());
+                Produit produit1 = new Produit(produit.getName(),0,produit.getCategorie(),produit.getDate(),produit.getImage(),0,"",produit.getDescription(),new LatLng(43.6183584, 7.042719));
                 if(quantit<=0 || quantit>produit.getQuantite())
                 {
                     erreur.setText("Erreur. Veuillez saisir une quantité valable.");

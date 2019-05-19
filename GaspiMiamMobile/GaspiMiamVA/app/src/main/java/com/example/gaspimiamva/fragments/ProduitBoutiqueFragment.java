@@ -72,7 +72,7 @@ public class ProduitBoutiqueFragment extends Fragment {
                 else
                 {
                     quantit = Integer.parseInt(quantiteProduit.getText().toString());
-                    Produit produit1 = new Produit(produit.getName(),quantit,produit.getCategorie(),produit.getDate(),produit.getImage(),produit.getDescription());
+                    Produit produit1 = new Produit(produit.getName(),quantit,produit.getCategorie(),produit.getDate(),produit.getImage(),produit.getPrix(),produit.getLocalisation(),produit.getDescription(),produit.getPositiongps());
                     if(quantit== produit.getQuantite()) {
                         produit1.setQuantite(quantit);
                         modelListOfProduit.deleteBoutique(produit);
