@@ -101,7 +101,7 @@ public class FormulaireVenteFragment extends Fragment {
                     {
 
                         produit.setQuantite(produit.getQuantite() - quant);
-                        Produit produit1 = new Produit(produit.getName(), quant,produit.getCategorie(), produit.getDate(), produit.getImage(),prix,"", produit.getDescription(),new LatLng(43.6183584, 7.042719)) ;
+                        Produit produit1 = new Produit(produit.getName(), quant,produit.getCategorie(), produit.getDate(), produit.getImage(),prix,"", produit.getDescription()) ;
                         modelListOfProduit.addBoutique(produit1);
                         modelListOfProduit.addMesVentes(produit1);
                         modelListOfProduit.addBoutique(produit);
