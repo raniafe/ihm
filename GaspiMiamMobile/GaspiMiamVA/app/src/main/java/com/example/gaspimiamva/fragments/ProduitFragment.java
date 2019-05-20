@@ -105,14 +105,15 @@ public class ProduitFragment extends Fragment {
                     erreur.setText("Erreur. Veuillez saisir une quantité valable.");
                 }else if(quanti==0){
                     produit1.setQuantite(produit.getQuantite());
+                    modelListOfProduit.addMesVentes(produit1);
+                    modelListOfProduit.addBoutique(produit1);
                     modelListOfProduit.deleteStock(produit);
                     FragmentManager manager = (getActivity()).getFragmentManager();
                     manager.beginTransaction()
                             .replace(R.id.content_frame
                                     , MesVentesFragment.newInstance(modelListOfProduit))
                             .commit();
-                    modelListOfProduit.addMesVentes(produit1);
-                    modelListOfProduit.addBoutique(produit1);
+
                 }
                 else if(quanti>0){
                     produit1.setQuantite(quantit);

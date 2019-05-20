@@ -64,11 +64,8 @@ public class MainActivity extends AppCompatActivity
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
     public MainActivity() {
-        try {
-            modelListOfProduit = new ModelListOfProduit();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
+        modelListOfProduit = new ModelListOfProduit();
         userModel = new UsersListModel() ;
 
     }

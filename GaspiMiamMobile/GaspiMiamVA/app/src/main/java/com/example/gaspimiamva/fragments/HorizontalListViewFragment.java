@@ -139,13 +139,13 @@ public class HorizontalListViewFragment extends Fragment {
                     if( id == R.drawable.ic_like){
                         holder.likeImageView.setTag(R.drawable.ic_liked);
                         holder.likeImageView.setImageResource(R.drawable.ic_liked);
-                        Toast.makeText(getActivity(),holder.titleTextView.getText()+" added to your Reservations",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),holder.titleTextView.getText()+" sont ajoutés à vos réservations",Toast.LENGTH_SHORT).show();
                         modelListOfProduit.addReservation(list.get(position));
                         modelListOfProduit.deleteBoutique(list.get(position));
                     }else{
                         holder.likeImageView.setTag(R.drawable.ic_like);
                         holder.likeImageView.setImageResource(R.drawable.ic_like);
-                        Toast.makeText(getActivity(),holder.titleTextView.getText()+" removed from your Reservations",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),holder.titleTextView.getText()+" sont supprimés de vos réservations",Toast.LENGTH_SHORT).show();
                         modelListOfProduit.deleteReservation(list.get(position));
                         modelListOfProduit.addBoutique(list.get(position));
                     }
